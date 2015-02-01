@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4": {
+            "IPFO\\" : "IPFO/"
+        }
+    },
+    "config": {
+        "vendor-dir": "Vendor"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "~5.0"
+    }
+}

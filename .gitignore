@@ -1,3 +1,6 @@
 Vendor
 Vendor/
 Vendor/*
+.idea
+Config/
+Samples/

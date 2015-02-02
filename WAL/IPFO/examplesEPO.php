@@ -23,19 +23,13 @@ require $autoLoad;
 $search = new \WAL\IPFO\IPFOSearch();
 
 ////Make the request
-//$search->setIPType('Patent')
-//       ->setNumberType('publication')
-//       ->setNumber('EP1452484')
-//       ->search();
-//
-////Get the results and do whatever you want with them!
-//debug($search->getResults());
-
-//Make the request
 $search->setIPType('Patent')
        ->setNumberType('publication')
-       ->setNumber('US5123456')
+       ->setNumber('EP1452484')
        ->search();
+
+//Get the results and do whatever you want with them!
+debug($search->getResults());
 
 //Get the results and do whatever you want with them!
 debug($search->getResults());

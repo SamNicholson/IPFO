@@ -10,6 +10,7 @@ namespace WAL\IPFO\Containers;
 
 
 use WAL\IPFO\DataMappers\EPODataMapper;
+use WAL\IPFO\DataMappers\USPTODataMapper;
 
 class DataMapperContainer {
 
@@ -20,6 +21,10 @@ class DataMapperContainer {
     /** @return EPODataMapper */
     public function newEPODataMapper(){
         return new EPODataMapper();
+    }
+    /** @return USPTODataMapper */
+    public function newUSPTODataMapper(){
+        return new USPTODataMapper();
     }
 
 } 

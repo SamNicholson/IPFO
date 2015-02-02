@@ -15,8 +15,12 @@ namespace WAL\IPFO\Abstracts;
 abstract class DataMapper {
 
     protected $mapped;
-    protected $mappedResponse;
     protected $unmappedResponse;
+
+    protected $mappedResponse = array(
+    );
+
+    protected $results;
 
     public function setResponse($response){
         $this->unmappedResponse = $response;
@@ -31,9 +35,44 @@ abstract class DataMapper {
     }
 
     protected function mapData() {
-        $mappedData = [];
+
+        $this->mappedResponse['publication-reference'] = $this->getPublication();
+        $this->mappedResponse['application-reference'] = $this->getApplication();
+        $this->mappedResponse['grant-reference'] = $this->getGrant();
+        $this->mappedResponse['priority-claims'] = $this->getPriorities();
+        $this->mappedResponse['parties'] = $this->getParties();
+        $this->mappedResponse['titles'] = $this->getTitles();
+        $this->mappedResponse['citations'] = $this->getCitations();
+
         $this->mapped = true;
-        $this->mappedResponse = $mappedData;
+    }
+
+    protected function getPublication(){
+        return array();
+    }
+
+    protected function getApplication(){
+        return array();
+    }
+
+    protected function getGrant(){
+        return array();
+    }
+
+    protected function getPriorities(){
+        return array();
+    }
+
+    protected function getParties(){
+        return array();
+    }
+
+    protected function getTitles(){
+        return array();
+    }
+
+    protected function getCitations(){
+        return array();
     }
 
     protected function checkDuplicatePart($newMemberSequence,$partyList){

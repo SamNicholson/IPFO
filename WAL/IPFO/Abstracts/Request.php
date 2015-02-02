@@ -14,16 +14,6 @@ use WAL\IPFO\Interfaces\RequestInterface;
 abstract class Request implements RequestInterface {
 
     public $response = false;
-    public $mappings = array(
-        //Bibliographic information
-        'publication-reference',
-        'application-reference',
-        'grant-reference',
-        'priority-claims',
-        'parties',
-        'titles',
-        'citations'
-    );
 
     public $kindCodes;
     public $mappedResponse;

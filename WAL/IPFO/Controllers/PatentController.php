@@ -32,6 +32,9 @@ class PatentController extends Controller implements ControllerInterface {
         if(substr($number,0,2) == 'EP'){
             return $this->requestsContainer->newEPORequest();
         }
+        else if(substr($number,0,2) == 'US'){
+            return $this->requestsContainer->newUSPTORequest();
+        }
         return false;
     }
 

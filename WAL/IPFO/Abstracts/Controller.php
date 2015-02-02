@@ -31,7 +31,6 @@ abstract class Controller {
         //Find the official office we should search from the number format
         $searchObj = $this->findOfficeFromNumber($this->requestNumber);
 
-        var_dump($this->requestNumber);
         if($searchObj) {
             /** @var $searchObj Request*/
             $searchOutput = $searchObj->simpleNumberSearch($this->requestNumber, $numberType);

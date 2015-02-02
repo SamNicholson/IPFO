@@ -34,7 +34,7 @@ $search = new \WAL\IPFO\IPFOSearch();
 //Make the request
 $search->setIPType('Patent')
        ->setNumberType('publication')
-       ->setNumber('US5123456')
+       ->setNumber('US8123431')
        ->search();
 
 //Get the results and do whatever you want with them!

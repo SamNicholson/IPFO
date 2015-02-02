@@ -15,7 +15,7 @@ use WAL\IPFO\Abstracts\DataMapper;
 
 class USPTODataMapper extends DataMapper implements DataMapperInterface {
 
-    protected function getPublication(){
+    protected function getGrant(){
         $re = "/(?i)#h2[\\S\\s]*?<\\/b>([\\S\\s]*?)<\\/b>/";
         preg_match($re, $this->unmappedResponse, $matches);
         $pubNo = trim($matches[1]);

@@ -101,9 +101,6 @@ class USPTORequest extends Request {
 
     protected function genRequestURI($number,$numberType){
         switch($numberType){
-            case 'application':
-                return $this->baseURI.'netacgi/nph-Parser?patentnumber='.$number.'';
-                break;
             case 'publication';
                 return $this->baseURI.'netacgi/nph-Parser?patentnumber='.$number.'';
                 break;

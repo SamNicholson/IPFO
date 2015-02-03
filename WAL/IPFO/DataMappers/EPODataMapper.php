@@ -194,7 +194,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface {
                      */
                     $mappedResponse['parties']['applicants'] = array();
                     foreach($responseResult['bibliographic-data']['parties']['applicants']['applicant'] AS $aKey => $applicant){
-                        if(!$this->checkDuplicatePart($applicant['@sequence'],$mappedResponse['parties']['applicants'])) {
+                        if(!$this->checkDuplicateParty($applicant['@sequence'],$mappedResponse['parties']['applicants'])) {
                             $mappedResponse['parties']['applicants'][] = array('name' => $this->findValueFromEPO($applicant['applicant-name']['name']), 'sequence' => $this->findValueFromEPO($applicant['@sequence']));
                         }
                     }
@@ -204,7 +204,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface {
                      */
                     $mappedResponse['parties']['inventors'] = array();
                     foreach($responseResult['bibliographic-data']['parties']['inventors']['inventor'] AS $aKey => $applicant){
-                        if(!$this->checkDuplicatePart($applicant['@sequence'],$mappedResponse['parties']['inventors'])) {
+                        if(!$this->checkDuplicateParty($applicant['@sequence'],$mappedResponse['parties']['inventors'])) {
                             $mappedResponse['parties']['inventors'][] = array('name' => $this->findValueFromEPO($applicant['inventor-name']['name']), 'sequence' => $this->findValueFromEPO($applicant['@sequence']));
                         }
                     }

@@ -15,6 +15,7 @@ abstract class Controller {
 
     protected $requestsContainer;
     protected $requestNumber;
+    protected $requestNumberType;
 
     protected $error;
 
@@ -22,9 +23,18 @@ abstract class Controller {
         $this->requestsContainer = new RequestsContainer();
     }
 
+    /**
+     * @return mixed
+     */
+    public function getError() {
+        return $this->error;
+    }
+
     public function numberSearch($number,$numberType){
         //Set up some variables
         $this->requestNumber = $number;
+        $this->requestNumberType = $numberType;
+
         $success = false;
         $searchOutput = false;
 
@@ -34,6 +44,7 @@ abstract class Controller {
         if($searchObj) {
             /** @var $searchObj Request*/
             $searchOutput = $searchObj->simpleNumberSearch($this->requestNumber, $numberType);
+
 
             if (is_array($searchOutput)) {
                 $success = true;

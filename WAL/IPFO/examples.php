@@ -32,9 +32,9 @@ $search = new \WAL\IPFO\IPFOSearch();
 //debug($search->getResults());
 
 //Make the request
-$search->setIPType('Patent')
-       ->setNumberType('publication')
-       ->setNumber('US8123431')
+$search->setIPType('Trademark')
+       ->setNumberType('application')
+       ->setNumber('US86037390')
        ->search();
 
 //Get the results and do whatever you want with them!

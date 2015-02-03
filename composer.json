@@ -1,10 +1,10 @@
 {
 
-    "name" : "wal/ipfo",
+    "name" : "WAL/IPFO",
     "description" : "A small library to talk to the intellectual property official offices",
     "autoload": {
         "psr-4": {
-            "WAL\\" : "WAL/"
+            "WAL\\IPFO\\" : "src/"
         }
     },
     "config": {

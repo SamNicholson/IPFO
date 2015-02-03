@@ -4,3 +4,4 @@ Vendor/*
 .idea
 Config/
 Samples/
+composer.phar

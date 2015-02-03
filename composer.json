@@ -1,4 +1,7 @@
 {
+
+    "name" : "wal/ipfo",
+    "description" : "A small library to talk to the intellectual property official offices",
     "autoload": {
         "psr-4": {
             "WAL\\" : "WAL/"

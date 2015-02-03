@@ -11,6 +11,7 @@ namespace WAL\IPFO\Containers;
 
 use WAL\IPFO\Requests\EPORequest;
 use WAL\IPFO\Requests\USPTORequest;
+use WAL\IPFO\Requests\USPTOTrademarkRequest;
 use WAL\IPFO\Requests\WIPORequest;
 
 class RequestsContainer {
@@ -31,4 +32,8 @@ class RequestsContainer {
         return new WIPORequest();
     }
 
+
+    function newUSPTOTrademarkRequest(){
+        return new USPTOTrademarkRequest();
+    }
 } 

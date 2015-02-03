@@ -14,20 +14,17 @@ use WAL\IPFO\Abstracts\Request;
 use WAL\IPFO\Exceptions\DataMappingException;
 use WAL\IPFO\Exceptions\FileHandleException;
 use WAL\IPFO\Helpers\ZIPFromString;
+use WAL\IPFO\Interfaces\RequestInterface;
 
-class USPTORequest extends Request {
+class USPTOTrademarkRequest extends Request implements RequestInterface {
 
+    private $baseURI = 'https://tsdrapi.uspto.gov/ts/cd/casestatus/';
+    protected $dataMapper;
 
-    //https://tsdrapi.uspto.gov/ts/cd/casestatus/ sn78787878/content.zip
-
-    function sampleRequest(){
+    function simpleNumberSearch($number,$numberType){
 
         $client = new Client();
-        //$request = $client->createRequest('GET', 'https://tsdrapi.uspto.gov/ts/cd/casestatus/sn12456689/content.zip');
-        $request = $client->createRequest('GET', 'https://tsdrapi.uspto.gov/ts/cd/casestatus/sn78787878/info.xml');
-
-
-
+        $request = $client->createRequest("GET",$this->genRequestURI($number,$numberType));
 
         try {
             $response = $client->send($request);
@@ -40,23 +37,12 @@ class USPTORequest extends Request {
                 $bodyContent .= $body->read(1024);
             }
 
-            $zipFile = new ZIPFromString($bodyContent);
+            $responseJSON = json_decode($bodyContent,true);
 
-            $requestContents = $zipFile->getContents();
+            $this->dataMapper = $this->dataMapperContainer->newUSPTOTrademarkDataMapper();
+            $this->dataMapper->setResponse($responseJSON);
+            $output = $this->dataMapper->getMappedResponse();
 
-            foreach($requestContents As $filename => $content) {
-                if(stristr($filename,'.xml')){
-                    $this->response = json_decode(json_encode(simplexml_load_string($content)),true);
-                }
-            }
-
-            if($this->response){
-                return $this->mapData();
-
-            }
-            else {
-                throw new FileHandleException('Unable to parse XML Document into JSON from USPTO');
-            }
         }
         catch(GuzzleHttp\Exception\ClientException $e){
             switch($e->getCode()){
@@ -77,11 +63,14 @@ class USPTORequest extends Request {
         catch(FileHandleException $e){
             return $e->getMessage();
         }
-        //return $output;
+        return $output;
     }
 
     function genRequestURI($number,$numberType){
-
+        if(substr($number,0,2) == 'US'){
+            $number = substr($number,2);
+        }
+        return $this->baseURI.'sn'.$number.'/info.json';
     }
 
 
@@ -101,8 +90,5 @@ class USPTORequest extends Request {
         return array();
     }
 
-    function simpleNumberSearch($number,$numberType){
-
-    }
 
 } 

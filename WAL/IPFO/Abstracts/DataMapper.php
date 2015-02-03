@@ -44,6 +44,8 @@ abstract class DataMapper {
         $this->mappedResponse['titles'] = $this->getTitles();
         $this->mappedResponse['citations'] = $this->getCitations();
 
+
+
         $this->mapped = true;
     }
 
@@ -75,7 +77,7 @@ abstract class DataMapper {
         return array();
     }
 
-    protected function checkDuplicatePart($newMemberSequence,$partyList){
+    protected function checkDuplicateParty($newMemberSequence,$partyList){
         foreach($partyList AS $existingMember){
             if($newMemberSequence == $existingMember['sequence']){
                 return true;

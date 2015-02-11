@@ -9,6 +9,7 @@
 namespace WAL\IPFO\Containers;
 
 
+use WAL\IPFO\DataMappers\WIPODataMapper;
 use WAL\IPFO\DataMappers\EPODataMapper;
 use WAL\IPFO\DataMappers\USPTODataMapper;
 use WAL\IPFO\DataMappers\USPTOTrademarkDataMapper;
@@ -30,6 +31,10 @@ class DataMapperContainer {
     /** @return USPTOTrademarkDataMapper */
     public function newUSPTOTrademarkDataMapper(){
         return new USPTOTrademarkDataMapper();
+    }
+    /** @return USPTOTrademarkDataMapper */
+    public function newWIPODataMapper(){
+        return new WIPODataMapper();
     }
 
 } 

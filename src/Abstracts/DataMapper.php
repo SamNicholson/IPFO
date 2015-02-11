@@ -44,8 +44,6 @@ abstract class DataMapper {
         $this->mappedResponse['titles'] = $this->getTitles();
         $this->mappedResponse['citations'] = $this->getCitations();
 
-
-
         $this->mapped = true;
     }
 

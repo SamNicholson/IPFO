@@ -26,6 +26,8 @@ abstract class Request implements RequestInterface {
 
     public abstract function simpleNumberSearch($number,$numberType);
 
-    protected abstract function genRequestURI($number,$numberType);
+    protected function genRequestURI($number,$numberType){
+        return null;
+    }
 
 }

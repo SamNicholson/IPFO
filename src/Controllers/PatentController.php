@@ -21,14 +21,15 @@ class PatentController extends Controller implements ControllerInterface {
     protected $error;
 
     protected function findOfficeFromNumber($number){
-        //TODO massively improve this, to include fantastic validation etc.
         if(substr($number,0,2) == 'EP'){
             return $this->requestsContainer->newEPORequest();
         }
         else if(substr($number,0,2) == 'US'){
             return $this->requestsContainer->newUSPTORequest();
         }
-        return false;
+        else {
+            return $this->requestsContainer->newWIPORequest();
+        }
     }
 
 } 

@@ -16,6 +16,7 @@ class USPTORequest extends Request {
     private $baseURI = 'http://patft.uspto.gov/';
     protected $dataMapper;
     public $response;
+    private $source = 'USPTO';
 
     public $kindCodes = array(
         'A1' => 'European patent application published with European search report',

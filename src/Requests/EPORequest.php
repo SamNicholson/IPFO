@@ -8,6 +8,7 @@ use GuzzleHttp;
 
 class EPORequest extends Request {
 
+    private $source = 'EPO';
     private $baseURI = 'http://ops.epo.org/3.1/rest-services/published-data/';
     protected $dataMapper;
 

@@ -20,6 +20,7 @@ class USPTOTrademarkRequest extends Request implements RequestInterface {
 
     private $baseURI = 'https://tsdrapi.uspto.gov/ts/cd/casestatus/';
     protected $dataMapper;
+    private $source = 'USPTO';
 
     function simpleNumberSearch($number,$numberType){
 
@@ -79,7 +80,7 @@ class USPTOTrademarkRequest extends Request implements RequestInterface {
         debug($this->response);
         try {
             if(!is_array($this->response)){
-                throw new DataMappingException('Response from USPTO was not in the expected array format');
+                throw new DataMappingException('SearchResponse from USPTO was not in the expected array format');
             }
 
         }

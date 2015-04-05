@@ -13,6 +13,7 @@ class WIPORequest extends Request {
     private $username = 'workanyware';
     private $password = 'R_tRebru2';
     protected $dataMapper;
+    private $source = 'WIPO';
 
     public function simpleNumberSearch($number,$numberType){
 

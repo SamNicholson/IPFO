@@ -19,6 +19,7 @@ abstract class Request implements RequestInterface {
     public $mappedResponse;
     /** @var DataMapperContainer */
     protected $dataMapperContainer;
+    protected $source;
 
     public function __construct(){
         $this->dataMapperContainer = new DataMapperContainer();
@@ -28,6 +29,10 @@ abstract class Request implements RequestInterface {
 
     protected function genRequestURI($number,$numberType){
         return null;
+    }
+
+    public function getDataSource(){
+        return $this->source;
     }
 
 }

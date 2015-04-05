@@ -15,6 +15,21 @@ class SearchResponseCollection {
      * @var
      */
     private $responses;
+    private $success;
+
+    /**
+     * @return mixed
+     */
+    public function getSuccess() {
+        return $this->success;
+    }
+
+    /**
+     * @param mixed $success
+     */
+    public function setSuccess($success) {
+        $this->success = $success;
+    }
 
     /**
      * @param SearchResponse $response

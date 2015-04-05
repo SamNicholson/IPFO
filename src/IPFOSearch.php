@@ -88,11 +88,10 @@ class IPFOSearch {
         if($searchClass->numberSearch($this->number,$this->NumberType)) {
             $this->results = $searchClass->getResultCollection();
             $this->dataSource = $searchClass->getSearchSource();
-            $this->success = true;
+            $this->results->setSuccess(true);
         } else {
-            /** @var $searchClass ControllerInterface */
-            $this->results = array("Error" => $searchClass->getError());
-            $this->success = false;
+            $this->results = $searchClass->getResultCollection();
+            $this->results->setSuccess(false);
         }
 
 
@@ -104,7 +103,7 @@ class IPFOSearch {
      * return Array
      */
     public function getResultCollection() {
-        return array("success" => $this->success, 'result' => $this->results);
+        return $this->results;
     }
 
 } 

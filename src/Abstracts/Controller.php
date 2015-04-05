@@ -16,7 +16,10 @@ abstract class Controller {
     protected $requestsContainer;
     protected $requestNumber;
     protected $requestNumberType;
-
+    /** @var $searchObj Request*/
+    protected $searchObj;
+    
+    
     protected $error;
 
     function __construct(){
@@ -35,34 +38,32 @@ abstract class Controller {
         $this->requestNumber = $number;
         $this->requestNumberType = $numberType;
 
-        $success = false;
-        $searchOutput = false;
-
         //Find the official office we should search from the number format
-        $searchObj = $this->findOfficeFromNumber($this->requestNumber);
+        $this->searchObj = $this->findOfficeFromNumber($this->requestNumber);
 
-        if($searchObj) {
-            /** @var $searchObj Request*/
-            $searchOutput = $searchObj->simpleNumberSearch($this->requestNumber, $numberType);
+        if($this->searchObj) {
 
-
-            if (is_array($searchOutput)) {
-                $success = true;
+            if($this->searchObj->simpleNumberSearch($this->requestNumber, $numberType)) {
+                return true;
             }
             else {
-                $this->error = $searchOutput;
+                $this->error = $this->searchObj->getError();
+                return false;
             }
         }
         else {
             $this->error = "We are unable to search on the format of the number specified, we did not match the format";
-        }
-
-        if($success){
-            return $searchOutput;
-        }
-        else {
             return false;
         }
+
+    }
+
+    public function getSearchSource(){
+        return $this->searchObj->getDataSource();
+    }
+    
+    public function getResultCollection(){
+        return $this->searchObj->getResponse();
     }
 
     protected function findOfficeFromNumber($number){

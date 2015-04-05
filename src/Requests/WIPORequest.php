@@ -13,7 +13,7 @@ class WIPORequest extends Request {
     private $username = 'workanyware';
     private $password = 'R_tRebru2';
     protected $dataMapper;
-    private $source = 'WIPO';
+    protected $source = 'WIPO';
 
     public function simpleNumberSearch($number,$numberType){
 
@@ -35,10 +35,11 @@ class WIPORequest extends Request {
 
         }
         else {
-            return "Number was not matched, not a WIPO compliant number";
+            $this->error =  "Number was not matched, not a WIPO compliant number";
+            return false;
         }
-
-        return $output;
+        $this->mapResponseToObject($output);
+        return true;
     }
 
     protected function checkNumberFormat($number,$numberType){

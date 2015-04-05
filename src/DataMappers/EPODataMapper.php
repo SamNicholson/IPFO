@@ -209,7 +209,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface {
                         }
                     }
                 }
-                $this->mappedResponse[] = $mappedResponse;
+                $this->mappedResponse = $mappedResponse;
             }
             catch(DataMappingException $e){
                 $this->mappedResponse = "Failed to map data, exception occurred, ending process softly";

@@ -25,6 +25,7 @@ class IPFOSearch {
 
     private $results = [];
     private $success;
+    private $dataSource;
 
     /**
      * Sets the IP type for the Search, e.g. Patent or Trademark
@@ -84,16 +85,16 @@ class IPFOSearch {
         $numberType = $this->NumberType;
 
         //Run the search
-        $this->results = $searchClass->numberSearch($this->number,$this->NumberType);
-
-        if(!$this->results){
+        if($searchClass->numberSearch($this->number,$this->NumberType)) {
+            $this->results = $searchClass->getResultCollection();
+            $this->dataSource = $searchClass->getSearchSource();
+            $this->success = true;
+        } else {
             /** @var $searchClass ControllerInterface */
             $this->results = array("Error" => $searchClass->getError());
             $this->success = false;
         }
-        else {
-            $this->success = true;
-        }
+
 
         return $this;
     }
@@ -102,8 +103,8 @@ class IPFOSearch {
      * Get the Standardised Map of results from the official offices
      * return Array
      */
-    public function getResults() {
-        return array("success" => $this->success, $this->results);
+    public function getResultCollection() {
+        return array("success" => $this->success, 'result' => $this->results);
     }
 
 } 

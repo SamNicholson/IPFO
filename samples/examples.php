@@ -38,4 +38,4 @@ $search->setIPType('Trademark')
        ->search();
 
 //Get the results and do whatever you want with them!
-debug($search->getResults());
+debug($search->getResultCollection());

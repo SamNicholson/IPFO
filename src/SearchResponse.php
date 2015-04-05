@@ -6,7 +6,7 @@
  * Time: 14:19
  */
 
-namespace src;
+namespace WAL\IPFO;
 
 
 class SearchResponse {
@@ -29,6 +29,22 @@ class SearchResponse {
     private $englishTitle;
     private $frenchTitle;
     private $germanTitle;
+
+    private $source;
+
+    /**
+     * @return mixed
+     */
+    public function getSource() {
+        return $this->source;
+    }
+
+    /**
+     * @param mixed $source
+     */
+    public function setSource($source) {
+        $this->source = $source;
+    }
 
     /**
      * @return mixed

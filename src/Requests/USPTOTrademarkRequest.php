@@ -20,7 +20,7 @@ class USPTOTrademarkRequest extends Request implements RequestInterface {
 
     private $baseURI = 'https://tsdrapi.uspto.gov/ts/cd/casestatus/';
     protected $dataMapper;
-    private $source = 'USPTO';
+    protected $source = 'USPTO';
 
     function simpleNumberSearch($number,$numberType){
 
@@ -46,25 +46,19 @@ class USPTOTrademarkRequest extends Request implements RequestInterface {
 
         }
         catch(GuzzleHttp\Exception\ClientException $e){
-            switch($e->getCode()){
-                case '504':
-                    return 'USPTO Service Timed Out';
-                    break;
-                case '500':
-                    return 'USPTO Service Internal Server Error';
-                    break;
-                case '404':
-                    return 'Unable to locate Patent in the USPTO Database';
-                    break;
-                default:
-                    return 'USPTO Service Unknown Error';
-                    break;
-            }
+            $this->error = $e->getMessage();
+            return false;
         }
         catch(FileHandleException $e){
-            return $e->getMessage();
+            $this->error = $e->getMessage();
+            return false;
         }
-        return $output;
+        if(is_string($output)){
+            $this->error = $output;
+            return false;
+        }
+        $this->mapResponseToObject($output);
+        return true;
     }
 
     function genRequestURI($number,$numberType){
@@ -77,7 +71,6 @@ class USPTOTrademarkRequest extends Request implements RequestInterface {
 
     function mapData(){
 
-        debug($this->response);
         try {
             if(!is_array($this->response)){
                 throw new DataMappingException('SearchResponse from USPTO was not in the expected array format');

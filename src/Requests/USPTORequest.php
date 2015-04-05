@@ -16,7 +16,7 @@ class USPTORequest extends Request {
     private $baseURI = 'http://patft.uspto.gov/';
     protected $dataMapper;
     public $response;
-    private $source = 'USPTO';
+    protected $source = 'USPTO';
 
     public $kindCodes = array(
         'A1' => 'European patent application published with European search report',
@@ -47,22 +47,11 @@ class USPTORequest extends Request {
             $output = $this->dataMapper->setResponse($this->response)->getMappedResponse();
         }
         catch(GuzzleHttp\Exception\ClientException $e){
-            switch($e->getCode()){
-                case '504':
-                    return 'EPO Service Timed Out';
-                    break;
-                case '500':
-                    return 'EPO Service Internal Server Error';
-                    break;
-                case '404':
-                    return 'Unable to locate Patent in the EPO Database';
-                    break;
-                default:
-                    return 'EPO Service Unknown Error';
-                    break;
-            }
+            $this->error = $e->getMessage();
+            return false;
         }
-        return $output;
+        $this->mapResponseToObject($output);
+        return true;
     }
 
     private function getRedirectURL($requestURI){

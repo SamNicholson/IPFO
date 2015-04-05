@@ -8,7 +8,7 @@ use GuzzleHttp;
 
 class EPORequest extends Request {
 
-    private $source = 'EPO';
+    protected $source = 'EPO';
     private $baseURI = 'http://ops.epo.org/3.1/rest-services/published-data/';
     protected $dataMapper;
 
@@ -32,27 +32,19 @@ class EPORequest extends Request {
         try {
             $response = $client->send($request);
             $this->response = $response->json();
-
             $this->dataMapper = $this->dataMapperContainer->newEPODataMapper();
             $output = $this->dataMapper->setResponse($this->response)->getMappedResponse();
         }
         catch(GuzzleHttp\Exception\ClientException $e){
-            switch($e->getCode()){
-                case '504':
-                    return 'EPO Service Timed Out';
-                    break;
-                case '500':
-                    return 'EPO Service Internal Server Error';
-                    break;
-                case '404':
-                    return 'Unable to locate Patent in the EPO Database';
-                    break;
-                default:
-                    return 'EPO Service Unknown Error';
-                    break;
-            }
+            $this->error = $e->getMessage();
+            return false;
         }
-        return $output;
+        if(is_string($output)){
+            $this->error = $output;
+            return false;
+        }
+        $this->mapResponseToObject($output);
+        return true;
     }
 
     protected function genRequestURI($number,$numberType){

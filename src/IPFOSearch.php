@@ -100,7 +100,7 @@ class IPFOSearch {
 
     /**
      * Get the Standardised Map of results from the official offices
-     * return Array
+     * return SearchResponseCollection
      */
     public function getResultCollection() {
         return $this->results;

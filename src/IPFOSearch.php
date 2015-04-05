@@ -22,7 +22,7 @@ class IPFOSearch {
 
     private $IPTypes = array('Patent', 'Trademark');
     private $NumberTypes = array('application', 'publication');
-
+    /** @var $results SearchResponseCollection */
     private $results = [];
     private $success;
     private $dataSource;

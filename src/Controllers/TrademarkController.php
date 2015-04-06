@@ -19,7 +19,7 @@ class TrademarkController extends Controller implements ControllerInterface {
         if(substr($number,0,2) == 'US' && $this->requestNumberType == 'application'){
             return $this->requestsContainer->newUSPTOTrademarkRequest();
         }
-        return false;
+        return $this->requestsContainer->newUSPTOTrademarkRequest();
     }
 
 }

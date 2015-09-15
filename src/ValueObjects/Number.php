@@ -21,6 +21,7 @@ class Number
 
     /**
      * Returns a new application number
+     *
      * @param $number
      *
      * @return Number
@@ -32,6 +33,7 @@ class Number
 
     /**
      * Returns a new publication number
+     *
      * @param $number
      *
      * @return Number
@@ -54,7 +56,7 @@ class Number
 
     /**
      * Returns the number type e.g. application
-     * @return mixed
+     * @return string
      */
     public function getType()
     {
@@ -63,9 +65,18 @@ class Number
 
     /**
      * Returns the number string e.g GB12345
-     * @return mixed
+     * @return string
      */
     public function getNumberString()
+    {
+        return $this->numberString;
+    }
+
+    /**
+     * Returns the number part when utilised as a string
+     * @return string
+     */
+    public function __toString()
     {
         return $this->numberString;
     }

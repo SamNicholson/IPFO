@@ -6,10 +6,10 @@
  * Time: 22:07
  */
 
-namespace WAL\IPFO\Abstracts;
+namespace SNicholson\IPFO\Abstracts;
 
 
-use WAL\IPFO\Containers\RequestsContainer;
+use SNicholson\IPFO\Containers\RequestsContainer;
 
 abstract class Controller {
 

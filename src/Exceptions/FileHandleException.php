@@ -6,7 +6,7 @@
  * Time: 11:04
  */
 
-namespace WAL\IPFO\Exceptions;
+namespace SNicholson\IPFO\Exceptions;
 
 
 class FileHandleException extends \Exception {

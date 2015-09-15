@@ -6,13 +6,13 @@
  * Time: 22:05
  */
 
-namespace WAL\IPFO\Controllers;
+namespace SNicholson\IPFO\Controllers;
 
-use WAL\IPFO\Abstracts\Controller;
-use WAL\IPFO\Interfaces\ControllerInterface;
-use WAL\IPFO\Requests\EPORequest;
-use WAL\IPFO\Requests\USPTORequest;
-use WAL\IPFO\Requests\WIPORequest;
+use SNicholson\IPFO\Abstracts\Controller;
+use SNicholson\IPFO\Interfaces\ControllerInterface;
+use SNicholson\IPFO\Requests\EPORequest;
+use SNicholson\IPFO\Requests\USPTORequest;
+use SNicholson\IPFO\Requests\WIPORequest;
 
 
 class PatentController extends Controller implements ControllerInterface {

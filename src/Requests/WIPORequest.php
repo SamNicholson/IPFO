@@ -1,9 +1,9 @@
 <?php
 
-namespace WAL\IPFO\Requests;
+namespace SNicholson\IPFO\Requests;
 
-use WAL\IPFO\Abstracts\Request;
-use WAL\IPFO\Exceptions\DataMappingException;
+use SNicholson\IPFO\Abstracts\Request;
+use SNicholson\IPFO\Exceptions\DataMappingException;
 use GuzzleHttp;
 use SoapClient;
 

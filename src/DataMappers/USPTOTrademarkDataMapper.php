@@ -6,11 +6,11 @@
  * Time: 12:08
  */
 
-namespace WAL\IPFO\DataMappers;
+namespace SNicholson\IPFO\DataMappers;
 
 
-use WAL\IPFO\Abstracts\DataMapper;
-use WAL\IPFO\Interfaces\DataMapperInterface;
+use SNicholson\IPFO\Abstracts\DataMapper;
+use SNicholson\IPFO\Interfaces\DataMapperInterface;
 
 class USPTOTrademarkDataMapper extends DataMapper implements DataMapperInterface {
 

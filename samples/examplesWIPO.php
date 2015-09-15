@@ -21,7 +21,7 @@ if(!file_exists($autoLoad)){
 require $autoLoad;
 
 //Establish the request object
-$search = new \WAL\IPFO\IPFOSearch();
+$search = new \SNicholson\IPFO\Search();
 
 ////Make the request
 $search->setIPType('Patent')

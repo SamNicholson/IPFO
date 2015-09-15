@@ -6,7 +6,7 @@
  * Time: 22:07
  */
 
-namespace WAL\IPFO\Abstracts;
+namespace SNicholson\IPFO\Abstracts;
 
 /**
  * @property mixed mapped

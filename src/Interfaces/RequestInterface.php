@@ -6,7 +6,7 @@
  * Time: 08:36
  */
 
-namespace WAL\IPFO\Interfaces;
+namespace SNicholson\IPFO\Interfaces;
 
 
 interface RequestInterface {

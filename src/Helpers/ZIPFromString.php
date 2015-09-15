@@ -6,10 +6,10 @@
  * Time: 10:41
  */
 
-namespace WAL\IPFO\Helpers;
+namespace SNicholson\IPFO\Helpers;
 
 
-use WAL\IPFO\Exceptions\FileHandleException;
+use SNicholson\IPFO\Exceptions\FileHandleException;
 
 class ZIPFromString {
 

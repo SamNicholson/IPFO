@@ -6,7 +6,7 @@
  * Time: 20:06
  */
 
-namespace WAL\IPFO\Exceptions;
+namespace SNicholson\IPFO\Exceptions;
 
 
 class DataMappingException extends \Exception{

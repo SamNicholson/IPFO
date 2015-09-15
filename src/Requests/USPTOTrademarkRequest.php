@@ -6,15 +6,15 @@
  * Time: 15:06
  */
 
-namespace WAL\IPFO\Requests;
+namespace SNicholson\IPFO\Requests;
 
 use GuzzleHttp;
 use GuzzleHttp\Client;
-use WAL\IPFO\Abstracts\Request;
-use WAL\IPFO\Exceptions\DataMappingException;
-use WAL\IPFO\Exceptions\FileHandleException;
-use WAL\IPFO\Helpers\ZIPFromString;
-use WAL\IPFO\Interfaces\RequestInterface;
+use SNicholson\IPFO\Abstracts\Request;
+use SNicholson\IPFO\Exceptions\DataMappingException;
+use SNicholson\IPFO\Exceptions\FileHandleException;
+use SNicholson\IPFO\Helpers\ZIPFromString;
+use SNicholson\IPFO\Interfaces\RequestInterface;
 
 class USPTOTrademarkRequest extends Request implements RequestInterface {
 

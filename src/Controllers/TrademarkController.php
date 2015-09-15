@@ -6,11 +6,11 @@
  * Time: 22:05
  */
 
-namespace WAL\IPFO\Controllers;
+namespace SNicholson\IPFO\Controllers;
 
 
-use WAL\IPFO\Abstracts\Controller;
-use WAL\IPFO\Interfaces\ControllerInterface;
+use SNicholson\IPFO\Abstracts\Controller;
+use SNicholson\IPFO\Interfaces\ControllerInterface;
 
 class TrademarkController extends Controller implements ControllerInterface {
 

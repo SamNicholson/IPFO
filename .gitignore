@@ -1,7 +1,6 @@
 Vendor
-Vendor/
-Vendor/*
-.idea
+.idea/
 Config/
 Samples/
 composer.phar
+phpunit.phar

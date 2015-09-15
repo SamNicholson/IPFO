@@ -6,12 +6,12 @@
  * Time: 08:48
  */
 
-namespace WAL\IPFO\DataMappers;
+namespace SNicholson\IPFO\DataMappers;
 
 use DateTime;
-use WAL\IPFO\Exceptions\DataMappingException;
-use WAL\IPFO\Interfaces\DataMapperInterface;
-use WAL\IPFO\Abstracts\DataMapper;
+use SNicholson\IPFO\Exceptions\DataMappingException;
+use SNicholson\IPFO\Interfaces\DataMapperInterface;
+use SNicholson\IPFO\Abstracts\DataMapper;
 
 class WIPODataMapper extends DataMapper implements DataMapperInterface {
 

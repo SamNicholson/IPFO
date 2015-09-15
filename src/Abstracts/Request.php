@@ -1,19 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sam
- * Date: 15/11/2014
- * Time: 17:54
- */
 
-namespace WAL\IPFO\Abstracts;
+namespace SNicholson\IPFO\Abstracts;
 
-use WAL\IPFO\Containers\DataMapperContainer;
-use WAL\IPFO\Interfaces\RequestInterface;
-use WAL\IPFO\SearchResponse;
-use WAL\IPFO\SearchResponseCollection;
+use SNicholson\IPFO\Containers\DataMapperContainer;
+use SNicholson\IPFO\Interfaces\RequestInterface;
+use SNicholson\IPFO\SearchResponse;
+use SNicholson\IPFO\SearchResponseCollection;
 
-abstract class Request implements RequestInterface {
+abstract class Request implements RequestInterface
+{
 
     public $response = false;
 
@@ -25,25 +20,26 @@ abstract class Request implements RequestInterface {
     protected $responseObject = [];
     protected $error;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->dataMapperContainer = new DataMapperContainer();
-        $this->responseObject = new SearchResponseCollection();
+        $this->responseObject      = new SearchResponseCollection();
     }
 
-    public abstract function simpleNumberSearch($number,$numberType);
+    abstract public function simpleNumberSearch($number, $numberType);
 
     /**
      * @return mixed
      */
-    public function getError() {
+    public function getError()
+    {
         return $this->error;
     }
 
-    protected function genRequestURI($number,$numberType){
-        return null;
-    }
+    abstract protected function genRequestURI($number, $numberType);
 
-    protected function mapResponseToObject($response){
+    protected function mapResponseToObject($response)
+    {
 
         $obj = new SearchResponse();
 
@@ -95,12 +91,13 @@ abstract class Request implements RequestInterface {
 
     }
 
-    public function getDataSource(){
+    public function getDataSource()
+    {
         return $this->source;
     }
 
-    public function getResponse(){
+    public function getResponse()
+    {
         return $this->responseObject;
     }
-
 }

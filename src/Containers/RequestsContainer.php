@@ -6,13 +6,13 @@
  * Time: 22:08
  */
 
-namespace WAL\IPFO\Containers;
+namespace SNicholson\IPFO\Containers;
 
 
-use WAL\IPFO\Requests\EPORequest;
-use WAL\IPFO\Requests\USPTORequest;
-use WAL\IPFO\Requests\USPTOTrademarkRequest;
-use WAL\IPFO\Requests\WIPORequest;
+use SNicholson\IPFO\Requests\EPORequest;
+use SNicholson\IPFO\Requests\USPTORequest;
+use SNicholson\IPFO\Requests\USPTOTrademarkRequest;
+use SNicholson\IPFO\Requests\WIPORequest;
 
 class RequestsContainer {
 

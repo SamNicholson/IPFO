@@ -6,7 +6,7 @@
  * Time: 16:12
  */
 
-namespace WAL\IPFO;
+namespace SNicholson\IPFO;
 
 
 

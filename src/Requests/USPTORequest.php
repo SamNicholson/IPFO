@@ -6,10 +6,10 @@
  * Time: 15:06
  */
 
-namespace WAL\IPFO\Requests;
+namespace SNicholson\IPFO\Requests;
 
 use GuzzleHttp;
-use WAL\IPFO\Abstracts\Request;
+use SNicholson\IPFO\Abstracts\Request;
 
 class USPTORequest extends Request {
 

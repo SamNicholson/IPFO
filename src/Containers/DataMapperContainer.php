@@ -6,13 +6,13 @@
  * Time: 22:08
  */
 
-namespace WAL\IPFO\Containers;
+namespace SNicholson\IPFO\Containers;
 
 
-use WAL\IPFO\DataMappers\WIPODataMapper;
-use WAL\IPFO\DataMappers\EPODataMapper;
-use WAL\IPFO\DataMappers\USPTODataMapper;
-use WAL\IPFO\DataMappers\USPTOTrademarkDataMapper;
+use SNicholson\IPFO\DataMappers\WIPODataMapper;
+use SNicholson\IPFO\DataMappers\EPODataMapper;
+use SNicholson\IPFO\DataMappers\USPTODataMapper;
+use SNicholson\IPFO\DataMappers\USPTOTrademarkDataMapper;
 
 class DataMapperContainer {
 

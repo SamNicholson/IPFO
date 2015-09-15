@@ -6,7 +6,7 @@
  * Time: 23:53
  */
 
-namespace WAL\IPFO\Exceptions;
+namespace SNicholson\IPFO\Exceptions;
 
 
 class InvalidAddressException extends \Exception{

@@ -6,7 +6,7 @@
  * Time: 14:19
  */
 
-namespace WAL\IPFO;
+namespace SNicholson\IPFO;
 
 
 class SearchResponse {

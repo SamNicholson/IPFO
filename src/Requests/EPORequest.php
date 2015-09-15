@@ -1,12 +1,12 @@
 <?php
 
-namespace WAL\IPFO\Requests;
+namespace SNicholson\IPFO\Requests;
 
-use WAL\IPFO\Abstracts\Request;
-use WAL\IPFO\Exceptions\DataMappingException;
+use SNicholson\IPFO\Abstracts\Request;
 use GuzzleHttp;
 
-class EPORequest extends Request {
+class EPORequest extends Request
+{
 
     protected $source = 'EPO';
     private $baseURI = 'http://ops.epo.org/3.1/rest-services/published-data/';
@@ -14,7 +14,9 @@ class EPORequest extends Request {
 
     public $kindCodes = array(
         'A1' => 'European patent application published with European search report',
-        'A2' => 'European patent application published without European search report (search report not available at publication date)',
+        'A2' =>
+            'European patent application published without European search report' .
+            ' (search report not available at publication date)',
         'A3' => 'Separate publication of European search report',
         'A4' => 'Supplementary search report',
         'A8' => 'Corrected title page of A document, ie. A1 or A2 document',
@@ -22,24 +24,24 @@ class EPORequest extends Request {
         //TODO B ones (oh and WIPO ones!! somehow...)
     );
 
-    public function simpleNumberSearch($number,$numberType){
+    public function simpleNumberSearch($number, $numberType)
+    {
 
-        $requestURI = $this->genRequestURI($number,$numberType);
+        $requestURI = $this->genRequestURI($number, $numberType);
 
-        $client = new GuzzleHttp\Client();
-        $request = $client->createRequest('GET', $requestURI,['headers' => ['Accept' => 'application/json']]);
+        $client  = new GuzzleHttp\Client();
+        $request = $client->createRequest('GET', $requestURI, ['headers' => ['Accept' => 'application/json']]);
 
         try {
-            $response = $client->send($request);
-            $this->response = $response->json();
+            $response         = $client->send($request);
+            $this->response   = $response->json();
             $this->dataMapper = $this->dataMapperContainer->newEPODataMapper();
-            $output = $this->dataMapper->setResponse($this->response)->getMappedResponse();
-        }
-        catch(GuzzleHttp\Exception\ClientException $e){
+            $output           = $this->dataMapper->setResponse($this->response)->getMappedResponse();
+        } catch (GuzzleHttp\Exception\ClientException $e) {
             $this->error = $e->getMessage();
             return false;
         }
-        if(is_string($output)){
+        if (is_string($output)) {
             $this->error = $output;
             return false;
         }
@@ -47,13 +49,14 @@ class EPORequest extends Request {
         return true;
     }
 
-    protected function genRequestURI($number,$numberType){
-        switch($numberType){
+    protected function genRequestURI($number, $numberType)
+    {
+        switch ($numberType) {
             case 'application':
-                return $this->baseURI.'application/epodoc/'.$number.'/biblio';
+                return $this->baseURI . 'application/epodoc/' . $number . '/biblio';
                 break;
-            case 'publication';
-                return $this->baseURI.'publication/epodoc/'.$number.'/biblio';
+            case 'publication':
+                return $this->baseURI . 'publication/epodoc/' . $number . '/biblio';
                 break;
         }
         return false;

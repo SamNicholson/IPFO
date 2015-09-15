@@ -6,7 +6,7 @@
  * Time: 22:48
  */
 
-namespace WAL\IPFO\Interfaces;
+namespace SNicholson\IPFO\Interfaces;
 
 
 interface DataMapperInterface {

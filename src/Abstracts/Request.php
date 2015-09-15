@@ -4,8 +4,9 @@ namespace SNicholson\IPFO\Abstracts;
 
 use SNicholson\IPFO\Containers\DataMapperContainer;
 use SNicholson\IPFO\Interfaces\RequestInterface;
-use SNicholson\IPFO\SearchResponse;
-use SNicholson\IPFO\SearchResponseCollection;
+use SNicholson\IPFO\Result;
+use SNicholson\IPFO\ResultCollection;
+use SNicholson\IPFO\ValueObjects\SearchSource;
 
 abstract class Request implements RequestInterface
 {
@@ -23,7 +24,7 @@ abstract class Request implements RequestInterface
     public function __construct()
     {
         $this->dataMapperContainer = new DataMapperContainer();
-        $this->responseObject      = new SearchResponseCollection();
+        $this->responseObject      = new ResultCollection();
     }
 
     abstract public function simpleNumberSearch($number, $numberType);
@@ -41,7 +42,7 @@ abstract class Request implements RequestInterface
     protected function mapResponseToObject($response)
     {
 
-        $obj = new SearchResponse();
+        $obj = new Result();
 
         if (isset($response['application-reference']['country'])) {
             $obj->setApplicationCountry($response['application-reference']['country']);
@@ -91,9 +92,12 @@ abstract class Request implements RequestInterface
 
     }
 
+    /**
+     * @return SearchSource
+     */
     public function getDataSource()
     {
-        return $this->source;
+        return SearchSource::USPTO();
     }
 
     public function getResponse()

@@ -73,7 +73,7 @@ class USPTOTrademarkRequest extends Request implements RequestInterface {
 
         try {
             if(!is_array($this->response)){
-                throw new DataMappingException('SearchResponse from USPTO was not in the expected array format');
+                throw new DataMappingException('Result from USPTO was not in the expected array format');
             }
 
         }

@@ -23,10 +23,7 @@ require $autoLoad;
 $search = new \SNicholson\IPFO\Search();
 
 //Make the request
-$search->setIPType('Trademark')
-       ->setNumberType('application')
-       ->setNumber('US86037390')
-       ->search();
+Search::tradeMark()->byApplicationNumber('EP12345GB');
 
 //Get the results and do whatever you want with them!
 debug($search->getResultCollection());

@@ -1,74 +1,82 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samdev
- * Date: 16/11/14
- * Time: 22:07
- */
 
 namespace SNicholson\IPFO\Abstracts;
 
-
 use SNicholson\IPFO\Containers\RequestsContainer;
+use SNicholson\IPFO\ValueObjects\Number;
+use SNicholson\IPFO\ValueObjects\SearchSource;
 
-abstract class Controller {
+abstract class Search
+{
 
     protected $requestsContainer;
     protected $requestNumber;
     protected $requestNumberType;
-    /** @var $searchObj Request*/
+    /** @var $searchObj Request */
     protected $searchObj;
-    
-    
+
+
     protected $error;
 
-    function __construct(){
+    public function __construct()
+    {
         $this->requestsContainer = new RequestsContainer();
     }
 
     /**
      * @return mixed
      */
-    public function getError() {
+    public function getError()
+    {
         return $this->error;
     }
 
-    public function numberSearch($number,$numberType){
+    /**
+     * @param Number $number
+     *
+     * @return bool
+     */
+    public function numberSearch(Number $number)
+    {
         //Set up some variables
-        $this->requestNumber = $number;
+        $this->requestNumber     = $number;
         $this->requestNumberType = $numberType;
 
         //Find the official office we should search from the number format
         $this->searchObj = $this->findOfficeFromNumber($this->requestNumber);
 
-        if($this->searchObj) {
-
-            if($this->searchObj->simpleNumberSearch($this->requestNumber, $numberType)) {
+        if ($this->searchObj) {
+            if ($this->searchObj->simpleNumberSearch($this->requestNumber, $numberType)) {
                 return true;
-            }
-            else {
+            } else {
                 $this->error = $this->searchObj->getError();
                 return false;
             }
-        }
-        else {
+        } else {
             $this->error = "We are unable to search on the format of the number specified, we did not match the format";
             return false;
         }
 
     }
 
-    public function getSearchSource(){
+    /**
+     * @return SearchSource
+     */
+    public function getSearchSource()
+    {
         return $this->searchObj->getDataSource();
     }
-    
-    public function getResultCollection(){
+
+    /**
+     * @return \SNicholson\IPFO\ResultCollection
+     */
+    public function getResultCollection()
+    {
         return $this->searchObj->getResponse();
     }
 
-    protected function findOfficeFromNumber($number){
+    protected function findOfficeFromNumber($number)
+    {
         return false;
     }
-
-
-} 
+}

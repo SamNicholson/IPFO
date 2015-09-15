@@ -5,16 +5,19 @@ namespace SNicholson\IPFO\ValueObjects;
 class IPType
 {
 
+    const TRADEMARK = 'TradeMark';
+    const PATENT = 'Patent';
+
     private $IPType;
 
     public static function tradeMark()
     {
-        return new IPType('TradeMark');
+        return new IPType(IPType::TRADEMARK);
     }
 
     public static function patent()
     {
-        return new IPType('Patent');
+        return new IPType(IPType::PATENT);
     }
 
     private function __construct($IPType)

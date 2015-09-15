@@ -1,50 +1,48 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sam
- * Date: 05/04/2015
- * Time: 16:12
- */
 
 namespace SNicholson\IPFO;
 
-
-
-class SearchResponseCollection {
+class ResultCollection
+{
     /**
      * @var
      */
     private $responses;
     private $success;
+    private $dataSource;
 
     /**
      * @return mixed
      */
-    public function getSuccess() {
+    public function getSuccess()
+    {
         return $this->success;
     }
 
     /**
      * @param mixed $success
      */
-    public function setSuccess($success) {
+    public function setSuccess($success)
+    {
         $this->success = $success;
     }
 
     /**
-     * @param SearchResponse $response
+     * @param Result $response
      *
      */
-    public function addResponse(SearchResponse $response)
+    public function addResponse(Result $response)
     {
         $this->responses[] = $response;
     }
 
-    public function getResponses(){
+    public function getResponses()
+    {
         return $this->responses;
     }
 
-    public function getResult(){
+    public function getResult()
+    {
         return $this->responses[0];
     }
 }

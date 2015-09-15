@@ -12,7 +12,7 @@ class IPTypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPatentReturnsStringCorrectly()
     {
-        $this->assertEquals('Patent', IPType::patent()->__toString());
+        $this->assertEquals(IPType::PATENT, IPType::patent()->__toString());
     }
 
     /**
@@ -20,6 +20,6 @@ class IPTypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testTradeMarkReturnsStringCorrectly()
     {
-        $this->assertEquals('TradeMark', IPType::tradeMark()->__toString());
+        $this->assertEquals(IPType::TRADEMARK, IPType::tradeMark()->__toString());
     }
 }

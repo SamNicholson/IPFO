@@ -18,9 +18,9 @@ abstract class Search
 
     protected $error;
 
-    public function __construct()
+    public function __construct(RequestsContainer $requestsContainer)
     {
-        $this->requestsContainer = new RequestsContainer();
+        $this->requestsContainer = $requestsContainer;
     }
 
     /**
@@ -39,14 +39,14 @@ abstract class Search
     public function numberSearch(Number $number)
     {
         //Set up some variables
-        $this->requestNumber     = $number;
-        $this->requestNumberType = $numberType;
+        $this->requestNumber     = $number->getNumberString();
+        $this->requestNumberType = $number->getType();
 
         //Find the official office we should search from the number format
         $this->searchObj = $this->findOfficeFromNumber($this->requestNumber);
 
         if ($this->searchObj) {
-            if ($this->searchObj->simpleNumberSearch($this->requestNumber, $numberType)) {
+            if ($this->searchObj->simpleNumberSearch($this->requestNumber, $this->requestNumberType)) {
                 return true;
             } else {
                 $this->error = $this->searchObj->getError();

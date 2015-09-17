@@ -75,8 +75,5 @@ abstract class Search
         return $this->searchObj->getResponse();
     }
 
-    protected function findOfficeFromNumber($number)
-    {
-        return false;
-    }
+    abstract protected function findOfficeFromNumber($number);
 }

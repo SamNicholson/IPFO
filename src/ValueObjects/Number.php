@@ -8,6 +8,9 @@ namespace SNicholson\IPFO\ValueObjects;
  */
 class Number
 {
+    const PUBLICATION = 'publication';
+    const APPLICATION = 'application';
+
     /**
      * The Number String, which houses the primary value e.g. GB12345
      * @var

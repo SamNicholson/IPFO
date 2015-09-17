@@ -4,6 +4,7 @@ namespace SNicholson\IPFO\Searches;
 
 use SNicholson\IPFO\Abstracts\Search;
 use SNicholson\IPFO\Interfaces\SearchInterface;
+use SNicholson\IPFO\ValueObjects\Number;
 
 class TrademarkSearch extends Search implements SearchInterface
 {
@@ -11,7 +12,7 @@ class TrademarkSearch extends Search implements SearchInterface
     protected function findOfficeFromNumber($number)
     {
         //TODO massively improve this, to include fantastic validation etc.
-        if (substr($number, 0, 2) == 'US' && $this->requestNumberType == 'application') {
+        if (substr($number, 0, 2) == 'US' && $this->requestNumberType == Number::APPLICATION) {
             return $this->requestsContainer->newUSPTOTrademarkRequest();
         }
         return $this->requestsContainer->newUSPTOTrademarkRequest();

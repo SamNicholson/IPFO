@@ -42,7 +42,7 @@ class USPTOTrademarkRequest extends Request implements RequestInterface {
 
             $this->dataMapper = $this->dataMapperContainer->newUSPTOTrademarkDataMapper();
             $this->dataMapper->setResponse($responseJSON);
-            $output = $this->dataMapper->getMappedResponse();
+            $output = $this->dataMapper->getSearchResult();
 
         }
         catch(GuzzleHttp\Exception\ClientException $e){

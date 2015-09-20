@@ -31,7 +31,7 @@ class WIPORequest extends Request {
             $this->response = $client->getIASR(['iaNumber' => $number]);
 
             $this->dataMapper = $this->dataMapperContainer->newWIPODataMapper();
-            $output = $this->dataMapper->setResponse($this->response)->getMappedResponse();
+            $output = $this->dataMapper->setResponse($this->response)->getSearchResult();
 
         }
         else {

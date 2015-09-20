@@ -10,10 +10,12 @@ class Citation
 
     private $type;
     private $number;
+    private $numberType;
     private $country;
     private $text;
     private $citedBy;
     private $citedInPhase;
+    private $sequence;
 
     public static function patent($number, $county, $citedBy)
     {
@@ -131,5 +133,37 @@ class Citation
     public function setCitedInPhase($citedInPhase)
     {
         $this->citedInPhase = $citedInPhase;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSequence()
+    {
+        return $this->sequence;
+    }
+
+    /**
+     * @param mixed $sequence
+     */
+    public function setSequence($sequence)
+    {
+        $this->sequence = $sequence;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNumberType()
+    {
+        return $this->numberType;
+    }
+
+    /**
+     * @param mixed $numberType
+     */
+    public function setNumberType($numberType)
+    {
+        $this->numberType = $numberType;
     }
 }

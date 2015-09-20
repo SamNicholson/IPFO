@@ -1,17 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sam
- * Date: 15/11/2014
- * Time: 15:06
- */
 
 namespace SNicholson\IPFO\Requests;
 
 use GuzzleHttp;
 use SNicholson\IPFO\Abstracts\Request;
+use SNicholson\IPFO\ValueObjects\SearchSource;
 
-class USPTORequest extends Request {
+class USPTORequest extends Request
+{
 
     private $baseURI = 'http://patft.uspto.gov/';
     protected $dataMapper;
@@ -20,7 +16,8 @@ class USPTORequest extends Request {
 
     public $kindCodes = array(
         'A1' => 'European patent application published with European search report',
-        'A2' => 'European patent application published without European search report (search report not available at publication date)',
+        'A2' => 'European patent application published without European search report'
+            . '(search report not available at publication date)',
         'A3' => 'Separate publication of European search report',
         'A4' => 'Supplementary search report',
         'A8' => 'Corrected title page of A document, ie. A1 or A2 document',
@@ -28,25 +25,26 @@ class USPTORequest extends Request {
         //TODO B ones (oh and WIPO ones!! somehow...)
     );
 
-    public function simpleNumberSearch($number,$numberType){
+    public function simpleNumberSearch($number, $numberType)
+    {
 
         //Strip the "US" off of the start of the number if present, the US doesn't use this bit
-        if(substr($number,0,2) == 'US'){
-            $number = substr($number,2);
+        if (substr($number, 0, 2) == 'US') {
+            $number = substr($number, 2);
         }
 
-        $requestURI = $this->genRequestURI($number,$numberType);
+        $requestURI = $this->genRequestURI($number, $numberType);
 
         try {
-            //The USPTO redirects you, we need to emulate that redirect by pulling out the new URL target from the initial response
+            //The USPTO redirects you, we need to emulate that redirect by pulling out the
+            //new URL target from the initial response
             $redirectURL = $this->getRedirectURL($requestURI);
 
             $this->response = $this->getPatentData($redirectURL);
 
             $this->dataMapper = $this->dataMapperContainer->newUSPTODataMapper();
-            $output = $this->dataMapper->setResponse($this->response)->getMappedResponse();
-        }
-        catch(GuzzleHttp\Exception\ClientException $e){
+            $output           = $this->dataMapper->setResponse($this->response)->getSearchResult();
+        } catch (GuzzleHttp\Exception\ClientException $e) {
             $this->error = $e->getMessage();
             return false;
         }
@@ -54,13 +52,14 @@ class USPTORequest extends Request {
         return true;
     }
 
-    private function getRedirectURL($requestURI){
-        $client = new GuzzleHttp\Client();
+    private function getRedirectURL($requestURI)
+    {
+        $client  = new GuzzleHttp\Client();
         $request = $client->createRequest('GET', $requestURI);
 
-        $response = $client->send($request);
+        $response         = $client->send($request);
         $redirectResponse = $response->getBody();
-        $redirectURL = '';
+        $redirectURL      = '';
 
         //Get the redirect URL
         while (!$redirectResponse->eof()) {
@@ -74,12 +73,13 @@ class USPTORequest extends Request {
         return $matches[1];
     }
 
-    private function getPatentData($requestURI){
-        $client = new GuzzleHttp\Client();
-        $request = $client->createRequest('GET', $this->baseURI.$requestURI);
+    private function getPatentData($requestURI)
+    {
+        $client  = new GuzzleHttp\Client();
+        $request = $client->createRequest('GET', $this->baseURI . $requestURI);
 
-        $response = $client->send($request);
-        $response = $response->getBody();
+        $response     = $client->send($request);
+        $response     = $response->getBody();
         $textResponse = '';
         //Get the redirect URL
         while (!$response->eof()) {
@@ -89,12 +89,18 @@ class USPTORequest extends Request {
         return $textResponse;
     }
 
-    protected function genRequestURI($number,$numberType){
-        switch($numberType){
-            case 'publ ication';
-                return $this->baseURI.'netacgi/nph-Parser?patentnumber='.$number.'';
+    protected function genRequestURI($number, $numberType)
+    {
+        switch ($numberType) {
+            case 'publication':
+                return $this->baseURI . 'netacgi/nph-Parser?patentnumber=' . $number . '';
                 break;
         }
         return false;
+    }
+
+    public function getDataSource()
+    {
+        return SearchSource::USPTO();
     }
 }

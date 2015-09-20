@@ -2,6 +2,9 @@
 
 namespace SNicholson\IPFO;
 
+use SNicholson\IPFO\ValueObjects\Citation;
+use SNicholson\IPFO\ValueObjects\Priority;
+
 class Result
 {
 
@@ -23,6 +26,10 @@ class Result
     private $englishTitle;
     private $frenchTitle;
     private $germanTitle;
+
+    private $citations;
+
+    private $priorities;
 
     private $source;
 
@@ -264,6 +271,48 @@ class Result
     public function setGermanTitle($germanTitle)
     {
         $this->germanTitle = $germanTitle;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCitations()
+    {
+        return $this->citations;
+    }
+
+    public function addCitation(Citation $citation)
+    {
+        $this->citations[] = $citation;
+    }
+
+    /**
+     * @param mixed $citations
+     */
+    public function setCitations(Citation ...$citations)
+    {
+        $this->citations = $citations;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPriorities()
+    {
+        return $this->priorities;
+    }
+
+    /**
+     * @param mixed $priorities
+     */
+    public function setPriorities(Priority ...$priorities)
+    {
+        $this->priorities = $priorities;
+    }
+
+    public function addPriority(Priority $priority)
+    {
+        $this->priorities[] = $priority;
     }
 
 }

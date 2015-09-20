@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="My Server">
+  <component name="PublishConfigData" serverName="Colin Server">
     <serverData>
+      <paths name="Colin Server">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/public_html/app/design/frontend/f001/default/template/page/html" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="My Server">
         <serverdata>
           <mappings>

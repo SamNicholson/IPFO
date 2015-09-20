@@ -4,6 +4,7 @@ namespace SNicholson\IPFO\Requests;
 
 use SNicholson\IPFO\Abstracts\Request;
 use GuzzleHttp;
+use SNicholson\IPFO\ValueObjects\SearchSource;
 
 class EPORequest extends Request
 {
@@ -12,7 +13,7 @@ class EPORequest extends Request
     private $baseURI = 'http://ops.epo.org/3.1/rest-services/published-data/';
     protected $dataMapper;
 
-    public $kindCodes = array(
+    public $kindCodes = [
         'A1' => 'European patent application published with European search report',
         'A2' =>
             'European patent application published without European search report' .
@@ -21,8 +22,7 @@ class EPORequest extends Request
         'A4' => 'Supplementary search report',
         'A8' => 'Corrected title page of A document, ie. A1 or A2 document',
         'A9' => 'Complete reprint of A document, ie. A1, A2 or A3 document',
-        //TODO B ones (oh and WIPO ones!! somehow...)
-    );
+    ];
 
     public function simpleNumberSearch($number, $numberType)
     {
@@ -36,7 +36,7 @@ class EPORequest extends Request
             $response         = $client->send($request);
             $this->response   = $response->json();
             $this->dataMapper = $this->dataMapperContainer->newEPODataMapper();
-            $output           = $this->dataMapper->setResponse($this->response)->getMappedResponse();
+            $output           = $this->dataMapper->setResponse($this->response)->getSearchResult();
         } catch (GuzzleHttp\Exception\ClientException $e) {
             $this->error = $e->getMessage();
             return false;
@@ -45,8 +45,7 @@ class EPORequest extends Request
             $this->error = $output;
             return false;
         }
-        $this->mapResponseToObject($output);
-        return true;
+        return $output;
     }
 
     protected function genRequestURI($number, $numberType)
@@ -60,5 +59,10 @@ class EPORequest extends Request
                 break;
         }
         return false;
+    }
+
+    public function getDataSource()
+    {
+        return SearchSource::EPO();
     }
 }

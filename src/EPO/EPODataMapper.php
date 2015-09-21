@@ -7,7 +7,10 @@ use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
 use SNicholson\IPFO\Result;
 use SNicholson\IPFO\Searches\SearchError;
+use SNicholson\IPFO\ValueObjects\Applicant;
 use SNicholson\IPFO\ValueObjects\Citation;
+use SNicholson\IPFO\ValueObjects\Inventor;
+use SNicholson\IPFO\ValueObjects\Party;
 use SNicholson\IPFO\ValueObjects\Priority;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
@@ -78,7 +81,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                  * Titles Data
                  */
                 if (isset($responseResult['bibliographic-data']['invention-title'])
-                    && !isset($mappedResponse['title'])) {
+                    && empty($result->getEnglishTitle())) {
                     $result->setFrenchTitle($this->findValueFromEPO(
                         $responseResult['bibliographic-data']['invention-title'][0]
                     ));
@@ -94,7 +97,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                  * Citations
                  */
                 if (isset($responseResult['bibliographic-data']['references-cited'])
-                    && !isset($mappedResponse['citations'])) {
+                    && empty($result->getCitations())) {
                     foreach ($responseResult['bibliographic-data']['references-cited']['citation'] as $citation) {
                         //Type of citation
                         if (isset($citation['patcit'])) {
@@ -241,7 +244,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                             /*
                              * Grant Data
                              */
-                            foreach ($responseResult['bibliographic-data']['publication-reference']['document-id'][0] AS $fieldName => $field) {
+                            foreach ($responseResult['bibliographic-data']['publication-reference']['document-id'][0] as $fieldName => $field) {
                                 switch ($fieldName) {
                                     case 'doc-number':
                                         $result->setGrantNumber(
@@ -275,8 +278,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                  */
                 //TODO fix a bug with these getting picked up, see
                 //http://ops.epo.org/3.1/rest-services/published-data/publication/epodoc/EP2285036/biblio for a sample
-                if (isset($responseResult['bibliographic-data']['priority-claims'])
-                    && !isset($mappedResponse['priority-claims'])) {
+                if (isset($responseResult['bibliographic-data']['priority-claims'])) {
                     $priorityFromOffice = $responseResult['bibliographic-data']['priority-claims']['priority-claim'];
                     if (isset($priorityFromOffice[0]) && empty($result->getPriorities())) {
                         foreach ($priorityFromOffice as $pKey => $priority) {
@@ -302,52 +304,61 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                 /*
                  * Inventors and Applicants Data
                  */
-                if (isset($responseResult['bibliographic-data']['parties']) && !isset($mappedResponse['parties'])) {
+                if (isset($responseResult['bibliographic-data']['parties']) && empty($result->getApplicants())) {
                     /*
                      * Applicants
                      * IMPORTANT - The EPO bundles original and EPO database results together, which is confusing,
                      * we check to find the unique applicants so that we get a good clean list.
                      */
-                    $mappedResponse['parties']['applicants'] = array();
-                    foreach ($responseResult['bibliographic-data']['parties']['applicants']['applicant'] AS $aKey => $applicant) {
+                    $applicantParty = new Party();
+                    $registerApplicants = $responseResult['bibliographic-data']['parties']['applicants']['applicant'];
+                    foreach ($registerApplicants as $aKey => $applicant) {
                         if (!$this->checkDuplicateParty(
                             $applicant['@sequence'],
-                            $mappedResponse['parties']['applicants']
+                            $applicantParty
                         )
                         ) {
-                            $mappedResponse['parties']['applicants'][] = array(
-                                'name'     => $this->findValueFromEPO(
-                                    $applicant['applicant-name']['name']
-                                ),
-                                'sequence' => $this->findValueFromEPO(
-                                    $applicant['@sequence']
-                                )
-                            );
+                            if ($applicant['@data-format'] == 'original') {
+                                $thisApp = new Applicant();
+                                $thisApp->setName(
+                                    $this->findValueFromEPO(
+                                        $applicant['applicant-name']['name']
+                                    )
+                                );
+                                $thisApp->setSequence($applicant['@sequence']);
+                                $applicantParty->addMember($thisApp);
+                            }
                         }
                     }
+                    $result->setApplicants($applicantParty);
                     /*
                      * Inventors
-                     * IMPORTANT - The EPO bundles original and EPO database results together, which is confusing, we check to find the unique inventors so that we get a good clean list.
+                     * IMPORTANT - The EPO bundles original and EPO database results together,
+                     * which is confusing, we check to find the unique inventors so that we get a good clean list.
                      */
-                    $mappedResponse['parties']['inventors'] = array();
-                    foreach ($responseResult['bibliographic-data']['parties']['inventors']['inventor'] AS $aKey => $applicant) {
+                    $inventorParty = new Party();
+                    $registerInventors = $responseResult['bibliographic-data']['parties']['inventors']['inventor'];
+                    foreach ($registerInventors as $aKey => $inventor) {
                         if (!$this->checkDuplicateParty(
-                            $applicant['@sequence'],
-                            $mappedResponse['parties']['inventors']
+                            $inventor['@sequence'],
+                            $inventorParty
                         )
                         ) {
-                            $mappedResponse['parties']['inventors'][] = array(
-                                'name'     => $this->findValueFromEPO(
-                                    $applicant['inventor-name']['name']
-                                ),
-                                'sequence' => $this->findValueFromEPO(
-                                    $applicant['@sequence']
-                                )
-                            );
+                            //We only want the ORIGINAL inventor information
+                            if ($inventor['@data-format'] == 'original') {
+                                $thisInv = new Inventor();
+                                $thisInv->setName(
+                                    $this->findValueFromEPO(
+                                        $inventor['inventor-name']['name']
+                                    )
+                                );
+                                $thisInv->setSequence($inventor['@sequence']);
+                                $inventorParty->addMember($thisInv);
+                            }
                         }
+                        $result->setInventors($inventorParty);
                     }
                 }
-                $this->mappedResponse = $mappedResponse;
             } catch (DataMappingException $e) {
                 $this->mappedResponse = "Failed to map data, exception occurred, ending process softly";
                 $this->mapped         = true;

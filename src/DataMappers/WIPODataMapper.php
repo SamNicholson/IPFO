@@ -93,7 +93,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface {
         //Check to see if inventors entry exists
         $partyCheck = (array) $this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'parties'};
         if(!empty($partyCheck['inventors'])) {
-            foreach ($this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'parties'}->{'inventors'}->{'inventor'} AS $property => $party) {
+            foreach ($this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'parties'}->{'inventors'}->{'Inventor'} AS $property => $party) {
                 if (is_array($party)) {
                     $inventors[] = array('name'     => $party->{'addressbook'}->{'name'}->{'_'},
                                          'sequence' => $sequence

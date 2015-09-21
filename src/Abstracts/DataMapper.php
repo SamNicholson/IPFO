@@ -10,6 +10,7 @@ namespace SNicholson\IPFO\Abstracts;
 
 use SNicholson\IPFO\Result;
 use SNicholson\IPFO\Searches\SearchError;
+use SNicholson\IPFO\ValueObjects\Party;
 
 /**
  * @property mixed mapped
@@ -41,7 +42,7 @@ abstract class DataMapper
 
     abstract protected function mapData();
 
-    protected function checkDuplicateParty($newMemberSequence, $partyList)
+    protected function checkDuplicateParty($newMemberSequence, Party $partyList)
     {
         foreach ($partyList as $existingMember) {
             if ($newMemberSequence == $existingMember['sequence']) {

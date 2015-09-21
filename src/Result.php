@@ -3,6 +3,7 @@
 namespace SNicholson\IPFO;
 
 use SNicholson\IPFO\ValueObjects\Citation;
+use SNicholson\IPFO\ValueObjects\Party;
 use SNicholson\IPFO\ValueObjects\Priority;
 
 class Result
@@ -204,7 +205,7 @@ class Result
     /**
      * @param mixed $applicants
      */
-    public function setApplicants($applicants)
+    public function setApplicants(Party $applicants)
     {
         $this->applicants = $applicants;
     }
@@ -220,7 +221,7 @@ class Result
     /**
      * @param mixed $inventors
      */
-    public function setInventors($inventors)
+    public function setInventors(Party $inventors)
     {
         $this->inventors = $inventors;
     }

@@ -22,4 +22,5 @@ class PatentSearch extends Search implements SearchInterface
         }
     }
 
+
 }

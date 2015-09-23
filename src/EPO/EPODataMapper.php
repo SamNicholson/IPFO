@@ -360,8 +360,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                     }
                 }
             } catch (DataMappingException $e) {
-                $this->mappedResponse = "Failed to map data, exception occurred, ending process softly";
-                $this->mapped         = true;
+                return SearchError::fromString("Failed to map data : " . $e->getMessage());
             }
         }
         return $result;

@@ -3,6 +3,7 @@
 namespace SNicholson\IPFO;
 
 use InvalidArgumentException;
+use SNicholson\IPFO\Containers\RequestsContainer;
 use SNicholson\IPFO\Searches\PatentSearch;
 use SNicholson\IPFO\Searches\TrademarkSearch;
 use SNicholson\IPFO\Interfaces\SearchInterface;
@@ -119,10 +120,10 @@ class Search
         if ($search === null) {
             switch ($this->getIPType()) {
                 case IPType::TRADEMARK:
-                    return new TrademarkSearch();
+                    return new TrademarkSearch(new RequestsContainer());
                     break;
                 case IPType::PATENT:
-                    return new PatentSearch();
+                    return new PatentSearch(new RequestsContainer());
                     break;
                 default:
                     throw new InvalidArgumentException("Invalid Search Interface Provided");

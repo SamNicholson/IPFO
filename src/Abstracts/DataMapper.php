@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samdev
- * Date: 16/11/14
- * Time: 22:07
- */
 
 namespace SNicholson\IPFO\Abstracts;
 
@@ -40,7 +34,10 @@ abstract class DataMapper
         return $this->mapData();
     }
 
-    abstract protected function mapData();
+    protected function mapData()
+    {
+        return SearchError::fromString('Map Data Method should be overwritten when extending');
+    }
 
     protected function checkDuplicateParty($newMemberSequence, Party $partyList)
     {
@@ -51,5 +48,4 @@ abstract class DataMapper
         }
         return false;
     }
-
-} 
+}

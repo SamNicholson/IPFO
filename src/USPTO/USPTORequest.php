@@ -1,6 +1,6 @@
 <?php
 
-namespace SNicholson\IPFO\Requests;
+namespace SNicholson\IPFO\USPTO;
 
 use GuzzleHttp;
 use SNicholson\IPFO\Abstracts\Request;
@@ -48,8 +48,7 @@ class USPTORequest extends Request
             $this->error = $e->getMessage();
             return false;
         }
-        $this->mapResponseToObject($output);
-        return true;
+        return $output;
     }
 
     private function getRedirectURL($requestURI)

@@ -1,6 +1,6 @@
 <?php
 
-namespace SNicholson\IPFO\Requests;
+namespace SNicholson\IPFO\EPO;
 
 use SNicholson\IPFO\Abstracts\Request;
 use GuzzleHttp;

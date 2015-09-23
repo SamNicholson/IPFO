@@ -2,8 +2,8 @@
 
 namespace SNicholson\IPFO\Containers;
 
-use SNicholson\IPFO\Requests\EPORequest;
-use SNicholson\IPFO\Requests\USPTORequest;
+use SNicholson\IPFO\EPO\EPORequest;
+use SNicholson\IPFO\USPTO\USPTORequest;
 use SNicholson\IPFO\Requests\USPTOTrademarkRequest;
 use SNicholson\IPFO\Requests\WIPORequest;
 

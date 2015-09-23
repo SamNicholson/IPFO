@@ -4,7 +4,7 @@ namespace SNicholson\IPFO\Containers;
 
 use SNicholson\IPFO\DataMappers\WIPODataMapper;
 use SNicholson\IPFO\EPO\EPODataMapper;
-use SNicholson\IPFO\DataMappers\USPTODataMapper;
+use SNicholson\IPFO\USPTO\USPTODataMapper;
 use SNicholson\IPFO\DataMappers\USPTOTrademarkDataMapper;
 
 class DataMapperContainer

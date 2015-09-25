@@ -8,6 +8,23 @@ class Priority
     private $number;
     private $date;
     private $kind;
+    private $country;
+
+    /**
+     * @return mixed
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param mixed $country
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    }
 
     public static function fromNumber($number)
     {

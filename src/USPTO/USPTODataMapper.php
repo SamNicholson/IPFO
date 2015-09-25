@@ -7,6 +7,7 @@ use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
 use SNicholson\IPFO\Result;
 use SNicholson\IPFO\ValueObjects\Applicant;
+use SNicholson\IPFO\ValueObjects\Citation;
 use SNicholson\IPFO\ValueObjects\Inventor;
 use SNicholson\IPFO\ValueObjects\Party;
 
@@ -88,14 +89,27 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
 
     protected function getTitles(Result &$result)
     {
-
         $re = "/(?i)<FONT size=\\\"\\+1\\\">([\\S\\s]*)<\\/FONT>/";
         preg_match($re, $this->unmappedResponse, $matches);
         $result->setEnglishTitle(trim($matches[1]));
     }
 
-    protected function getCitations(Result $result)
+    protected function getCitations(Result &$result)
     {
-
+        $re = "/References([\\s\\S]*)Primary/";
+        preg_match($re, $this->unmappedResponse, $matches);
+        if (!empty($matches[1])) {
+            $re = "/<tr>([\\s\\S]*)\\/tr>/iU";
+            preg_match_all($re, $matches[1], $matches);
+            if (!empty($matches[1])) {
+                foreach ($matches[1] as $row) {
+                    $re = "/<td[\\s\\S]*<a.*>(?<number>[\\s\\S]*)<\\/a><\\/td><td.*>(?<date>[\\s\\S]*)<\\/td><td.*>(?<Author>[\\s\\S]*)<\\/td>/iU";
+                    preg_match($re, $row, $matches);
+                    if (!empty($matches['number'])) {
+                        $result->addCitation(Citation::patent($matches['number'], 'US', '', trim($matches['date'])));
+                    }
+                }
+            }
+        }
     }
 }

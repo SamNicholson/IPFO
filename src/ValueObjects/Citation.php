@@ -16,21 +16,41 @@ class Citation
     private $citedBy;
     private $citedInPhase;
     private $sequence;
+    private $citationDate;
 
-    public static function patent($number, $county, $citedBy)
+    /**
+     * @return mixed
+     */
+    public function getCitationDate()
+    {
+        return $this->citationDate;
+    }
+
+    /**
+     * @param mixed $citationDate
+     */
+    public function setCitationDate($citationDate)
+    {
+        $this->citationDate = $citationDate;
+    }
+
+    public static function patent($number, $county, $citedBy = null, $citationDate = null)
     {
         $citation = new Citation(Citation::PATENT);
         $citation->setNumber($number);
         $citation->setCitedBy($citedBy);
         $citation->setCountry($county);
+        $citation->setCitationDate($citationDate);
         return $citation;
     }
 
-    public static function nonPatentLiterature($text, $citedBy)
+    public static function nonPatentLiterature($text, $citedBy = null, $country = null, $citationDate = null)
     {
         $citation = new Citation(Citation::NON_PATENT_LITERATURE);
         $citation->setText($text);
         $citation->setCitedBy($citedBy);
+        $citation->setCitationDate($citationDate);
+        $citation->setCountry($country);
         return $citation;
     }
 

@@ -1,11 +1,14 @@
 <?php
 
+use SNicholson\IPFO\Result;
+use SNicholson\IPFO\ValueObjects\Citation;
+
 class USPTODataMapperTest extends PHPUnit_Framework_TestCase
 {
 
     public function testApplicationInformationIsPulledProperly()
     {
-        $result         = $this->getPublicationSample();
+        $result = $this->getPublicationSample();
         $expectedResult = $this->getExpectedPublication();
         $this->assertEquals($expectedResult->getApplicationDate(), $result->getApplicationDate());
         $this->assertEquals($expectedResult->getApplicationNumber(), $result->getApplicationNumber());
@@ -14,7 +17,7 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
 
     public function testGrantInformationIsPulledProperly()
     {
-        $result         = $this->getPublicationSample();
+        $result = $this->getPublicationSample();
         $expectedResult = $this->getExpectedPublication();
         $this->assertEquals($expectedResult->getGrantDate(), $result->getGrantDate());
         $this->assertEquals($expectedResult->getGrantNumber(), $result->getGrantNumber());
@@ -23,34 +26,43 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
 
     public function testInventorsArePulledCorrectly()
     {
-        $result         = $this->getPublicationSample();
+        $result = $this->getPublicationSample();
         $expectedResult = $this->getExpectedPublication();
         $this->assertEquals($expectedResult->getInventors(), $result->getInventors());
     }
+
     public function testApplicantsArePulledCorrectly()
     {
-        $result         = $this->getPublicationSample();
+        $result = $this->getPublicationSample();
         $expectedResult = $this->getExpectedPublication();
         $this->assertEquals($expectedResult->getApplicants(), $result->getApplicants());
     }
 
     public function testTitleIsParsedCorrectly()
     {
-        $result         = $this->getPublicationSample();
+        $result = $this->getPublicationSample();
         $expectedResult = $this->getExpectedPublication();
         $this->assertEquals($expectedResult->getEnglishTitle(), $result->getEnglishTitle());
+    }
+
+    public function testCitationsAreParsedCorrectly()
+    {
+        $result = $this->getPublicationSample();
+        $expectedResult = $this->getExpectedPublication();
+        $this->assertEquals($expectedResult->getCitations(), $result->getCitations());
     }
 
     private function getPublicationSample()
     {
         $USPTO = new \SNicholson\IPFO\USPTO\USPTODataMapper();
         $USPTO->setResponse(file_get_contents(__DIR__ . '/sample/USPTO/publication.sample'));
+
         return $USPTO->getSearchResult();
     }
 
     private function getExpectedPublication()
     {
-        $result = new \SNicholson\IPFO\Result();
+        $result = new Result();
         //Application
         $result->setApplicationDate('2003-09-02');
         $result->setApplicationNumber('10/653,633');
@@ -91,6 +103,48 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
         $applicants = new \SNicholson\IPFO\ValueObjects\Party();
         $applicants->addMember($applicant);
         $result->setApplicants($applicants);
+
+        $this->getPatentCitationsForPublicationSample($result);
+
+        $this->getNonPatentLiteraturePublicationSample($result);
+
+        return $result;
+    }
+
+    private function getNonPatentLiteraturePublicationSample(Result &$result)
+    {
+        $npl = [
+            ['text' => '0 148 102', 'date' => 'Jul 1985', 'country' => 'EP'],
+            ['text' => '9-280696', 'date' => 'Oct 1997', 'country' => 'JP'],
+            ['text' => '11-108228', 'date' => 'Apr 1999', 'country' => 'JP']
+        ];
+        foreach($npl as $citation) {
+            $result->addCitation(Citation::nonPatentLiterature($citation['text'], null, $citation['country'], $citation['date']));
+        }
+    }
+
+    /**
+     * @param $result
+     * @return mixed
+     */
+    private function getPatentCitationsForPublicationSample(Result &$result)
+    {
+        //Citations
+        $patentCitations = [
+            ['number' => '4986085', 'date' => 'January 1991', 'author' => 'Tischer'],
+            ['number' => '5502970', 'date' => 'April 1996', 'author' => 'Rajendran'],
+            ['number' => '5694782', 'date' => 'December 1997', 'author' => 'Alsenz'],
+            ['number' => '5771703', 'date' => 'June 1998', 'author' => 'Rajendran'],
+            ['number' => '5791155', 'date' => 'August 1998', 'author' => 'Tulpule'],
+            ['number' => '6121735', 'date' => 'September 2000', 'author' => 'Igeta et al.'],
+            ['number' => '6182742', 'date' => 'February 2001', 'author' => 'Takahashi et al.'],
+            ['number' => '6272870', 'date' => 'August 2001', 'author' => 'Schaeffer'],
+            ['number' => '6595018', 'date' => 'July 2003', 'author' => 'Goth et al.']
+        ];
+        foreach ($patentCitations as $citation) {
+            $result->addCitation(Citation::patent($citation['number'], 'US', null, $citation['date']));
+        }
+
         return $result;
     }
 }

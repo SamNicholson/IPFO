@@ -96,7 +96,8 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
 
     protected function getCitations(Result &$result)
     {
-        $re = "/References([\\s\\S]*)Primary/";
+        //Patent Citations
+        $re = "/U.S. Patent Documents([\\s\\S]*)Foreign/";
         preg_match($re, $this->unmappedResponse, $matches);
         if (!empty($matches[1])) {
             $re = "/<tr>([\\s\\S]*)\\/tr>/iU";
@@ -108,6 +109,23 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
                     if (!empty($matches['number'])) {
                         $result->addCitation(Citation::patent($matches['number'], 'US', '', trim($matches['date'])));
                     }
+                }
+            }
+        }
+        $re = "/Foreign Patent Documents([\\s\\S]*)Claims/";
+        preg_match($re, $this->unmappedResponse, $matches);
+        if (!empty($matches[1])) {
+            $re = "/<tr>([\\s\\S]*)\\/tr>/iU";
+            preg_match_all($re, $matches[1], $matches);
+            if (!empty($matches[1])) {
+                foreach ($matches[1] as $row) {
+                    //Find patent citations
+                    $re = "/<td[\\s\\S]*<\\/td><td[\\s\\S]*>(?<text>[\\s\\S]*)<\\/td><td[\\s\\S]*><\\/td><td[\\s\\S]*>(?<date>[\\s\\S]*)<\\/td><td[\\s\\S]*><\\/td><td.*>(?<country>[\\s\\S]*)<\\/td>/iU";
+                    preg_match($re, $row, $matches);
+                    if (!empty($matches['text'])) {
+                        $result->addCitation(Citation::nonPatentLiterature($matches['text'], '', trim($matches['country']), trim($matches['date'])));
+                    }
+                    //Find npl citations
                 }
             }
         }

@@ -14,7 +14,7 @@ class USPTORequest extends Request
     public $response;
     protected $source = 'USPTO';
 
-    public $kindCodes = array(
+    public $kindCodes = [
         'A1' => 'European patent application published with European search report',
         'A2' => 'European patent application published without European search report'
             . '(search report not available at publication date)',
@@ -23,7 +23,7 @@ class USPTORequest extends Request
         'A8' => 'Corrected title page of A document, ie. A1 or A2 document',
         'A9' => 'Complete reprint of A document, ie. A1, A2 or A3 document',
         //TODO B ones (oh and WIPO ones!! somehow...)
-    );
+    ];
 
     public function simpleNumberSearch($number, $numberType)
     {

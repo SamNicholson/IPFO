@@ -288,9 +288,11 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                             $priorityObject->setDate(
                                 $this->findValueFromEPO($priority['document-id'][0]['date'])
                             );
-                            $priorityObject->setKind(
-                                $this->findValueFromEPO($priority['document-id'][0]['kind'])
-                            );
+                            if (!empty($priority['document-id'][0]['kind'])) {
+                                $priorityObject->setKind(
+                                    $this->findValueFromEPO($priority['document-id'][0]['kind'])
+                                );
+                            }
                             $result->addPriority($priorityObject);
                         }
                     } elseif (empty($result->getPriorities())) {

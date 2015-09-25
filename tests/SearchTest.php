@@ -2,6 +2,7 @@
 
 namespace src\Tests;
 
+use SNicholson\IPFO\Result;
 use SNicholson\IPFO\Search;
 use SNicholson\IPFO\ValueObjects\IPType;
 use SNicholson\IPFO\ValueObjects\Number;
@@ -67,8 +68,8 @@ class SearchTest extends \PHPUnit_Framework_TestCase
     public function testSearchCallsSearchInterFaceCorrectly()
     {
         $search = Search::patent()->byPublicationNumber('EP12345');
-        $this->searchInterfaceMock->expects($this->once())->method('numberSearch')->with($search->getNumber());
-        $this->searchInterfaceMock->expects($this->once())->method('getResultCollection');
+        $this->searchInterfaceMock->expects($this->once())->method('numberSearch')->with($search->getNumber())
+            ->willReturn(new Result());
         $search->search($this->searchInterfaceMock);
     }
 }

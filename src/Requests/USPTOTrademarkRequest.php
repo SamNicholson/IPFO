@@ -15,6 +15,7 @@ use SNicholson\IPFO\Exceptions\DataMappingException;
 use SNicholson\IPFO\Exceptions\FileHandleException;
 use SNicholson\IPFO\Helpers\ZIPFromString;
 use SNicholson\IPFO\Interfaces\RequestInterface;
+use SNicholson\IPFO\ValueObjects\SearchSource;
 
 class USPTOTrademarkRequest extends Request implements RequestInterface {
 
@@ -85,4 +86,11 @@ class USPTOTrademarkRequest extends Request implements RequestInterface {
     }
 
 
-} 
+    /**
+     * @return SearchSource
+     */
+    public function getDataSource()
+    {
+        // TODO: Implement getDataSource() method.
+    }
+}

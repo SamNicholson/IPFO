@@ -42,9 +42,4 @@ abstract class Request implements RequestInterface
      * @return SearchSource
      */
     abstract public function getDataSource();
-
-    public function getResponse()
-    {
-        return $this->responseObject;
-    }
 }

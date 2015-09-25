@@ -105,8 +105,12 @@ class Search
     public function search(SearchInterface $searchObject = null)
     {
         $searchClass = $this->getSearch($searchObject);
-        $searchClass->numberSearch($this->getNumber());
-        return $searchClass->getResultCollection();
+        $result = $searchClass->numberSearch($this->getNumber());
+        $results = new ResultCollection();
+        if (!is_bool($result)) {
+            $results->addResponse($result);
+        }
+        return $results;
     }
 
     /**

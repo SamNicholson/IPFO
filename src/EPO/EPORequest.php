@@ -26,7 +26,6 @@ class EPORequest extends Request
 
     public function simpleNumberSearch($number, $numberType)
     {
-
         $requestURI = $this->genRequestURI($number, $numberType);
 
         $client  = new GuzzleHttp\Client();

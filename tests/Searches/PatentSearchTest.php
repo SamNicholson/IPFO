@@ -19,6 +19,7 @@ class PatentSearchTest extends PHPUnit_Framework_TestCase
             ->getMock();
         $this->requestMock = $this->getMockBuilder('SNicholson\IPFO\Requests\USPTORequest')
             ->disableOriginalConstructor()
+            ->setMethods(['simpleNumberSearch', 'getError'])
             ->getMock();
     }
 

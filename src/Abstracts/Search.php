@@ -3,6 +3,7 @@
 namespace SNicholson\IPFO\Abstracts;
 
 use SNicholson\IPFO\Containers\RequestsContainer;
+use SNicholson\IPFO\Result;
 use SNicholson\IPFO\ValueObjects\Number;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
@@ -33,8 +34,7 @@ abstract class Search
 
     /**
      * @param Number $number
-     *
-     * @return bool
+     * @return bool|Result
      */
     public function numberSearch(Number $number)
     {
@@ -46,8 +46,8 @@ abstract class Search
         $this->searchObj = $this->findOfficeFromNumber($this->requestNumber);
 
         if ($this->searchObj) {
-            if ($this->searchObj->simpleNumberSearch($this->requestNumber, $this->requestNumberType)) {
-                return true;
+            if ($result = $this->searchObj->simpleNumberSearch($this->requestNumber, $this->requestNumberType)) {
+                return $result;
             } else {
                 $this->error = $this->searchObj->getError();
                 return false;
@@ -65,14 +65,6 @@ abstract class Search
     public function getSearchSource()
     {
         return $this->searchObj->getDataSource();
-    }
-
-    /**
-     * @return \SNicholson\IPFO\ResultCollection
-     */
-    public function getResultCollection()
-    {
-        return $this->searchObj->getResponse();
     }
 
     abstract protected function findOfficeFromNumber($number);

@@ -70,6 +70,6 @@ class SearchTest extends \PHPUnit_Framework_TestCase
         $search = Search::patent()->byPublicationNumber('EP12345');
         $this->searchInterfaceMock->expects($this->once())->method('numberSearch')->with($search->getNumber())
             ->willReturn(new Result());
-        $search->search($this->searchInterfaceMock);
+        $search->run($this->searchInterfaceMock);
     }
 }

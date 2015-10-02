@@ -102,7 +102,7 @@ class Search
      *
      * @return ResultCollection
      */
-    public function search(SearchInterface $searchObject = null)
+    public function run(SearchInterface $searchObject = null)
     {
         $searchClass = $this->getSearch($searchObject);
         $result = $searchClass->numberSearch($this->getNumber());

@@ -39,11 +39,11 @@ class WIPORequest extends Request
 
             } else {
                 $this->error = SearchError::fromString("Number was not matched, not a WIPO compliant number");
-
                 return false;
             }
         } catch (\Exception $e) {
-            return SearchError::fromString('Error from WIPO service: ' . $e->getMessage());
+            $this->error = SearchError::fromString('Error from WIPO service: ' . $e->getMessage());
+            return false;
         }
         return $output;
     }

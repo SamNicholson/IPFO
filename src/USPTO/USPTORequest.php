@@ -4,6 +4,7 @@ namespace SNicholson\IPFO\USPTO;
 
 use GuzzleHttp;
 use SNicholson\IPFO\Abstracts\Request;
+use SNicholson\IPFO\Searches\SearchError;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
 class USPTORequest extends Request
@@ -46,6 +47,10 @@ class USPTORequest extends Request
             $output           = $this->dataMapper->setResponse($this->response)->getSearchResult();
         } catch (GuzzleHttp\Exception\ClientException $e) {
             $this->error = $e->getMessage();
+            return false;
+        }
+        if ($output instanceof SearchError) {
+            $this->error = $output;
             return false;
         }
         return $output;

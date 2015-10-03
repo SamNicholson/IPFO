@@ -45,6 +45,10 @@ class WIPORequest extends Request
             $this->error = SearchError::fromString('Error from WIPO service: ' . $e->getMessage());
             return false;
         }
+        if ($output instanceof SearchError) {
+            $this->error = $output;
+            return false;
+        }
         return $output;
     }
 

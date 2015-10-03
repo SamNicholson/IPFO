@@ -4,6 +4,7 @@ namespace SNicholson\IPFO\EPO;
 
 use SNicholson\IPFO\Abstracts\Request;
 use GuzzleHttp;
+use SNicholson\IPFO\Searches\SearchError;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
 class EPORequest extends Request
@@ -37,10 +38,10 @@ class EPORequest extends Request
             $this->dataMapper = $this->dataMapperContainer->newEPODataMapper();
             $output           = $this->dataMapper->setResponse($this->response)->getSearchResult();
         } catch (GuzzleHttp\Exception\ClientException $e) {
-            $this->error = $e->getMessage();
+            $this->error = SearchError::fromString($e->getMessage());
             return false;
         }
-        if (is_string($output)) {
+        if ($output instanceof SearchError) {
             $this->error = $output;
             return false;
         }

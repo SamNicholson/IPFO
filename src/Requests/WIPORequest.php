@@ -21,9 +21,11 @@ class WIPORequest extends Request
     public function simpleNumberSearch($number, $numberType)
     {
         if ($number = $this->checkNumberFormat($number, $numberType)) {
-            $client = new SoapClient($this->baseURI, [
+            $client = new SoapClient(
+                $this->baseURI,
+                [
                     "trace"      => 1,
-                    "exceptions" => 0,
+                    "exceptions" => 1,
                     'login'      => $this->username,
                     'password'   => $this->password
                 ]
@@ -32,7 +34,7 @@ class WIPORequest extends Request
             $this->response = $client->getIASR(['iaNumber' => $number]);
 
             $this->dataMapper = $this->dataMapperContainer->newWIPODataMapper();
-            $output = $this->dataMapper->setResponse($this->response)->getSearchResult();
+            $output           = $this->dataMapper->setResponse($this->response)->getSearchResult();
 
         } else {
             $this->error = SearchError::fromString("Number was not matched, not a WIPO compliant number");

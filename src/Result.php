@@ -316,4 +316,8 @@ class Result
         $this->priorities[] = $priority;
     }
 
+    public function toArray()
+    {
+        return (array) $this;
+    }
 }

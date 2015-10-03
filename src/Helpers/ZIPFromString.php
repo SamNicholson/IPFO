@@ -11,26 +11,28 @@ namespace SNicholson\IPFO\Helpers;
 
 use SNicholson\IPFO\Exceptions\FileHandleException;
 
-class ZIPFromString {
+class ZIPFromString
+{
 
     private $zip;
     private $tmpDir = '../../tmp/';
     private $filename;
     private $contents = array();
 
-    function __construct($fileString){
+    public function __construct($fileString)
+    {
 
         try {
-            $this->filename = $this->tmpDir.date('Y-m-d-h:i:s').rand(1000000,2000000).'.zip';
+            $this->filename = $this->tmpDir . date('Y-m-d-h:i:s') . rand(1000000, 2000000) . '.zip';
 
-            file_put_contents($this->filename,$fileString);
+            file_put_contents($this->filename, $fileString);
 
             $this->zip = new \ZipArchive();
             $this->zip->open($this->filename);
 
-            for($i = 0; $i < $this->zip->numFiles; $i++) {
+            for ($i = 0; $i < $this->zip->numFiles; $i++) {
                 $fp = $this->zip->getStream($this->zip->getNameIndex($i));
-                if(!$fp){
+                if (!$fp) {
                     throw new FileHandleException('Failed to open contents of USPTO ZIP File');
                 }
                 $this->contents[$this->zip->getNameIndex($i)] = '';
@@ -42,14 +44,13 @@ class ZIPFromString {
             unlink($this->filename);
 
             return true;
-        }
-        catch(FileHandleException $e){
+        } catch (FileHandleException $e) {
             return $e->getMessage();
         }
     }
 
-    function getContents(){
+    public function getContents()
+    {
         return $this->contents;
     }
-
-} 
+}

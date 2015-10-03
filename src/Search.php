@@ -100,13 +100,13 @@ class Search
      *
      * @param SearchInterface $searchObject
      *
-     * @return ResultCollection
+     * @return SearchResult
      */
     public function run(SearchInterface $searchObject = null)
     {
         $searchClass = $this->getSearch($searchObject);
         $result = $searchClass->numberSearch($this->getNumber());
-        $results = new ResultCollection();
+        $results = new SearchResult();
         if (!is_bool($result)) {
             $results->addResponse($result);
         }

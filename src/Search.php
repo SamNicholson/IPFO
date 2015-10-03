@@ -108,7 +108,10 @@ class Search
         $result = $searchClass->numberSearch($this->getNumber());
         $results = new SearchResult();
         if (!is_bool($result)) {
+            $results->setSuccess(true);
             $results->addResponse($result);
+        } else {
+            $results->setSuccess(false);
         }
         return $results;
     }

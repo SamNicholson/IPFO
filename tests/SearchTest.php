@@ -72,4 +72,20 @@ class SearchTest extends \PHPUnit_Framework_TestCase
             ->willReturn(new Result());
         $search->run($this->searchInterfaceMock);
     }
+
+    public function testSearchSetsSuccessToTrueOnSuccess()
+    {
+        $search = Search::patent()->byPublicationNumber('EP12345');
+        $this->searchInterfaceMock->expects($this->once())->method('numberSearch')->with($search->getNumber())
+                                  ->willReturn(new Result());
+        $this->assertEquals(true, $search->run($this->searchInterfaceMock)->getSuccess());
+    }
+
+    public function testSearchSetsSuccessToFalseOnSuccess()
+    {
+        $search = Search::patent()->byPublicationNumber('EP12345');
+        $this->searchInterfaceMock->expects($this->once())->method('numberSearch')->with($search->getNumber())
+                                  ->willReturn(false);
+        $this->assertEquals(false, $search->run($this->searchInterfaceMock)->getSuccess());
+    }
 }

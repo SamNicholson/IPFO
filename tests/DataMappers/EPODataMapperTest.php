@@ -88,6 +88,16 @@ class EPODataMapperTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResult->getInventors(), $actualResult->getInventors());
     }
 
+    public function testSinglePriorityIsParsedCorrectly()
+    {
+        $actualResult = $this->getSinglePriorityExample();
+        $expectedResult = new Result();
+        $priority = Priority::fromNumber('EP20030075514');
+        $priority->setDate('2003-02-21');
+        $expectedResult->addPriority($priority);
+        $this->assertEquals($expectedResult->getPriorities(), $actualResult->getPriorities());
+    }
+
     private function getPublicationEPODataMapperResult()
     {
         $epoMapper = new EPODataMapper();
@@ -168,5 +178,13 @@ class EPODataMapperTest extends PHPUnit_Framework_TestCase
         $expectedResult->setInventors($inventorParty);
 
         return $expectedResult;
+    }
+
+    private function getSinglePriorityExample()
+    {
+        $epoMapper = new EPODataMapper();
+        $stringResponse = json_decode(file_get_contents(__DIR__ . '/sample/EPO/singlePriority.sample'), true);
+        $epoMapper->setResponse($stringResponse);
+        return $epoMapper->getSearchResult();
     }
 }

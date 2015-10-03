@@ -301,10 +301,36 @@ class Result
     }
 
     /**
+     * @param bool $inArrayFormat
+     *
      * @return mixed
      */
-    public function getCitations()
+    public function getCitations($inArrayFormat = false)
     {
+        if ($inArrayFormat) {
+            $arrayToReturn = '';
+            /** @var Citation $citation */
+            foreach ($this->citations as $citation) {
+                if ($citation->getType() == Citation::PATENT) {
+                    $arrayToReturn[] = [
+                        'type'     => $citation->getType(),
+                        'number'   => $citation->getNumber(),
+                        'country'  => $citation->getCountry(),
+                        'cited-by' => $citation->getCitedBy(),
+                        'date'     => $citation->getCitationDate(),
+                    ];
+                } else {
+                    $arrayToReturn[] = [
+                        'type'     => $citation->getType(),
+                        'text'     => $citation->getText(),
+                        'country'  => $citation->getCountry(),
+                        'cited-by' => $citation->getCitedBy(),
+                        'date'     => $citation->getCitationDate(),
+                    ];
+                }
+            }
+            return $arrayToReturn;
+        }
         return $this->citations;
     }
 
@@ -383,7 +409,8 @@ class Result
             ],
             'priorities' => $this->getPriorities(true),
             'applicants' => $this->getApplicants(true),
-            'inventors' => $this->getInventors(true)
+            'inventors' => $this->getInventors(true),
+            'citations' => $this->getCitations(true)
         ];
     }
 }

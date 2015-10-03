@@ -2,6 +2,7 @@
 
 use SNicholson\IPFO\Result;
 use SNicholson\IPFO\ValueObjects\Applicant;
+use SNicholson\IPFO\ValueObjects\Citation;
 use SNicholson\IPFO\ValueObjects\Inventor;
 use SNicholson\IPFO\ValueObjects\Party;
 use SNicholson\IPFO\ValueObjects\Priority;
@@ -73,6 +74,25 @@ class ResultTest extends PHPUnit_Framework_TestCase
             ['name' => 'ROTH, RICHARD,', 'sequence' => '5'],
             ['name' => 'MANDELL, JEFFREY', 'sequence' => '6'],
         ];
+
+        //Citations
+        $result['citations'] = [
+            [
+                'type' => 'patent',
+                'number' => '123',
+                'country' => 'GB',
+                'cited-by' => 'office',
+                'date' => '2001-01-01'
+            ],
+            [
+                'type' => 'non-patent-literature',
+                'text' => 'text',
+                'country' => 'GB',
+                'cited-by' => 'office',
+                'date' => '2001-01-02'
+            ]
+        ];
+
         return $result;
     }
 
@@ -155,6 +175,12 @@ class ResultTest extends PHPUnit_Framework_TestCase
         $inventor6->setSequence('6');
         $inventorParty->addMember($inventor6);
         $result->setInventors($inventorParty);
+
+        //Citations
+        $citation = Citation::patent('123', 'GB', 'office', '2001-01-01');
+        $result->addCitation($citation);
+        $citation = Citation::nonPatentLiterature('text', 'office', 'GB', '2001-01-02');
+        $result->addCitation($citation);
 
         return $result;
     }

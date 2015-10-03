@@ -6,7 +6,7 @@ class Citation
 {
 
     const PATENT = 'patent';
-    const NON_PATENT_LITERATURE = 'npl';
+    const NON_PATENT_LITERATURE = 'non-patent-literature';
 
     private $type;
     private $number;

@@ -2,7 +2,7 @@
 
 namespace SNicholson\IPFO;
 
-class SearchResult
+class SearchResults
 {
     /**
      * @var

@@ -4,7 +4,7 @@ namespace SNicholson\IPFO\Abstracts;
 
 use SNicholson\IPFO\Containers\DataMapperContainer;
 use SNicholson\IPFO\Interfaces\RequestInterface;
-use SNicholson\IPFO\SearchResult;
+use SNicholson\IPFO\SearchResults;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
 abstract class Request implements RequestInterface
@@ -23,7 +23,7 @@ abstract class Request implements RequestInterface
     public function __construct()
     {
         $this->dataMapperContainer = new DataMapperContainer();
-        $this->responseObject      = new SearchResult();
+        $this->responseObject      = new SearchResults();
     }
 
     abstract public function simpleNumberSearch($number, $numberType);

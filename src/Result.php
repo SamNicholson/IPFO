@@ -2,9 +2,12 @@
 
 namespace SNicholson\IPFO;
 
+use SNicholson\IPFO\ValueObjects\Applicant;
 use SNicholson\IPFO\ValueObjects\Citation;
+use SNicholson\IPFO\ValueObjects\Inventor;
 use SNicholson\IPFO\ValueObjects\Party;
 use SNicholson\IPFO\ValueObjects\Priority;
+use SNicholson\IPFO\ValueObjects\SearchSource;
 
 class Result
 {
@@ -21,8 +24,10 @@ class Result
     private $grantCountry;
     private $grantNumber;
 
-    private $applicants;
+    /** @var Party */
     private $inventors;
+    /** @var Party */
+    private $applicants;
 
     private $englishTitle;
     private $frenchTitle;
@@ -32,6 +37,7 @@ class Result
 
     private $priorities;
 
+    /** @var  SearchSource */
     private $source;
 
     /**
@@ -195,10 +201,20 @@ class Result
     }
 
     /**
+     * @param bool $inArrayFormat
+     *
      * @return mixed
      */
-    public function getApplicants()
+    public function getApplicants($inArrayFormat = false)
     {
+        if ($inArrayFormat) {
+            $arrayToReturn = [];
+            /** @var Applicant $applicant */
+            foreach ($this->applicants->getMembers() as $applicant) {
+                $arrayToReturn[] = ['name' => $applicant->getName(), 'sequence' =>$applicant->getSequence()];
+            }
+            return $arrayToReturn;
+        }
         return $this->applicants;
     }
 
@@ -211,10 +227,20 @@ class Result
     }
 
     /**
+     * @param bool $inArrayFormat
+     *
      * @return mixed
      */
-    public function getInventors()
+    public function getInventors($inArrayFormat = false)
     {
+        if ($inArrayFormat) {
+            $arrayToReturn = [];
+            /** @var Inventor $inventor */
+            foreach ($this->inventors->getMembers() as $inventor) {
+                $arrayToReturn[] = ['name' => $inventor->getName(), 'sequence' =>$inventor->getSequence()];
+            }
+            return $arrayToReturn;
+        }
         return $this->inventors;
     }
 
@@ -296,10 +322,25 @@ class Result
     }
 
     /**
+     * @param bool $inArrayFormat
+     *
      * @return mixed
      */
-    public function getPriorities()
+    public function getPriorities($inArrayFormat = false)
     {
+        if ($inArrayFormat) {
+            $arrayToReturn = '';
+            /** @var Priority $priority */
+            foreach ($this->priorities as $priority) {
+                $arrayToReturn[] = [
+                    'number'  => $priority->getNumber(),
+                    'date'    => $priority->getDate(),
+                    'country' => $priority->getCountry(),
+                    'kind'    => $priority->getKind()
+                ];
+            }
+            return $arrayToReturn;
+        }
         return $this->priorities;
     }
 
@@ -318,6 +359,31 @@ class Result
 
     public function toArray()
     {
-        return (array) $this;
+        return [
+            'source' => $this->getSource()->__toString(),
+            'titles' => [
+                'english' => $this->getEnglishTitle(),
+                'french' => $this->getFrenchTitle(),
+                'german' => $this->getGermanTitle()
+            ],
+            'application' => [
+                'country' => $this->getApplicationCountry(),
+                'date' => $this->getApplicationDate(),
+                'number' => $this->getApplicationNumber()
+            ],
+            'publication' => [
+                'country' => $this->getPublicationCountry(),
+                'date' => $this->getPublicationDate(),
+                'number' => $this->getPublicationNumber()
+            ],
+            'grant' => [
+                'country' => $this->getGrantCountry(),
+                'date' => $this->getGrantDate(),
+                'number' => $this->getGrantNumber()
+            ],
+            'priorities' => $this->getPriorities(true),
+            'applicants' => $this->getApplicants(true),
+            'inventors' => $this->getInventors(true)
+        ];
     }
 }

@@ -41,6 +41,9 @@ class SearchResult
         return $this->responses;
     }
 
+    /**
+     * @return Result
+     */
     public function getResult()
     {
         return $this->responses[0];

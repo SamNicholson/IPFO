@@ -116,19 +116,19 @@ class EPODataMapperTest extends PHPUnit_Framework_TestCase
 
         //application information
         $expectedResult->setApplicationCountry('EP');
-        $expectedResult->setApplicationDate('20080714');
+        $expectedResult->setApplicationDate('2008-07-14');
         $expectedResult->setApplicationNumber('08781827');
 
         //publication information
         $expectedResult->setPublicationCountry('EP');
-        $expectedResult->setPublicationDate('20100505');
+        $expectedResult->setPublicationDate('2010-05-05');
         $expectedResult->setPublicationNumber('2181196');
 
         //Priorities
         $firstPriority = Priority::fromNumber('WO2008US70023');
-        $firstPriority->setDate('20080714');
+        $firstPriority->setDate('2008-07-14');
         $secondPriority = Priority::fromNumber('US20070778018');
-        $secondPriority->setDate('20070714');
+        $secondPriority->setDate('2007-07-14');
         $expectedResult->setPriorities($firstPriority, $secondPriority);
 
         //Applicants

@@ -188,14 +188,18 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                     //Sometimes there will be no application date in the docdb database!
                     if (isset($docDBAppInfo['date'])) {
                         $result->setApplicationDate(
-                            $this->findValueFromEPO(
-                                $docDBAppInfo['date']
+                            $this->transformEPODate(
+                                $this->findValueFromEPO(
+                                    $docDBAppInfo['date']
+                                )
                             )
                         );
                     } elseif (isset($docEPOAppInfo['date'])) {
                         $result->setApplicationDate(
-                            $this->findValueFromEPO(
-                                $responseResult['bibliographic-data']['application-reference']['document-id'][1]['date']
+                            $this->transformEPODate(
+                                $this->findValueFromEPO(
+                                    $responseResult['bibliographic-data']['application-reference']['document-id'][1]['date']
+                                )
                             )
                         );
                     }
@@ -232,8 +236,10 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                                         break;
                                     case 'date':
                                         $result->setPublicationDate(
-                                            $this->findValueFromEPO(
-                                                $field
+                                            $this->transformEPODate(
+                                                $this->findValueFromEPO(
+                                                    $field
+                                                )
                                             )
                                         );
                                         break;
@@ -262,8 +268,10 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                                         break;
                                     case 'date':
                                         $result->setGrantDate(
-                                            $this->findValueFromEPO(
-                                                $field
+                                            $this->transformEPODate(
+                                                $this->findValueFromEPO(
+                                                    $field
+                                                )
                                             )
                                         );
                                         break;
@@ -286,7 +294,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                                 $this->findValueFromEPO($priority['document-id'][0]['doc-number'])
                             );
                             $priorityObject->setDate(
-                                $this->findValueFromEPO($priority['document-id'][0]['date'])
+                                $this->transformEPODate($this->findValueFromEPO($priority['document-id'][0]['date']))
                             );
                             if (!empty($priority['document-id'][0]['kind'])) {
                                 $priorityObject->setKind(
@@ -381,4 +389,8 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
         }
     }
 
+    private function transformEPODate($date)
+    {
+        return substr($date, 0, 4) . '-' . substr($date, 4, 2) . '-' . substr($date, 6, 2);
+    }
 }

@@ -20,28 +20,31 @@ class WIPORequest extends Request
 
     public function simpleNumberSearch($number, $numberType)
     {
-        if ($number = $this->checkNumberFormat($number, $numberType)) {
-            $client = new SoapClient(
-                $this->baseURI,
-                [
-                    "trace"      => 1,
-                    "exceptions" => 1,
-                    'login'      => $this->username,
-                    'password'   => $this->password
-                ]
-            );
+        try {
+            if ($number = $this->checkNumberFormat($number, $numberType)) {
+                $client = new SoapClient(
+                    $this->baseURI,
+                    [
+                        "trace"      => 1,
+                        "exceptions" => 1,
+                        'login'      => $this->username,
+                        'password'   => $this->password
+                    ]
+                );
 
-            $this->response = $client->getIASR(['iaNumber' => $number]);
+                $this->response = $client->getIASR(['iaNumber' => $number]);
 
-            $this->dataMapper = $this->dataMapperContainer->newWIPODataMapper();
-            $output           = $this->dataMapper->setResponse($this->response)->getSearchResult();
+                $this->dataMapper = $this->dataMapperContainer->newWIPODataMapper();
+                $output           = $this->dataMapper->setResponse($this->response)->getSearchResult();
 
-        } else {
-            $this->error = SearchError::fromString("Number was not matched, not a WIPO compliant number");
+            } else {
+                $this->error = SearchError::fromString("Number was not matched, not a WIPO compliant number");
 
-            return false;
+                return false;
+            }
+        } catch (\Exception $e) {
+            return SearchError::fromString('Error from WIPO service: ' . $e->getMessage());
         }
-
         return $output;
     }
 

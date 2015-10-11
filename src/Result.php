@@ -33,7 +33,7 @@ class Result
     private $frenchTitle;
     private $germanTitle;
 
-    private $citations;
+    private $citations = [];
 
     private $priorities;
 

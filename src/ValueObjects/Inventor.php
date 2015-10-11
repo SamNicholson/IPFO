@@ -23,6 +23,7 @@ class Inventor implements PartyMemberInterface
      */
     public function setName($name)
     {
+        $name = rtrim($name, ",");
         $this->name = $name;
     }
 

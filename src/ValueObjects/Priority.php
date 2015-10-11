@@ -15,6 +15,11 @@ class Priority
      */
     public function getCountry()
     {
+        if (is_null($this->country)) {
+            if (ctype_alpha(substr($this->number, 0, 2))) {
+                return substr($this->number, 0, 2);
+            }
+        }
         return $this->country;
     }
 

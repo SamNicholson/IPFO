@@ -1,6 +1,6 @@
 Vendor
-.idea/
 Config/
 Samples/
 composer.phar
 phpunit.phar
+.idea

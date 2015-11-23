@@ -67,11 +67,11 @@ class ResultTest extends PHPUnit_Framework_TestCase
 
         //Inventors
         $result['inventors'] = [
-            ['name' => 'MAPLES, BRIAN, K,', 'sequence' => '1'],
-            ['name' => 'HOLMBERG, REBECCA, C,', 'sequence' => '2'],
-            ['name' => 'MILLER, ANDREW, P,', 'sequence' => '3'],
-            ['name' => 'PROVINS, JARROD,', 'sequence' => '4'],
-            ['name' => 'ROTH, RICHARD,', 'sequence' => '5'],
+            ['name' => 'MAPLES, BRIAN, K', 'sequence' => '1'],
+            ['name' => 'HOLMBERG, REBECCA, C', 'sequence' => '2'],
+            ['name' => 'MILLER, ANDREW, P', 'sequence' => '3'],
+            ['name' => 'PROVINS, JARROD', 'sequence' => '4'],
+            ['name' => 'ROTH, RICHARD', 'sequence' => '5'],
             ['name' => 'MANDELL, JEFFREY', 'sequence' => '6'],
         ];
 

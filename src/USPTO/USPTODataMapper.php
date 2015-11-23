@@ -33,7 +33,9 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
 
         $re = "/(?i)<b>[\\s]*(\\S{0,10}? \\d{1,2}?, \\d{4}?)[\\s].*<\\/b>/";
         preg_match($re, $this->unmappedResponse, $matches);
-        $result->setGrantDate(DateTime::createFromFormat('F d, Y', $matches[1])->format('Y-m-d'));
+        if (!is_bool($matches[1])) {
+            $result->setGrantDate(DateTime::createFromFormat('F d, Y', $matches[1])->format('Y-m-d'));
+        }
         $result->setGrantCountry('US');
     }
 

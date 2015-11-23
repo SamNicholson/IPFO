@@ -4,6 +4,8 @@ namespace SNicholson\IPFO\USPTO;
 
 use GuzzleHttp;
 use SNicholson\IPFO\Abstracts\Request;
+use SNicholson\IPFO\Exceptions\DataMappingException;
+use SNicholson\IPFO\Exceptions\InvalidAddressException;
 use SNicholson\IPFO\Searches\SearchError;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
@@ -39,14 +41,14 @@ class USPTORequest extends Request
         try {
             //The USPTO redirects you, we need to emulate that redirect by pulling out the
             //new URL target from the initial response
-            $redirectURL = $this->getRedirectURL($requestURI);
+            $redirectURL = $this->getRedirectURL($requestURI, $number);
 
             $this->response = $this->getPatentData($redirectURL);
 
             $this->dataMapper = $this->dataMapperContainer->newUSPTODataMapper();
             $output           = $this->dataMapper->setResponse($this->response)->getSearchResult();
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $this->error = $e->getMessage();
+        } catch (\Exception $e) {
+            $this->error = SearchError::fromString($e->getMessage());
             return false;
         }
         if ($output instanceof SearchError) {
@@ -56,7 +58,7 @@ class USPTORequest extends Request
         return $output;
     }
 
-    private function getRedirectURL($requestURI)
+    private function getRedirectURL($requestURI, $number)
     {
         $client  = new GuzzleHttp\Client();
         $request = $client->createRequest('GET', $requestURI);
@@ -73,7 +75,11 @@ class USPTORequest extends Request
         //Preg match the URL out of the response
         $re = "/CONTENT=\"1;URL=(.*)\"/";
         preg_match($re, $redirectURL, $matches);
-        //TODO perhaps validate this?
+
+        if (empty($matches)) {
+            throw new InvalidAddressException("Unable to locate Patent $number in USPTO database");
+        }
+
         return $matches[1];
     }
 

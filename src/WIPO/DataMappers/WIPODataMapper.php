@@ -1,6 +1,6 @@
 <?php
 
-namespace SNicholson\IPFO\WIPO;
+namespace SNicholson\IPFO\WIPO\DataMappers;
 
 use DateTime;
 use SNicholson\IPFO\Exceptions\DataMappingException;
@@ -100,7 +100,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
                     $applicant->setSequence($sequence);
                 } else if (property_exists($party, 'name')) {
                     $applicant = new Applicant();
-                    $applicant->setName($party->{'name'}->{'name'}->{'_'});
+                    $applicant->setName($party->{'name'}->{'_'});
                     $applicant->setSequence($sequence);
                 }
             }
@@ -118,7 +118,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         //Check to see if inventors entry exists
         $partyCheck = (array)$this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'parties'};
         if (!empty($partyCheck['inventors'])) {
-            foreach ($this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'parties'}->{'inventors'}->{'Inventor'} AS $property => $party) {
+            foreach ($this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'parties'}->{'inventors'}->{'inventor'} AS $property => $party) {
                 $inventor = new Inventor();
                 $inventor->setSequence($sequence);
                 $inventor->setName($party->{'addressbook'}->{'name'}->{'_'});
@@ -134,13 +134,13 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         $priorities = [];
         $sequence = 1;
         foreach ($this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'wo-priority-info'}->{'priority-claim'} AS $property => $priority) {
-            $priority = Priority::fromNumber($priority->{'doc-number'});
-            $priority->setDate($this->parseWIPODate($priority->{'date'}));
-            $priority->setCountry($priority->{'country'});
-            $priorities[] = $priority;
+            $newPriority = Priority::fromNumber($priority->{'doc-number'});
+            $newPriority->setDate($this->parseWIPODate($priority->{'date'}));
+            $newPriority->setCountry($priority->{'country'});
+            $priorities[] = $newPriority;
             $sequence++;
         }
-        $result->setPriorities($priorities);
+        $result->setPriorities(...$priorities);
     }
 
     protected function getTitles(Result &$result)

@@ -14,7 +14,7 @@ class WIPORequest extends Request
 
     private $baseURI = 'http://www.wipo.int/patentscope-webservice/servicesPatentScope?wsdl';
     private $username = 'workanyware';
-    private $password = 'R_tRebru2';
+    private $password = 'eZ3Bay8';
     protected $dataMapper;
     protected $source = 'WIPO';
 

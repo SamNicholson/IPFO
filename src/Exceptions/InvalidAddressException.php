@@ -11,9 +11,4 @@ namespace SNicholson\IPFO\Exceptions;
 
 class InvalidAddressException extends \Exception{
 
-        function __construct($message){
-            echo($message);
-            parent::__construct();
-        }
-
-} 
+}

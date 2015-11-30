@@ -133,14 +133,24 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         //Priorities
         $priorities = [];
         $sequence = 1;
-        foreach ($this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'wo-priority-info'}->{'priority-claim'} AS $property => $priority) {
-            $newPriority = Priority::fromNumber($priority->{'doc-number'});
-            $newPriority->setDate($this->parseWIPODate($priority->{'date'}));
-            $newPriority->setCountry($priority->{'country'});
-            $priorities[] = $newPriority;
-            $sequence++;
+        $priorityClaim = $this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'wo-priority-info'}->{'priority-claim'};
+        if (is_array($priorityClaim)) {
+            foreach ($priorityClaim AS $property => $priority) {
+                $priorities[] = $this->getPriorityFromWIPOFormat($priority);
+                $sequence++;
+            }
+        } else if (is_object($priorityClaim)) {
+            $priorities[] = $this->getPriorityFromWIPOFormat($priorityClaim);
         }
         $result->setPriorities(...$priorities);
+    }
+
+    private function getPriorityFromWIPOFormat($priority)
+    {
+        $newPriority = Priority::fromNumber($priority->{'doc-number'});
+        $newPriority->setDate($this->parseWIPODate($priority->{'date'}));
+        $newPriority->setCountry($priority->{'country'});
+        return $newPriority;
     }
 
     protected function getTitles(Result &$result)

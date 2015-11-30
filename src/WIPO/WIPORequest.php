@@ -1,6 +1,6 @@
 <?php
 
-namespace SNicholson\IPFO\Requests;
+namespace SNicholson\IPFO\WIPO;
 
 use SNicholson\IPFO\Abstracts\Request;
 use SNicholson\IPFO\Exceptions\DataMappingException;
@@ -76,5 +76,6 @@ class WIPORequest extends Request
      */
     public function getDataSource()
     {
+        return SearchSource::WIPO();
     }
 }

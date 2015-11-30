@@ -5,7 +5,7 @@ namespace SNicholson\IPFO\Containers;
 use SNicholson\IPFO\EPO\EPORequest;
 use SNicholson\IPFO\USPTO\USPTORequest;
 use SNicholson\IPFO\Requests\USPTOTrademarkRequest;
-use SNicholson\IPFO\Requests\WIPORequest;
+use SNicholson\IPFO\WIPO\WIPORequest;
 
 class RequestsContainer
 {

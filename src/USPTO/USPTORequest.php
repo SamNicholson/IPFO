@@ -55,6 +55,7 @@ class USPTORequest extends Request
             $this->error = $output;
             return false;
         }
+        $output->setSource(SearchSource::USPTO());
         return $output;
     }
 

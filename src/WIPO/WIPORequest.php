@@ -49,6 +49,7 @@ class WIPORequest extends Request
             $this->error = $output;
             return false;
         }
+        $output->setSource(SearchSource::WIPO());
         return $output;
     }
 

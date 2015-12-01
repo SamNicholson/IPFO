@@ -56,7 +56,7 @@ class WIPORequest extends Request
     protected function checkNumberFormat($number, $numberType)
     {
 
-        $re = "/[PCT]{0,3}[\\/]{0,1}(?<country>[a-zA-Z]*)(?<year>[0-9]{0,4})[\\/]{0,1}(?<number>[0-9]*)/";
+        $re = "/(?:PCT)?\\/?(?<country>[a-zA-Z]{2})(?<year>[0-9]{0,4})\\/?(?<number>[0-9]{6})/";
 
         preg_match_all($re, $number, $matches);
 

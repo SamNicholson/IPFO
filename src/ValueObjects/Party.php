@@ -6,7 +6,7 @@ use SNicholson\IPFO\Interfaces\PartyMemberInterface;
 
 class Party
 {
-    private $members;
+    private $members = [];
 
     public function addMember(PartyMemberInterface $partyMember)
     {

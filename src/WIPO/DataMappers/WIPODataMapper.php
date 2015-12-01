@@ -85,44 +85,54 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
 
     protected function getParties(Result &$result)
     {
-        //Applicants
+        $inventors = new Party();
         $applicants = new Party();
-        $sequence = 1;
+        $applicantSequence = 1;
+        $inventorSequence = 1;
         foreach ($this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'parties'}->{'applicants'}->{'applicant'} AS $property => $party) {
             if (is_array($party)) {
                 $applicant = new Applicant();
                 $applicant->setName($party->{'addressbook'}->{'name'}->{'_'});
-                $applicant->setSequence($sequence);
+                $applicant->setSequence($applicantSequence);
             } else {
                 if (property_exists($party, 'addressbook')) {
                     $applicant = new Applicant();
                     $applicant->setName($party->{'addressbook'}->{'name'}->{'_'});
-                    $applicant->setSequence($sequence);
+                    $applicant->setSequence($applicantSequence);
                 } else if (property_exists($party, 'name')) {
                     $applicant = new Applicant();
                     $applicant->setName($party->{'name'}->{'_'});
-                    $applicant->setSequence($sequence);
+                    $applicant->setSequence($applicantSequence);
                 }
             }
+
+            //Are these applicant inventors?
+            if (property_exists($party, 'app-type')) {
+                if ($party->{'app-type'} == 'applicant-inventor') {
+                    $inventor = new Inventor();
+                    $inventor->setSequence($applicantSequence);
+                    $inventor->setName($party->{'addressbook'}->{'name'}->{'_'});
+                    $inventors->addMember($inventor);
+                    $inventorSequence++;
+                }
+            }
+
             if (!empty($applicant)) {
                 $applicants->addMember($applicant);
                 $applicant = null;
-                $sequence++;
+                $applicantSequence++;
             }
         }
         $result->setApplicants($applicants);
-        //Inventors
-        $inventors = new Party();
-        $sequence = 1;
 
         //Check to see if inventors entry exists
         $partyCheck = (array)$this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'parties'};
         if (!empty($partyCheck['inventors'])) {
             foreach ($this->unmappedResponse->{'wo-international-application-status'}->{'wo-bibliographic-data'}->{'parties'}->{'inventors'}->{'inventor'} AS $property => $party) {
                 $inventor = new Inventor();
-                $inventor->setSequence($sequence);
+                $inventor->setSequence($inventorSequence);
                 $inventor->setName($party->{'addressbook'}->{'name'}->{'_'});
-                $sequence++;
+                $inventorSequence++;
             }
         }
         $result->setInventors($inventors);

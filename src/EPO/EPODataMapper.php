@@ -303,6 +303,23 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                             }
                             $result->addPriority($priorityObject);
                         }
+                    } elseif (isset($priorityFromOffice['document-id'][0]) && empty($result->getPriorities())) {
+                        foreach ($priorityFromOffice['document-id'] as $pKey => $priority) {
+                            $priorityObject = Priority::fromNumber(
+                                $this->findValueFromEPO($priority['doc-number'])
+                            );
+                            if (isset($priority['date'])) {
+                                $priorityObject->setDate(
+                                    $this->transformEPODate($this->findValueFromEPO($priority['date']))
+                                );
+                            }
+                            if (!empty($priority['kind'])) {
+                                $priorityObject->setKind(
+                                    $this->findValueFromEPO($priority['kind'])
+                                );
+                            }
+                            $result->addPriority($priorityObject);
+                        }
                     } elseif (empty($result->getPriorities())) {
                         $priorityObject = Priority::fromNumber(
                             $this->findValueFromEPO($priorityFromOffice['document-id']['doc-number'])

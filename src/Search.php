@@ -4,10 +4,11 @@ namespace SNicholson\IPFO;
 
 use InvalidArgumentException;
 use SNicholson\IPFO\Containers\RequestsContainer;
+use SNicholson\IPFO\Searches\OfficeSearch;
 use SNicholson\IPFO\Searches\PatentSearch;
 use SNicholson\IPFO\Searches\TrademarkSearch;
 use SNicholson\IPFO\Interfaces\SearchInterface;
-use SNicholson\IPFO\ValueObjects\IPType;
+use SNicholson\IPFO\ValueObjects\SearchType;
 use SNicholson\IPFO\ValueObjects\Number;
 
 /**
@@ -33,7 +34,7 @@ class Search
      */
     public static function tradeMark()
     {
-        return new Search(IPType::tradeMark());
+        return new Search(SearchType::tradeMark());
     }
 
     /**
@@ -43,15 +44,30 @@ class Search
      */
     public static function patent()
     {
-        return new Search(IPType::patent());
+        return new Search(SearchType::patent());
+    }
+
+    public static function EPO()
+    {
+        return new Search(SearchType::EPO());
+    }
+
+    public static function WIPO()
+    {
+        return new Search(SearchType::WIPO());
+    }
+
+    public static function USPTO()
+    {
+        return new Search(SearchType::USPTO());
     }
 
     /**
      * Sets the IP type for the Search, e.g. Patent or Trademark
      *
-     * @param IPType $IPType
+     * @param SearchType $IPType
      */
-    private function __construct(IPType $IPType)
+    private function __construct(SearchType $IPType)
     {
         $this->IPType = $IPType;
     }
@@ -124,13 +140,19 @@ class Search
      */
     private function getSearch($search)
     {
+        $requestsContainer = new RequestsContainer();
         if ($search === null) {
             switch ($this->getIPType()) {
-                case IPType::TRADEMARK:
-                    return new TrademarkSearch(new RequestsContainer());
+                case SearchType::TRADEMARK:
+                    return new TrademarkSearch($requestsContainer);
                     break;
-                case IPType::PATENT:
-                    return new PatentSearch(new RequestsContainer());
+                case SearchType::PATENT:
+                    return new PatentSearch($requestsContainer);
+                    break;
+                case SearchType::EPO:
+                case SearchType::WIPO:
+                case SearchType::USPTO:
+                    return new OfficeSearch($requestsContainer, $this->getIPType());
                     break;
                 default:
                     throw new InvalidArgumentException("Invalid Search Interface Provided");

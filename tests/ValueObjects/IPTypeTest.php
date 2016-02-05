@@ -2,7 +2,7 @@
 
 namespace src\Tests\ValueObjects;
 
-use SNicholson\IPFO\ValueObjects\IPType;
+use SNicholson\IPFO\ValueObjects\SearchType;
 
 class IPTypeTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,7 +12,7 @@ class IPTypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPatentReturnsStringCorrectly()
     {
-        $this->assertEquals(IPType::PATENT, IPType::patent()->__toString());
+        $this->assertEquals(SearchType::PATENT, SearchType::patent()->__toString());
     }
 
     /**
@@ -20,6 +20,6 @@ class IPTypeTest extends \PHPUnit_Framework_TestCase
      */
     public function testTradeMarkReturnsStringCorrectly()
     {
-        $this->assertEquals(IPType::TRADEMARK, IPType::tradeMark()->__toString());
+        $this->assertEquals(SearchType::TRADEMARK, SearchType::tradeMark()->__toString());
     }
 }

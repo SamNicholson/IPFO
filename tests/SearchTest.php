@@ -4,7 +4,7 @@ namespace src\Tests;
 
 use SNicholson\IPFO\Result;
 use SNicholson\IPFO\Search;
-use SNicholson\IPFO\ValueObjects\IPType;
+use SNicholson\IPFO\ValueObjects\SearchType;
 use SNicholson\IPFO\ValueObjects\Number;
 
 class SearchTest extends \PHPUnit_Framework_TestCase
@@ -28,7 +28,7 @@ class SearchTest extends \PHPUnit_Framework_TestCase
     public function testSearchByTradeMarkApplicationSetsCorrectObjects()
     {
         $search = Search::tradeMark()->byApplicationNumber('EP12345');
-        $this->assertEquals(IPType::tradeMark(), $search->getIPType());
+        $this->assertEquals(SearchType::tradeMark(), $search->getIPType());
         $this->assertEquals(Number::application('EP12345'), $search->getNumber());
     }
 
@@ -38,7 +38,7 @@ class SearchTest extends \PHPUnit_Framework_TestCase
     public function testSearchByPatentApplicationSetsCorrectObjects()
     {
         $search = Search::patent()->byApplicationNumber('EP12345');
-        $this->assertEquals(IPType::patent(), $search->getIPType());
+        $this->assertEquals(SearchType::patent(), $search->getIPType());
         $this->assertEquals(Number::application('EP12345'), $search->getNumber());
     }
 
@@ -48,7 +48,7 @@ class SearchTest extends \PHPUnit_Framework_TestCase
     public function testSearchByTradeMarkPublicationSetsCorrectObjects()
     {
         $search = Search::tradeMark()->byPublicationNumber('EP12345');
-        $this->assertEquals(IPType::tradeMark(), $search->getIPType());
+        $this->assertEquals(SearchType::tradeMark(), $search->getIPType());
         $this->assertEquals(Number::publication('EP12345'), $search->getNumber());
     }
 
@@ -58,7 +58,7 @@ class SearchTest extends \PHPUnit_Framework_TestCase
     public function testSearchByPatentPublicationSetsCorrectObjects()
     {
         $search = Search::patent()->byPublicationNumber('EP12345');
-        $this->assertEquals(IPType::patent(), $search->getIPType());
+        $this->assertEquals(SearchType::patent(), $search->getIPType());
         $this->assertEquals(Number::publication('EP12345'), $search->getNumber());
     }
 

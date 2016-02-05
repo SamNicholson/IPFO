@@ -5,7 +5,7 @@ namespace SNicholson\IPFO\Searches;
 use SNicholson\IPFO\Abstracts\Search;
 use SNicholson\IPFO\Interfaces\SearchInterface;
 
-class PatentSearch extends Search implements SearchInterface
+class PatentSearch extends Search
 {
 
     protected $requestNumber = '';

@@ -3,11 +3,12 @@
 namespace SNicholson\IPFO\Abstracts;
 
 use SNicholson\IPFO\Containers\RequestsContainer;
+use SNicholson\IPFO\Interfaces\SearchInterface;
 use SNicholson\IPFO\Result;
 use SNicholson\IPFO\ValueObjects\Number;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
-abstract class Search
+abstract class Search implements SearchInterface
 {
 
     protected $requestsContainer;

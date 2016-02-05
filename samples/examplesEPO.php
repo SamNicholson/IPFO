@@ -3,7 +3,10 @@ use SNicholson\IPFO\Search;
 
 require __DIR__ . '/start.php';
 
-//Establish the request object
-$search = Search::patent()->byPublicationNumber('EP1452484');
+//Run a search for Patents on Publication Number
+$search = Search::patent()->byPublicationNumber('EP1452484')->run();
 
-var_dump($search->run());
+//Yes, it was that easy
+if ($search->getSuccess()) {
+    echo $search->getResult()->getEnglishTitle();
+}

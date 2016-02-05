@@ -284,8 +284,6 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                 /*
                  * Priorities Data
                  */
-                //TODO fix a bug with these getting picked up, see
-                //http://ops.epo.org/3.1/rest-services/published-data/publication/epodoc/EP2285036/biblio for a sample
                 if (isset($responseResult['bibliographic-data']['priority-claims'])) {
                     $priorityFromOffice = $responseResult['bibliographic-data']['priority-claims']['priority-claim'];
                     if (isset($priorityFromOffice[0]) && empty($result->getPriorities())) {

@@ -93,6 +93,12 @@ class ResultTest extends PHPUnit_Framework_TestCase
             ]
         ];
 
+        //Filing Language
+        $result['languageOfFiling'] = null;
+
+        //Agent
+        $result['agent'] = null;
+
         return $result;
     }
 

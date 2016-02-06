@@ -2,6 +2,7 @@
 
 namespace SNicholson\IPFO;
 
+use SNicholson\IPFO\Agents\Agent;
 use SNicholson\IPFO\ValueObjects\Applicant;
 use SNicholson\IPFO\ValueObjects\Citation;
 use SNicholson\IPFO\ValueObjects\Inventor;
@@ -37,8 +38,13 @@ class Result
 
     private $priorities;
 
+    private $languageOfFiling;
+
     /** @var  SearchSource */
     private $source;
+
+    /** @var Agent */
+    private $agent;
 
     /**
      * @return mixed
@@ -386,31 +392,70 @@ class Result
     public function toArray()
     {
         return [
-            'source' => $this->getSource()->__toString(),
-            'titles' => [
+            'source'           => $this->getSource()->__toString(),
+            'titles'           => [
                 'english' => $this->getEnglishTitle(),
-                'french' => $this->getFrenchTitle(),
-                'german' => $this->getGermanTitle()
+                'french'  => $this->getFrenchTitle(),
+                'german'  => $this->getGermanTitle()
             ],
-            'application' => [
+            'application'      => [
                 'country' => $this->getApplicationCountry(),
-                'date' => $this->getApplicationDate(),
-                'number' => $this->getApplicationNumber()
+                'date'    => $this->getApplicationDate(),
+                'number'  => $this->getApplicationNumber()
             ],
-            'publication' => [
+            'publication'      => [
                 'country' => $this->getPublicationCountry(),
-                'date' => $this->getPublicationDate(),
-                'number' => $this->getPublicationNumber()
+                'date'    => $this->getPublicationDate(),
+                'number'  => $this->getPublicationNumber()
             ],
-            'grant' => [
+            'grant'            => [
                 'country' => $this->getGrantCountry(),
-                'date' => $this->getGrantDate(),
-                'number' => $this->getGrantNumber()
+                'date'    => $this->getGrantDate(),
+                'number'  => $this->getGrantNumber()
             ],
-            'priorities' => $this->getPriorities(true),
-            'applicants' => $this->getApplicants(true),
-            'inventors' => $this->getInventors(true),
-            'citations' => $this->getCitations(true)
+            'priorities'       => $this->getPriorities(true),
+            'applicants'       => $this->getApplicants(true),
+            'inventors'        => $this->getInventors(true),
+            'citations'        => $this->getCitations(true),
+            'languageOfFiling' => $this->getLanguageOfFiling(),
+            'agent'            => $this->getAgent(true)
         ];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguageOfFiling()
+    {
+        return $this->languageOfFiling;
+    }
+
+    /**
+     * @param mixed $languageOfFiling
+     */
+    public function setLanguageOfFiling($languageOfFiling)
+    {
+        $this->languageOfFiling = $languageOfFiling;
+    }
+
+    /**
+     * @param $asArray
+     *
+     * @return Agent
+     */
+    public function getAgent($asArray)
+    {
+        if ($this->agent instanceOf Agent && $asArray) {
+            return $this->agent->toArray();
+        }
+        return $this->agent;
+    }
+
+    /**
+     * @param Agent $agent
+     */
+    public function setAgent($agent)
+    {
+        $this->agent = $agent;
     }
 }

@@ -229,7 +229,7 @@ class Result
     /**
      * @param bool $inArrayFormat
      *
-     * @return mixed
+     * @return Party|Inventor[]
      */
     public function getInventors($inArrayFormat = false)
     {

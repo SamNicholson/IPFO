@@ -6,10 +6,10 @@ use DateTime;
 use SNicholson\IPFO\Exceptions\DataMappingException;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
-use SNicholson\IPFO\Result;
-use SNicholson\IPFO\ValueObjects\Applicant;
-use SNicholson\IPFO\ValueObjects\Inventor;
-use SNicholson\IPFO\ValueObjects\Party;
+use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\Parties\Applicant;
+use SNicholson\IPFO\Parties\Inventor;
+use SNicholson\IPFO\Parties\Party;
 use SNicholson\IPFO\ValueObjects\Priority;
 
 class WIPODataMapper extends DataMapper implements DataMapperInterface
@@ -17,7 +17,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
 
     public function mapData()
     {
-        $result = new Result();
+        $result = new IPRight();
         $this->getPublication($result);
         $this->getApplication($result);
         $this->getParties($result);
@@ -27,7 +27,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         return $result;
     }
 
-    protected function getPublication(Result &$result)
+    protected function getPublication(IPRight &$result)
     {
 
         $result->setPublicationNumber(
@@ -55,7 +55,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         );
     }
 
-    protected function getApplication(Result &$result)
+    protected function getApplication(IPRight &$result)
     {
 
         $result->setApplicationNumber(
@@ -83,7 +83,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         );
     }
 
-    protected function getParties(Result &$result)
+    protected function getParties(IPRight &$result)
     {
         $inventors = new Party();
         $applicants = new Party();
@@ -138,7 +138,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         $result->setInventors($inventors);
     }
 
-    protected function getPriorities(Result &$result)
+    protected function getPriorities(IPRight &$result)
     {
         //Priorities
         $priorities = [];
@@ -163,7 +163,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         return $newPriority;
     }
 
-    protected function getTitles(Result &$result)
+    protected function getTitles(IPRight &$result)
     {
 
     }

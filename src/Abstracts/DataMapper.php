@@ -2,9 +2,9 @@
 
 namespace SNicholson\IPFO\Abstracts;
 
-use SNicholson\IPFO\Result;
+use SNicholson\IPFO\IPRight;
 use SNicholson\IPFO\Searches\SearchError;
-use SNicholson\IPFO\ValueObjects\Party;
+use SNicholson\IPFO\Parties\Party;
 
 /**
  * @property mixed mapped
@@ -27,7 +27,7 @@ abstract class DataMapper
     }
 
     /**
-     * @return SearchError|Result
+     * @return SearchError|IPRight
      */
     public function getSearchResult()
     {

@@ -1,16 +1,17 @@
 <?php
 
-namespace SNicholson\IPFO\Agents;
+namespace SNicholson\IPFO\Parties;
 
-class Agent
+abstract class PartyMember implements PartyMemberInterface
 {
-    private $name;
-    private $reference;
-    private $email;
-    private $phone;
-    private $fax;
-    /** @var AgentAddress */
-    private $address;
+    protected $sequence;
+    protected $name;
+    protected $reference;
+    protected $email;
+    protected $phone;
+    protected $fax;
+    /** @var PartyMemberAddress */
+    protected $address;
 
     /**
      * @return mixed
@@ -93,35 +94,44 @@ class Agent
     }
 
     /**
-     * @return AgentAddress
+     * @return PartyMemberAddress
      */
     public function getAddress()
     {
         if (is_null($this->address)) {
-            $this->address = new AgentAddress();
+            $this->address = new PartyMemberAddress();
         }
         return $this->address;
     }
 
     /**
-     * @param AgentAddress $address
+     * @param PartyMemberAddress $address
      */
-    public function setAddress(AgentAddress $address)
+    public function setAddress(PartyMemberAddress $address)
     {
         $this->address = $address;
     }
-
-
 
     public function toArray()
     {
         return [
             'name'      => $this->getName(),
+            'sequence'  => $this->getSequence(),
             'reference' => $this->getReference(),
             'email'     => $this->getEmail(),
             'phone'     => $this->getPhone(),
             'fax'       => $this->getFax(),
             'address'   => $this->getAddress()->toArray(),
         ];
+    }
+
+    public function setSequence($sequence)
+    {
+        $this->sequence = $sequence;
+    }
+
+    public function getSequence()
+    {
+        return $this->sequence;
     }
 }

@@ -4,7 +4,7 @@ namespace SNicholson\IPFO\Abstracts;
 
 use SNicholson\IPFO\Containers\RequestsContainer;
 use SNicholson\IPFO\Interfaces\SearchInterface;
-use SNicholson\IPFO\Result;
+use SNicholson\IPFO\IPRight;
 use SNicholson\IPFO\ValueObjects\Number;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
@@ -35,7 +35,8 @@ abstract class Search implements SearchInterface
 
     /**
      * @param Number $number
-     * @return bool|Result
+     *
+*@return bool|IPRight
      */
     public function numberSearch(Number $number)
     {

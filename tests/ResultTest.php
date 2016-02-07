@@ -1,10 +1,10 @@
 <?php
 
-use SNicholson\IPFO\Result;
-use SNicholson\IPFO\ValueObjects\Applicant;
+use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\Parties\Applicant;
 use SNicholson\IPFO\ValueObjects\Citation;
-use SNicholson\IPFO\ValueObjects\Inventor;
-use SNicholson\IPFO\ValueObjects\Party;
+use SNicholson\IPFO\Parties\Inventor;
+use SNicholson\IPFO\Parties\Party;
 use SNicholson\IPFO\ValueObjects\Priority;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
@@ -62,17 +62,101 @@ class ResultTest extends PHPUnit_Framework_TestCase
 
         //Applicants
         $result['applicants'] = [
-            ['name' => 'IONIAN TECHNOLOGIES, INC', 'sequence' => '1']
+            [
+                'name'      => 'IONIAN TECHNOLOGIES, INC',
+                'sequence'  => '1',
+                'reference' => null,
+                'email'     => null,
+                'phone'     => null,
+                'fax'       => null,
+                'address'   => [
+                    'address'  => null,
+                    'postCode' => null,
+                    'country'  => null
+                ]
+            ]
         ];
 
         //Inventors
         $result['inventors'] = [
-            ['name' => 'MAPLES, BRIAN, K', 'sequence' => '1'],
-            ['name' => 'HOLMBERG, REBECCA, C', 'sequence' => '2'],
-            ['name' => 'MILLER, ANDREW, P', 'sequence' => '3'],
-            ['name' => 'PROVINS, JARROD', 'sequence' => '4'],
-            ['name' => 'ROTH, RICHARD', 'sequence' => '5'],
-            ['name' => 'MANDELL, JEFFREY', 'sequence' => '6'],
+            [
+                'name'      => 'MAPLES, BRIAN, K',
+                'sequence'  => '1',
+                'reference' => null,
+                'email'     => null,
+                'phone'     => null,
+                'fax'       => null,
+                'address' => [
+                    'address'  => null,
+                    'postCode' => null,
+                    'country'  => null
+                ]
+            ],
+            [
+                'name'      => 'HOLMBERG, REBECCA, C',
+                'sequence'  => '2',
+                'reference' => null,
+                'email'     => null,
+                'phone'     => null,
+                'fax'       => null,
+                'address' => [
+                    'address'  => null,
+                    'postCode' => null,
+                    'country'  => null
+                ]
+            ],
+            [
+                'name'      => 'MILLER, ANDREW, P',
+                'sequence'  => '3',
+                'reference' => null,
+                'email'     => null,
+                'phone'     => null,
+                'fax'       => null,
+                'address' => [
+                    'address'  => null,
+                    'postCode' => null,
+                    'country'  => null
+                ]
+            ],
+            [
+                'name'      => 'PROVINS, JARROD',
+                'sequence'  => '4',
+                'reference' => null,
+                'email'     => null,
+                'phone'     => null,
+                'fax'       => null,
+                'address' => [
+                    'address'  => null,
+                    'postCode' => null,
+                    'country'  => null
+                ]
+            ],
+            [
+                'name'      => 'ROTH, RICHARD',
+                'sequence'  => '5',
+                'reference' => null,
+                'email'     => null,
+                'phone'     => null,
+                'fax'       => null,
+                'address' => [
+                    'address'  => null,
+                    'postCode' => null,
+                    'country'  => null
+                ]
+            ],
+            [
+                'name'      => 'MANDELL, JEFFREY',
+                'sequence'  => '6',
+                'reference' => null,
+                'email'     => null,
+                'phone'     => null,
+                'fax'       => null,
+                'address' => [
+                    'address'  => null,
+                    'postCode' => null,
+                    'country'  => null
+                ]
+            ],
         ];
 
         //Citations
@@ -97,7 +181,7 @@ class ResultTest extends PHPUnit_Framework_TestCase
         $result['languageOfFiling'] = null;
 
         //Agent
-        $result['agent'] = null;
+        $result['agent'] = [];
 
         return $result;
     }
@@ -105,7 +189,7 @@ class ResultTest extends PHPUnit_Framework_TestCase
     private function getSampleResult()
     {
         //Setup the expected publication result
-        $result = new Result();
+        $result = new IPRight();
         $result->setSource(SearchSource::EPO());
 
         //titles

@@ -28,10 +28,10 @@ class SearchResults
     }
 
     /**
-     * @param Result $response
+     * @param IPRight $response
      *
      */
-    public function addResponse(Result $response)
+    public function addResponse(IPRight $response)
     {
         $this->responses[] = $response;
     }
@@ -42,7 +42,7 @@ class SearchResults
     }
 
     /**
-     * @return Result
+     * @return IPRight
      */
     public function getResult()
     {

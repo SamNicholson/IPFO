@@ -1,8 +1,8 @@
 <?php
 
-namespace SNicholson\IPFO\Agents;
+namespace SNicholson\IPFO\Parties;
 
-class AgentAddress
+class PartyMemberAddress
 {
     private $address;
     private $postCode;

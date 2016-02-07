@@ -1,6 +1,6 @@
 <?php
 
-use SNicholson\IPFO\Result;
+use SNicholson\IPFO\IPRight;
 use SNicholson\IPFO\ValueObjects\Citation;
 
 class USPTODataMapperTest extends PHPUnit_Framework_TestCase
@@ -62,7 +62,7 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
 
     private function getExpectedPublication()
     {
-        $result = new Result();
+        $result = new IPRight();
         //Application
         $result->setApplicationDate('2003-09-02');
         $result->setApplicationNumber('10/653,633');
@@ -74,33 +74,33 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
         //Titles
         $result->setEnglishTitle('System for cooling multiple logic molecules');
         //Inventors
-        $inventors = new \SNicholson\IPFO\ValueObjects\Party();
-        $inventor1 = new \SNicholson\IPFO\ValueObjects\Inventor();
+        $inventors = new \SNicholson\IPFO\Parties\Party();
+        $inventor1 = new \SNicholson\IPFO\Parties\Inventor();
         $inventor1->setName('Goth; Gary F.');
         $inventor1->setSequence(1);
         $inventors->addMember($inventor1);
-        $inventor2 = new \SNicholson\IPFO\ValueObjects\Inventor();
+        $inventor2 = new \SNicholson\IPFO\Parties\Inventor();
         $inventor2->setName('Kearney; Daniel J.');
         $inventor2->setSequence(2);
         $inventors->addMember($inventor2);
-        $inventor3 = new \SNicholson\IPFO\ValueObjects\Inventor();
+        $inventor3 = new \SNicholson\IPFO\Parties\Inventor();
         $inventor3->setName('Makowicki; Robert P.');
         $inventor3->setSequence(3);
         $inventors->addMember($inventor3);
-        $inventor4 = new \SNicholson\IPFO\ValueObjects\Inventor();
+        $inventor4 = new \SNicholson\IPFO\Parties\Inventor();
         $inventor4->setName('McClafferty; W. David');
         $inventor4->setSequence(4);
         $inventors->addMember($inventor4);
-        $inventor5 = new \SNicholson\IPFO\ValueObjects\Inventor();
+        $inventor5 = new \SNicholson\IPFO\Parties\Inventor();
         $inventor5->setName('Porter; Donald W.');
         $inventor5->setSequence(5);
         $inventors->addMember($inventor5);
         $result->setInventors($inventors);
         //Applicants
-        $applicant = new \SNicholson\IPFO\ValueObjects\Applicant();
+        $applicant = new \SNicholson\IPFO\Parties\Applicant();
         $applicant->setName('International Business Machines Corporation');
         $applicant->setSequence(1);
-        $applicants = new \SNicholson\IPFO\ValueObjects\Party();
+        $applicants = new \SNicholson\IPFO\Parties\Party();
         $applicants->addMember($applicant);
         $result->setApplicants($applicants);
 
@@ -111,7 +111,7 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
         return $result;
     }
 
-    private function getNonPatentLiteraturePublicationSample(Result &$result)
+    private function getNonPatentLiteraturePublicationSample(IPRight &$result)
     {
         $npl = [
             ['text' => '0 148 102', 'date' => 'Jul 1985', 'country' => 'EP'],
@@ -127,7 +127,7 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
      * @param $result
      * @return mixed
      */
-    private function getPatentCitationsForPublicationSample(Result &$result)
+    private function getPatentCitationsForPublicationSample(IPRight &$result)
     {
         //Citations
         $patentCitations = [

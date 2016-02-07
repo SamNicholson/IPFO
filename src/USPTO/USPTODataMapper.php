@@ -5,18 +5,18 @@ namespace SNicholson\IPFO\USPTO;
 use DateTime;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
-use SNicholson\IPFO\Result;
-use SNicholson\IPFO\ValueObjects\Applicant;
+use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\Parties\Applicant;
 use SNicholson\IPFO\ValueObjects\Citation;
-use SNicholson\IPFO\ValueObjects\Inventor;
-use SNicholson\IPFO\ValueObjects\Party;
+use SNicholson\IPFO\Parties\Inventor;
+use SNicholson\IPFO\Parties\Party;
 
 class USPTODataMapper extends DataMapper implements DataMapperInterface
 {
 
     public function mapData()
     {
-        $result = new Result();
+        $result = new IPRight();
         $this->getGrant($result);
         $this->getApplication($result);
         $this->getParties($result);
@@ -25,7 +25,7 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
         return $result;
     }
 
-    protected function getGrant(Result &$result)
+    protected function getGrant(IPRight &$result)
     {
         $re = "/(?i)#h2[\\S\\s]*?<\\/b>([\\S\\s]*?)<\\/b>/";
         preg_match($re, $this->unmappedResponse, $matches);
@@ -41,7 +41,7 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
         $result->setGrantCountry('US');
     }
 
-    protected function getApplication(Result &$result)
+    protected function getApplication(IPRight &$result)
     {
         //Application number
         $re = "/(?i)Appl\\. No\\.:[\\S\\s]{0,150}<b>([\\S\\s]{0,15})<\\/b>/";
@@ -56,7 +56,7 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
         $result->setApplicationCountry('US');
     }
 
-    protected function getParties(Result &$result)
+    protected function getParties(IPRight &$result)
     {
         //Inventors, get a list of all of them
         $re = "/(?i)<tr>[\\s\\S]*?Inventors:([\\s\\S]*?<\\/tr>)/";
@@ -91,14 +91,14 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
         $result->setApplicants($applicants);
     }
 
-    protected function getTitles(Result &$result)
+    protected function getTitles(IPRight &$result)
     {
         $re = "/(?i)<FONT size=\\\"\\+1\\\">([\\S\\s]*)<\\/FONT>/";
         preg_match($re, $this->unmappedResponse, $matches);
         $result->setEnglishTitle(trim($matches[1]));
     }
 
-    protected function getCitations(Result &$result)
+    protected function getCitations(IPRight &$result)
     {
         //Patent Citations
         $re = "/U.S. Patent Documents([\\s\\S]*)Foreign/";

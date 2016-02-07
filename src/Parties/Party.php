@@ -1,8 +1,8 @@
 <?php
 
-namespace SNicholson\IPFO\ValueObjects;
+namespace SNicholson\IPFO\Parties;
 
-use SNicholson\IPFO\Interfaces\PartyMemberInterface;
+use SNicholson\IPFO\Parties\PartyMemberInterface;
 
 class Party
 {

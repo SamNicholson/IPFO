@@ -10,8 +10,8 @@ class AgentTest extends PHPUnit_Framework_TestCase
 {
     public function testToArray()
     {
-        $agent = new \SNicholson\IPFO\Agents\Agent();
-        $address = new \SNicholson\IPFO\Agents\AgentAddress();
+        $agent = new \SNicholson\IPFO\Parties\Agent();
+        $address = new \SNicholson\IPFO\Parties\PartyMemberAddress();
         $address->setAddress('1 some street');
         $agent->setAddress($address);
         $agent->setName('Bob Jones');
@@ -20,6 +20,7 @@ class AgentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(
             [
                 'name'      => 'Bob Jones',
+                'sequence'  => '',
                 'reference' => '',
                 'email'     => 'bob@jones.com',
                 'phone'     => '',

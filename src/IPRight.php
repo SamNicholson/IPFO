@@ -2,15 +2,15 @@
 
 namespace SNicholson\IPFO;
 
-use SNicholson\IPFO\Agents\Agent;
-use SNicholson\IPFO\ValueObjects\Applicant;
+use SNicholson\IPFO\Parties\Agent;
+use SNicholson\IPFO\Parties\Applicant;
 use SNicholson\IPFO\ValueObjects\Citation;
-use SNicholson\IPFO\ValueObjects\Inventor;
-use SNicholson\IPFO\ValueObjects\Party;
+use SNicholson\IPFO\Parties\Inventor;
+use SNicholson\IPFO\Parties\Party;
 use SNicholson\IPFO\ValueObjects\Priority;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
-class Result
+class IPRight
 {
 
     private $applicationDate;
@@ -43,8 +43,15 @@ class Result
     /** @var  SearchSource */
     private $source;
 
-    /** @var Agent */
-    private $agent;
+    /** @var Party */
+    private $agents;
+
+    public function __construct()
+    {
+        $this->applicants = new Party();
+        $this->inventors = new Party();
+        $this->agents = new Party();
+    }
 
     /**
      * @return mixed
@@ -209,7 +216,7 @@ class Result
     /**
      * @param bool $inArrayFormat
      *
-     * @return mixed
+     * @return Party
      */
     public function getApplicants($inArrayFormat = false)
     {
@@ -217,7 +224,7 @@ class Result
             $arrayToReturn = [];
             /** @var Applicant $applicant */
             foreach ($this->applicants->getMembers() as $applicant) {
-                $arrayToReturn[] = ['name' => $applicant->getName(), 'sequence' =>$applicant->getSequence()];
+                $arrayToReturn[] = $applicant->toArray();
             }
             return $arrayToReturn;
         }
@@ -235,7 +242,7 @@ class Result
     /**
      * @param bool $inArrayFormat
      *
-     * @return Party|Inventor[]
+     * @return Party
      */
     public function getInventors($inArrayFormat = false)
     {
@@ -243,7 +250,7 @@ class Result
             $arrayToReturn = [];
             /** @var Inventor $inventor */
             foreach ($this->inventors->getMembers() as $inventor) {
-                $arrayToReturn[] = ['name' => $inventor->getName(), 'sequence' =>$inventor->getSequence()];
+                $arrayToReturn[] = $inventor->toArray();
             }
             return $arrayToReturn;
         }
@@ -418,7 +425,7 @@ class Result
             'inventors'        => $this->getInventors(true),
             'citations'        => $this->getCitations(true),
             'languageOfFiling' => $this->getLanguageOfFiling(),
-            'agent'            => $this->getAgent(true)
+            'agent'            => $this->getAgents(true)
         ];
     }
 
@@ -439,23 +446,28 @@ class Result
     }
 
     /**
-     * @param $asArray
+     * @param $inArrayFormat
      *
-     * @return Agent
+     * @return Agent[]|array
      */
-    public function getAgent($asArray)
+    public function getAgents($inArrayFormat)
     {
-        if ($this->agent instanceOf Agent && $asArray) {
-            return $this->agent->toArray();
+        if ($inArrayFormat) {
+            $arrayToReturn = [];
+            /** @var Agent $agent */
+            foreach ($this->agents->getMembers() as $agent) {
+                $arrayToReturn[] = $agent->toArray();
+            }
+            return $arrayToReturn;
         }
-        return $this->agent;
+        return $this->inventors;
     }
 
     /**
-     * @param Agent $agent
+     * @param Party $agents
      */
-    public function setAgent($agent)
+    public function setAgents(Party $agents)
     {
-        $this->agent = $agent;
+        $this->agents = $agents;
     }
 }

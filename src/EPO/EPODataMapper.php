@@ -5,12 +5,12 @@ namespace SNicholson\IPFO\EPO;
 use SNicholson\IPFO\Exceptions\DataMappingException;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
-use SNicholson\IPFO\Result;
+use SNicholson\IPFO\IPRight;
 use SNicholson\IPFO\Searches\SearchError;
-use SNicholson\IPFO\ValueObjects\Applicant;
+use SNicholson\IPFO\Parties\Applicant;
 use SNicholson\IPFO\ValueObjects\Citation;
-use SNicholson\IPFO\ValueObjects\Inventor;
-use SNicholson\IPFO\ValueObjects\Party;
+use SNicholson\IPFO\Parties\Inventor;
+use SNicholson\IPFO\Parties\Party;
 use SNicholson\IPFO\ValueObjects\Priority;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
@@ -71,7 +71,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
             }
         }
 
-        $result = new Result();
+        $result = new IPRight();
         $result->setSource(SearchSource::EPO());
 
         //Iterate through each of the documented results from the EPO
@@ -337,7 +337,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
                 /*
                  * Inventors and Applicants Data
                  */
-                if (isset($responseResult['bibliographic-data']['parties']) && empty($result->getApplicants())) {
+                if (isset($responseResult['bibliographic-data']['parties']) && empty($result->getApplicants()->getMembers())) {
                     /*
                      * Applicants
                      * IMPORTANT - The EPO bundles original and EPO database results together, which is confusing,

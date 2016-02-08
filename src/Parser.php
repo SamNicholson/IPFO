@@ -7,17 +7,19 @@ use SNicholson\IPFO\Parsers\ParserInterface;
 use SNicholson\IPFO\Parsers\XMLParser;
 
 /**
- * Class ParserQuery
+ * Class Parser
  * @package SNicholson\IPFO
  */
-class ParserQuery
+class Parser
 {
     /**
+     * Parses a given document into an IPRight Object
+     *
      * @param $document
      *
      * @return IPRight
      */
-    public static function locateParserForDocument(Document $document)
+    public static function document(Document $document)
     {
         switch ($document->getExtension()) {
             case 'xml':
@@ -32,7 +34,7 @@ class ParserQuery
      *
      * @return ParserInterface
      */
-    public static function locateXMLDocumentParser(Document $document)
+    private static function locateXMLDocumentParser(Document $document)
     {
         $parser = new XMLParser();
         $parser->setDocument($document);

@@ -21,6 +21,9 @@ class PartyMemberAddress
      */
     public function setAddress($address)
     {
+        $address = preg_replace( "/\r|\n/", ", ", (string) $address );
+        $address = str_replace("  ", "", $address);
+        $address = preg_replace( "/,/S", ", ", (string) $address );
         $this->address = $address;
     }
 
@@ -37,7 +40,7 @@ class PartyMemberAddress
      */
     public function setPostCode($postCode)
     {
-        $this->postCode = $postCode;
+        $this->postCode = (string) $postCode;
     }
 
     /**
@@ -52,7 +55,7 @@ class PartyMemberAddress
      */
     public function setCountry($country)
     {
-        $this->country = $country;
+        $this->country = (string) $country;
     }
 
     public function toArray() {

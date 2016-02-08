@@ -1,4 +1,5 @@
 <?php
+use SNicholson\IPFO\Helpers\IPFOXML;
 use SNicholson\IPFO\Parsers\RecursiveFieldSearch;
 
 /**
@@ -11,26 +12,30 @@ class RecursiveFieldSearchTest extends PHPUnit_Framework_TestCase
 {
     public function testSearchByName()
     {
-        $sample = [
-            'foo' => 1,
-            'bar' => [
-                'test' => 2,
-                'third' => [
-                    'four' => 4
-                ]
-            ]
-        ];
-//        $this->assertEquals(
-//            1,
-//            RecursiveFieldSearch::searchByName('foo', $sample)
-//        );
+        $sample = '<base>
+                        <foo>1</foo>
+                        <bar>
+                            <test>2</test>
+                            <third>
+                                <four>4</four>
+                            </third>
+                        </bar>
+                    </base>';
+        $sample = simplexml_load_string($sample, IPFOXML::class);
+
         $this->assertEquals(
-            [
-                'test'  => 2,
-                'third' => [
-                    'four' => 4
-                ]
-            ],
+            1,
+            RecursiveFieldSearch::searchByName('foo', $sample)
+        );
+        $this->assertEquals(
+            (array) simplexml_load_string(
+                '<bar>
+                    <test>2</test>
+                    <third>
+                        <four>4</four>
+                    </third>
+                </bar>', IPFOXML::class
+            ),
             RecursiveFieldSearch::searchByName('bar', $sample)
         );
         $this->assertEquals(

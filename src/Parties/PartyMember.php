@@ -33,7 +33,7 @@ abstract class PartyMember implements PartyMemberInterface
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = (string) $name;
     }
 
     /**
@@ -49,7 +49,7 @@ abstract class PartyMember implements PartyMemberInterface
      */
     public function setReference($reference)
     {
-        $this->reference = $reference;
+        $this->reference = (string) $reference;
     }
 
     /**
@@ -65,7 +65,7 @@ abstract class PartyMember implements PartyMemberInterface
      */
     public function setEmail($email)
     {
-        $this->email = $email;
+        $this->email = (string) $email;
     }
 
     /**
@@ -81,7 +81,7 @@ abstract class PartyMember implements PartyMemberInterface
      */
     public function setPhone($phone)
     {
-        $this->phone = $phone;
+        $this->phone = (string) $phone;
     }
 
     /**
@@ -97,7 +97,7 @@ abstract class PartyMember implements PartyMemberInterface
      */
     public function setFax($fax)
     {
-        $this->fax = $fax;
+        $this->fax = (string) $fax;
     }
 
     /**
@@ -136,7 +136,7 @@ abstract class PartyMember implements PartyMemberInterface
 
     public function setSequence($sequence)
     {
-        $this->sequence = $sequence;
+        $this->sequence = (string) $sequence;
     }
 
     public function getSequence()

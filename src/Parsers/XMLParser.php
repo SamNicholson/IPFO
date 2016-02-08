@@ -3,6 +3,7 @@
 namespace SNicholson\IPFO\Parsers;
 
 use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\IPRightInterface;
 use SNicholson\IPFO\Parsers\EPOLine\EPOXMLParser;
 
 class XMLParser implements ParserInterface
@@ -29,7 +30,7 @@ class XMLParser implements ParserInterface
 
     /**
      * Return the IP Right which has been parsed from the document
-     * @return IPRight
+     * @return IPRightInterface
      */
     public function getIPRight()
     {

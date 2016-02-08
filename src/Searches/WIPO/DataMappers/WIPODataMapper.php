@@ -7,6 +7,7 @@ use SNicholson\IPFO\Exceptions\DataMappingException;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
 use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\IPRightInterface;
 use SNicholson\IPFO\Parties\Applicant;
 use SNicholson\IPFO\Parties\Inventor;
 use SNicholson\IPFO\Parties\Party;
@@ -27,7 +28,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         return $result;
     }
 
-    protected function getPublication(IPRight &$result)
+    protected function getPublication(IPRightInterface &$result)
     {
 
         $result->setPublicationNumber(
@@ -55,7 +56,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         );
     }
 
-    protected function getApplication(IPRight &$result)
+    protected function getApplication(IPRightInterface &$result)
     {
 
         $result->setApplicationNumber(
@@ -83,7 +84,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         );
     }
 
-    protected function getParties(IPRight &$result)
+    protected function getParties(IPRightInterface &$result)
     {
         $inventors = new Party();
         $applicants = new Party();
@@ -138,7 +139,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         $result->setInventors($inventors);
     }
 
-    protected function getPriorities(IPRight &$result)
+    protected function getPriorities(IPRightInterface &$result)
     {
         //Priorities
         $priorities = [];
@@ -163,7 +164,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
         return $newPriority;
     }
 
-    protected function getTitles(IPRight &$result)
+    protected function getTitles(IPRightInterface &$result)
     {
 
     }

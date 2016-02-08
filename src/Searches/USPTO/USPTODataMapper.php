@@ -6,6 +6,7 @@ use DateTime;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
 use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\IPRightInterface;
 use SNicholson\IPFO\Parties\Applicant;
 use SNicholson\IPFO\ValueObjects\Citation;
 use SNicholson\IPFO\Parties\Inventor;
@@ -25,7 +26,7 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
         return $result;
     }
 
-    protected function getGrant(IPRight &$result)
+    protected function getGrant(IPRightInterface &$result)
     {
         $re = "/(?i)#h2[\\S\\s]*?<\\/b>([\\S\\s]*?)<\\/b>/";
         preg_match($re, $this->unmappedResponse, $matches);
@@ -41,7 +42,7 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
         $result->setGrantCountry('US');
     }
 
-    protected function getApplication(IPRight &$result)
+    protected function getApplication(IPRightInterface &$result)
     {
         //Application number
         $re = "/(?i)Appl\\. No\\.:[\\S\\s]{0,150}<b>([\\S\\s]{0,15})<\\/b>/";
@@ -56,7 +57,7 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
         $result->setApplicationCountry('US');
     }
 
-    protected function getParties(IPRight &$result)
+    protected function getParties(IPRightInterface &$result)
     {
         //Inventors, get a list of all of them
         $re = "/(?i)<tr>[\\s\\S]*?Inventors:([\\s\\S]*?<\\/tr>)/";
@@ -91,14 +92,14 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
         $result->setApplicants($applicants);
     }
 
-    protected function getTitles(IPRight &$result)
+    protected function getTitles(IPRightInterface &$result)
     {
         $re = "/(?i)<FONT size=\\\"\\+1\\\">([\\S\\s]*)<\\/FONT>/";
         preg_match($re, $this->unmappedResponse, $matches);
         $result->setEnglishTitle(trim($matches[1]));
     }
 
-    protected function getCitations(IPRight &$result)
+    protected function getCitations(IPRightInterface &$result)
     {
         //Patent Citations
         $re = "/U.S. Patent Documents([\\s\\S]*)Foreign/";

@@ -10,7 +10,7 @@ class SearchSourceTest extends \PHPUnit_Framework_TestCase
     /**
      * @test Test USPTO
      */
-    public function testUSPTO()
+    public function  testUSPTO()
     {
         $this->assertEquals('USPTO', SearchSource::USPTO()->__toString());
     }

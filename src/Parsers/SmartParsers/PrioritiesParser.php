@@ -5,13 +5,14 @@ namespace SNicholson\IPFO\Parsers\SmartParsers;
 use SNicholson\IPFO\Helpers\DateParser;
 use SNicholson\IPFO\Helpers\IPFOXML;
 use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\IPRightInterface;
 use SNicholson\IPFO\Parsers\RecursiveFieldSearch;
 use SNicholson\IPFO\ValueObjects\Priority;
 
 class PrioritiesParser
 {
 
-    public static function parse(IPFOXML $XML, IPRight &$IPRight)
+    public static function parse(IPFOXML $XML, IPRightInterface &$IPRight)
     {
         $priorities = RecursiveFieldSearch::getAllFieldsMatchingNameByArray(['priorities', 'priority-claims'], $XML);
         if ($priorities) {

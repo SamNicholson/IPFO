@@ -1,6 +1,7 @@
 <?php
 
 use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\IPRightInterface;
 use SNicholson\IPFO\ValueObjects\Citation;
 
 class USPTODataMapperTest extends PHPUnit_Framework_TestCase
@@ -111,7 +112,7 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
         return $result;
     }
 
-    private function getNonPatentLiteraturePublicationSample(IPRight &$result)
+    private function getNonPatentLiteraturePublicationSample(IPRightInterface &$result)
     {
         $npl = [
             ['text' => '0 148 102', 'date' => 'Jul 1985', 'country' => 'EP'],
@@ -127,7 +128,7 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
      * @param $result
      * @return mixed
      */
-    private function getPatentCitationsForPublicationSample(IPRight &$result)
+    private function getPatentCitationsForPublicationSample(IPRightInterface &$result)
     {
         //Citations
         $patentCitations = [

@@ -3,6 +3,7 @@
 namespace SNicholson\IPFO\Parsers;
 
 use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\IPRightInterface;
 
 interface ParserInterface
 {
@@ -16,7 +17,7 @@ interface ParserInterface
 
     /**
      * Return the IP Right which has been parsed from the document
-     * @return IPRight
+     * @return IPRightInterface
      */
     public function getIPRight();
 }

@@ -17,7 +17,7 @@ class Parser
      *
      * @param $document
      *
-     * @return IPRight
+     * @return IPRightInterface
      */
     public static function document(Document $document)
     {

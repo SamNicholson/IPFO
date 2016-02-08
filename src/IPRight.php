@@ -8,11 +8,13 @@ use SNicholson\IPFO\ValueObjects\Citation;
 use SNicholson\IPFO\Parties\Inventor;
 use SNicholson\IPFO\Parties\Party;
 use SNicholson\IPFO\ValueObjects\Priority;
+use SNicholson\IPFO\ValueObjects\RightType;
 use SNicholson\IPFO\ValueObjects\SearchSource;
 
-class IPRight
+class IPRight implements IPRightInterface
 {
-
+    /** @var RightType  */
+    private $rightType;
     private $applicationDate;
     private $applicationCountry;
     private $applicationNumber;
@@ -46,11 +48,20 @@ class IPRight
     /** @var Party */
     private $agents;
 
-    public function __construct()
+    /**
+     * IPRight constructor.
+     *
+     * @param RightType $rightType
+     */
+    public function __construct($rightType = RightType::PATENT)
     {
         $this->applicants = new Party();
         $this->inventors = new Party();
         $this->agents = new Party();
+        if ($rightType == RightType::PATENT) {
+            $rightType = RightType::patent();
+        }
+        $this->setRightType($rightType);
     }
 
     /**
@@ -399,6 +410,7 @@ class IPRight
     public function toArray()
     {
         return [
+            'type'             => $this->rightType->__toString(),
             'source'           => $this->getSource()->__toString(),
             'titles'           => [
                 'english' => $this->getEnglishTitle(),
@@ -469,5 +481,21 @@ class IPRight
     public function setAgents(Party $agents)
     {
         $this->agents = $agents;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRightType()
+    {
+        return $this->rightType;
+    }
+
+    /**
+     * @param mixed $rightType
+     */
+    public function setRightType(RightType $rightType)
+    {
+        $this->rightType = $rightType;
     }
 }

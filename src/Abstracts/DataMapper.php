@@ -3,6 +3,7 @@
 namespace SNicholson\IPFO\Abstracts;
 
 use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\IPRightInterface;
 use SNicholson\IPFO\Searches\SearchError;
 use SNicholson\IPFO\Parties\Party;
 
@@ -27,7 +28,7 @@ abstract class DataMapper
     }
 
     /**
-     * @return SearchError|IPRight
+     * @return SearchError|IPRightInterface
      */
     public function getSearchResult()
     {

@@ -3,6 +3,7 @@
 namespace SNicholson\IPFO\Interfaces;
 
 use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\IPRightInterface;
 use SNicholson\IPFO\Searches\SearchError;
 use SNicholson\IPFO\ValueObjects\Number;
 
@@ -18,9 +19,9 @@ interface SearchInterface
     /**
      * Returns the results of a number search via this search interface
      *
-*@param Number $number
+     * @param Number $number
      *
-*@return false|IPRight
+     * @return false|IPRightInterface
      */
     public function numberSearch(Number $number);
 }

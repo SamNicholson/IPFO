@@ -5,7 +5,7 @@ namespace SNicholson\IPFO;
 class SearchResults
 {
     /**
-     * @var IPRight[]
+     * @var IPRightInterface[]
      */
     private $responses = [];
     private $success;
@@ -28,10 +28,10 @@ class SearchResults
     }
 
     /**
-     * @param IPRight $response
+     * @param IPRightInterface $response
      *
      */
-    public function addResponse(IPRight $response)
+    public function addResponse(IPRightInterface $response)
     {
         $this->responses[] = $response;
     }
@@ -51,7 +51,7 @@ class SearchResults
     }
 
     /**
-     * @return IPRight
+     * @return IPRightInterface
      */
     public function getResult()
     {

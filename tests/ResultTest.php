@@ -197,6 +197,9 @@ class ResultTest extends PHPUnit_Framework_TestCase
         //Agent
         $result['agent'] = [];
 
+        //Right Type
+        $result['type'] = 'patent';
+
         return $result;
     }
 

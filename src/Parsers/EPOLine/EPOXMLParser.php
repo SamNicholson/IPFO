@@ -4,6 +4,7 @@ namespace SNicholson\IPFO\Parsers\EPOLine;
 
 use SNicholson\IPFO\Helpers\IPFOXML;
 use SNicholson\IPFO\IPRight;
+use SNicholson\IPFO\IPRightInterface;
 use SNicholson\IPFO\Parsers\Document;
 use SNicholson\IPFO\Parsers\ParserInterface;
 use SNicholson\IPFO\Parsers\SmartParsers\AgentParser;
@@ -32,7 +33,7 @@ class EPOXMLParser implements ParserInterface
 
     /**
      * Return the IP Right which has been parsed from the document
-     * @return IPRight
+     * @return IPRightInterface
      */
     public function getIPRight()
     {

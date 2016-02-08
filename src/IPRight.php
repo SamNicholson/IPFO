@@ -36,7 +36,7 @@ class IPRight
 
     private $citations = [];
 
-    private $priorities;
+    private $priorities = [];
 
     private $languageOfFiling;
 

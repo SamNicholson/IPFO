@@ -11,6 +11,8 @@ use SNicholson\IPFO\Parsers\SmartParsers\ApplicantParser;
 use SNicholson\IPFO\Parsers\SmartParsers\InventorParser;
 use SNicholson\IPFO\Parsers\SmartParsers\PrioritiesParser;
 use SNicholson\IPFO\Parsers\SmartParsers\TitleParser;
+use SNicholson\IPFO\Search;
+use SNicholson\IPFO\ValueObjects\SearchType;
 
 class EPOXMLParser implements ParserInterface
 {
@@ -35,6 +37,7 @@ class EPOXMLParser implements ParserInterface
     public function getIPRight()
     {
         $IPRight = new IPRight();
+        $IPRight->setSource(SearchType::EPO());
         $IPRight->setApplicants(ApplicantParser::parse($this->XML));
         $IPRight->setInventors(InventorParser::parse($this->XML));
         $IPRight->setAgents(AgentParser::parse($this->XML));

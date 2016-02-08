@@ -19,7 +19,8 @@ class Document
     {
         $this->content = $content;
         $this->filename = $filename;
-        $this->extension = basename($filename);
+        $parts = explode('.', $filename);
+        $this->extension = $parts[count($parts) - 1];
     }
 
     /**

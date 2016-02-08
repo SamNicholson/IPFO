@@ -5,9 +5,9 @@ namespace SNicholson\IPFO;
 class SearchResults
 {
     /**
-     * @var
+     * @var IPRight[]
      */
-    private $responses;
+    private $responses = [];
     private $success;
     private $dataSource;
 
@@ -39,6 +39,15 @@ class SearchResults
     public function getResponses()
     {
         return $this->responses;
+    }
+
+    public function toArray()
+    {
+        $responses = [];
+        foreach ($this->responses as $response) {
+            $responses[] = $response->toArray();
+        }
+        return $responses;
     }
 
     /**

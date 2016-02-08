@@ -104,7 +104,7 @@ class USPTORequest extends Request
     {
         switch ($numberType) {
             case 'publication':
-                return $this->baseURI . 'netacgi/nph-ParserLocator?patentnumber=' . $number . '';
+                return $this->baseURI . 'netacgi/nph-ParserQuery?patentnumber=' . $number . '';
                 break;
         }
         return false;

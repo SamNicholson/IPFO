@@ -4,17 +4,18 @@ namespace SNicholson\IPFO;
 
 use SNicholson\IPFO\Parsers\Document;
 use SNicholson\IPFO\Parsers\ParserInterface;
+use SNicholson\IPFO\Parsers\XMLParser;
 
 /**
- * Class ParserLocator
+ * Class ParserQuery
  * @package SNicholson\IPFO
  */
-class ParserLocator
+class ParserQuery
 {
     /**
      * @param $document
      *
-     * @return ParserInterface
+     * @return IPRight
      */
     public static function locateParserForDocument(Document $document)
     {
@@ -23,6 +24,7 @@ class ParserLocator
                 return self::locateXMLDocumentParser($document);
                 break;
         }
+        return false;
     }
 
     /**
@@ -32,6 +34,8 @@ class ParserLocator
      */
     public static function locateXMLDocumentParser(Document $document)
     {
-
+        $parser = new XMLParser();
+        $parser->setDocument($document);
+        return $parser->getIPRight();
     }
 }

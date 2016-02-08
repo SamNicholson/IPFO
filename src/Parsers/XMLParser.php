@@ -36,5 +36,6 @@ class XMLParser implements ParserInterface
         //TODO find some way to identify which XML file this is
         $EPOLineParser = new EPOXMLParser();
         $EPOLineParser->setDocument($this->document);
+        return $EPOLineParser->getIPRight();
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace SNicholson\IPFO\WIPO\DataMappers;
+namespace SNicholson\IPFO\Searches\WIPO\DataMappers;
 
 use DateTime;
 use SNicholson\IPFO\Exceptions\DataMappingException;

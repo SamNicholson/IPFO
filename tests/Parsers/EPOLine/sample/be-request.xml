@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE be-request SYSTEM "be-request.dtd">
+<be-request application-type="first-filing" lang="fr" dtd-version="1.0" file="" status="new" date-produced="20151120" ro="BE" produced-by="applicant">
+    <file-reference-id>T0026-BE-P</file-reference-id>
+    <request-petition>Grant of a patent under Patent Law of 28 March 1984 is hereby requested</request-petition>
+    <invention-title lang="fr">M&#233;thode et dispositif de mesure de la direction de sources RF</invention-title>
+    <parties>
+        <applicants>
+            <applicant sequence="1" name-type="natural" app-type="applicant-inventor" common-representative="false" non-disclosure="false">
+                <addressbook lang="en">
+                    <last-name>RAUCY</last-name>
+                    <first-name>Christopher</first-name>
+                    <address>
+                        <street>Boucle de Roncevaux, 6 bte 201
+                        </street>
+                        <city>Louvain-la-Neuve</city>
+                        <county></county>
+                        <postcode>1348</postcode>
+                        <country>BE</country>
+                    </address>
+                    <phone>01373 462720</phone>
+                    <fax>FAX</fax>
+                    <email></email>
+                </addressbook>
+                <nationality>
+                    <country>British</country>
+                </nationality>
+                <id-number></id-number>
+            </applicant>
+        </applicants>
+        <inventors/>
+        <agents>
+            <agent sequence="1" name-type="natural" rep-type="agent" agent-number="U001" power-of-attorney-number="" power-of-attorney-type="" applicant-established-in-BE="false">
+                <addressbook lang="en">
+                    <last-name>PECHER</last-name>
+                    <first-name>Nicolas</first-name>
+                    <address>
+                        <street>Pecher &amp; Partners
+                            Rue Louis de Geer 6
+                        </street>
+                        <city>Louvain-la-Neuve</city>
+                        <county></county>
+                        <state/>
+                        <postcode>1348</postcode>
+                        <country>BE</country>
+                    </address>
+                    <phone>010/392257</phone>
+                    <fax>010/816308</fax>
+                    <email>nicolas.pecher@pecherandparners.be</email>
+                </addressbook>
+            </agent>
+        </agents>
+    </parties>
+    <priority-claims/>
+    <be-check-list>
+        <be-cl-request page-count=""/>
+        <be-cl-description page-count="17" ppf="1" ppl="17" applicant-file-name="T0026-BE-P_TTQD.pdf" eolf-file-name="SPEC.pdf"/>
+        <be-cl-claims page-count="6" number-of-claims="14" ppf="18" ppl="23" applicant-file-name="T0026-BE-P_TTQD.pdf" eolf-file-name="SPEC.pdf"/>
+        <be-cl-abstract page-count="1" ppf="30" ppl="30" applicant-file-name="T0026-BE-P_TTQD.pdf" eolf-file-name="SPEC.pdf"/>
+        <be-cl-drawings page-count="6" ppf="24" ppl="29" applicant-file-name="T0026-BE-P_TTQD.pdf" eolf-file-name="SPEC.pdf"/>
+        <be-cl-fee-calculation/>
+        <be-cl-pre-conversion-archive applicant-file-name="T0026-BE-P_ARCHIVE.zip" eolf-file-name="OLF-ARCHIVE.zip"/>
+    </be-check-list>
+    <figure-to-publish>
+        <fig-number>1</fig-number>
+    </figure-to-publish>
+    <language-of-filing>fr</language-of-filing>
+    <be-office-specific-data office="BE" lang="fr" office-dtd="be-office-specific-data" file="be-office-specific-data.dtd"/>
+</be-request>

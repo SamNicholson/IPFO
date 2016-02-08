@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ep-request SYSTEM "ep-request-v1-12.dtd">
+<ep-request lang="en" dtd-version="1.0" produced-by="applicant" ro="EP" date-produced="20151104 11:35:38">
+    <!--software_name eOLF-->
+    <!--software_version FMMNGR5140, EP20005140, FM_FOP0205-->
+    <!--stylesheet_version 3-->
+    <!--fop_version Version 0.20.5-->
+    <file-reference-id>T0021-EP2</file-reference-id>
+    <request-petition>Grant of European patent, and examination of the application under Article 94, are hereby requested.</request-petition>
+    <invention-title lang="en">High current cyclotron</invention-title>
+    <invention-title lang="fr"></invention-title>
+    <invention-title lang="de"></invention-title>
+    <parties>
+        <applicants>
+            <applicant sequence="1" designation="as-indicated" app-type="applicant">
+                <addressbook lang="en">
+                    <name name-type="legal">Ion Beam Applications S.A.</name>
+                    <registered-number>0.0</registered-number>
+                    <address>
+                        <address-2></address-2>
+                        <pobox></pobox>
+                        <street>Chemin du Cyclotron 3</street>
+                        <city>Louvain-la-Neuve</city>
+                        <state></state>
+                        <postcode>1348</postcode>
+                        <country>BE</country>
+                    </address>
+                    <phone></phone>
+                    <fax></fax>
+                    <email></email>
+                </addressbook>
+                <nationality>
+                    <country/>
+                </nationality>
+                <residence>
+                    <country>BE</country>
+                </residence>
+            </applicant>
+        </applicants>
+        <inventors>
+            <ep-inventor sequence="1" designation="as-indicated" deceased="no" inv-rights="employee">
+                <addressbook lang="en">
+                    <prefix>Mr.</prefix>
+                    <last-name>FORTON</last-name>
+                    <first-name>Eric</first-name>
+                    <orgname></orgname>
+                    <department></department>
+                    <address>
+                        <pobox></pobox>
+                        <street>Chemin Mahy 110</street>
+                        <city>Nil-Pierreux</city>
+                        <state></state>
+                        <postcode>1457</postcode>
+                        <country>BE</country>
+                    </address>
+                </addressbook>
+            </ep-inventor>
+            <ep-inventor sequence="2" designation="as-indicated" deceased="no" inv-rights="employee">
+                <addressbook lang="en">
+                    <prefix>Mr.</prefix>
+                    <last-name>KLEEVEN</last-name>
+                    <first-name>Willem</first-name>
+                    <orgname></orgname>
+                    <department></department>
+                    <address>
+                        <pobox></pobox>
+                        <street>Zavelstraat 17</street>
+                        <city>Pellenberg</city>
+                        <state></state>
+                        <postcode>3212</postcode>
+                        <country>BE</country>
+                    </address>
+                </addressbook>
+            </ep-inventor>
+        </inventors>
+        <agents>
+            <ep-agent rep-type="agent" sequence="1">
+                <addressbook lang="en">
+                    <prefix>Mr.</prefix>
+                    <last-name>PECHER</last-name>
+                    <first-name>Nicolas</first-name>
+                    <orgname></orgname>
+                    <department></department>
+                    <registered-number>0.0</registered-number>
+                    <address>
+                        <pobox></pobox>
+                        <street>Pecher &amp; Partners
+                            Rue Louis de Geer 6</street>
+                        <city>Louvain-la-Neuve</city>
+                        <state></state>
+                        <postcode>1348</postcode>
+                        <country>BE</country>
+                    </address>
+                    <phone>+32 10 39 22 57</phone>
+                    <fax></fax>
+                    <email>nicolas.pecher@pecherandpartners.be</email>
+                </addressbook>
+            </ep-agent>
+            <ep-agent rep-type="agent" sequence="2">
+                <addressbook lang="en">
+                    <prefix>Mr.</prefix>
+                    <last-name>CONNOR</last-name>
+                    <first-name>Marco</first-name>
+                    <orgname></orgname>
+                    <department></department>
+                    <registered-number>0.0</registered-number>
+                    <address>
+                        <pobox></pobox>
+                        <street>Pecher &amp; Partners
+                            Rue Louis de Geer 6</street>
+                        <city>Louvain-la-Neuve</city>
+                        <state></state>
+                        <postcode>1348</postcode>
+                        <country>BE</country>
+                    </address>
+                    <phone>+32 10 39 22 57</phone>
+                    <fax></fax>
+                    <email>marco.connor@pecherandpartners.be</email>
+                </addressbook>
+            </ep-agent>
+        </agents>
+    </parties>
+    <priority-claims>
+        <ep-priority-claim sequence="1" kind="regional" ep-document-type="patent">
+            <country>EP</country>
+            <doc-number>EP14193792.0</doc-number>
+            <date>20141119</date>
+            <earlier-searches>
+                <earlier-search search-type="international-type" id="ID_1" office="EP" declaration-of-no-search="not-determined">
+                    <doc-page he="1" type="pdf" wi="1" file=""/>
+                </earlier-search>
+            </earlier-searches>
+        </ep-priority-claim>
+    </priority-claims>
+    <check-list>
+        <cl-request/>
+        <cl-description page-count="12" ppf="1" ppl="12"/>
+        <cl-claims page-count="3" ppf="13" ppl="15" number-of-claims="13" number-claims-fee-calculation="13"/>
+        <cl-abstract page-count="1" ppf="16" ppl="16"/>
+        <cl-drawings page-count="5" ppf="1" ppl="5" fig-count="5"/>
+    </check-list>
+    <figure-to-publish>
+        <fig-number>3</fig-number>
+    </figure-to-publish>
+    <ep-language-of-filing lang-code="epo">en</ep-language-of-filing>
+    <ep-office-specific-data office="EP" lang="en">
+        <ep-designated-states waiver-communication-and-processing-of-non-designated-states="no">
+            <region>
+                <country>EP</country>
+            </region>
+            <extension-states>
+                <region>
+                    <country>EP</country>
+                </region>
+                <country>BA</country>
+                <country>ME</country>
+            </extension-states>
+            <validation-states/>
+        </ep-designated-states>
+        <ep-request-for-exam-art94 lang="nl"/>
+        <ep-declarations/>
+        <ep-electronic-files doc-type="1001">
+            <applicant-file-name/>
+            <epo-file-name>ep-request.pdf</epo-file-name>
+        </ep-electronic-files>
+        <ep-electronic-files doc-type="SPECEPO">
+            <applicant-file-name>T0021-AEXIII-EP2 TTQD.pdf</applicant-file-name>
+            <epo-file-name>SPECEPO-1.pdf</epo-file-name>
+        </ep-electronic-files>
+        <ep-electronic-files doc-type="SPECEPO">
+            <applicant-file-name>T0021-AEXIII-EP2 Dessins DTQD.pdf</applicant-file-name>
+            <epo-file-name>SPECEPO-2.pdf</epo-file-name>
+        </ep-electronic-files>
+        <ep-electronic-files doc-type="OLF-ARCHIVE">
+            <applicant-file-name>T0021-EP2 ARCHIVE.zip</applicant-file-name>
+            <epo-file-name>OLF-ARCHIVE.zip</epo-file-name>
+        </ep-electronic-files>
+        <ep-electronic-files doc-type="F1002">
+            <applicant-file-name/>
+            <epo-file-name>f1002-1.pdf</epo-file-name>
+        </ep-electronic-files>
+        <ep-financial-data curr="EUR" fee-amounts-unlocked-by-user="no">
+            <mode-of-payment accno="28020310  " mode-type="deposit" currency="EUR" deferred-execution-date="">Pecher &amp; Partners</mode-of-payment>
+            <fees date="20140401">
+                <standard-fee>
+                    <fee index="1" topay="yes">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>120</fee-schedule>
+                        <fee-sub-amount>120</fee-sub-amount>
+                        <fee-reduction-factor>0</fee-reduction-factor>
+                    </fee>
+                    <fee index="2" topay="yes">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>1285</fee-schedule>
+                        <fee-sub-amount>1285</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="5" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>0</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>100</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="5e" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>580</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="6" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1620</fee-sub-amount>
+                        <fee-reduction-factor>0</fee-reduction-factor>
+                    </fee>
+                    <fee index="13" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>635</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="15" topay="yes">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>0</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>235</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="15e" topay="yes">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>0</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>580</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="22" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>100</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="29" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>50</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="33" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>465</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="34" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>580</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="35" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>810</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="36" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1040</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="37" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1155</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="38" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1265</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="39" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1380</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="40" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="41" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="42" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="43" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="44" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="45" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="46" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="47" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="48" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="49" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="50" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>1560</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="55" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>0</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>40</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="401" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>102</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="402" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>102</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="403" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>102</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="404" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>102</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="405" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>102</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="406" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>102</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="407" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>102</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="408" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>102</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="409" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>102</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="410" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>102</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="420" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>240</fee-sub-amount>
+                        <fee-reduction-factor>-1</fee-reduction-factor>
+                    </fee>
+                    <fee index="501" topay="yes">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>0</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>15</fee-sub-amount>
+                        <fee-reduction-factor>0</fee-reduction-factor>
+                    </fee>
+                    <fee index="552" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>210</fee-sub-amount>
+                        <fee-reduction-factor>0</fee-reduction-factor>
+                    </fee>
+                    <fee index="553" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>420</fee-sub-amount>
+                        <fee-reduction-factor>0</fee-reduction-factor>
+                    </fee>
+                    <fee index="554" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>630</fee-sub-amount>
+                        <fee-reduction-factor>0</fee-reduction-factor>
+                    </fee>
+                    <fee index="555" topay="no">
+                        <type-of-fee>standard</type-of-fee>
+                        <fee-factor>1</fee-factor>
+                        <fee-schedule>0</fee-schedule>
+                        <fee-sub-amount>840</fee-sub-amount>
+                        <fee-reduction-factor>0</fee-reduction-factor>
+                    </fee>
+                </standard-fee>
+                <fee-total-amount>1405</fee-total-amount>
+            </fees>
+        </ep-financial-data>
+    </ep-office-specific-data>
+</ep-request>

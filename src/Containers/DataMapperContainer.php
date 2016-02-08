@@ -2,9 +2,9 @@
 
 namespace SNicholson\IPFO\Containers;
 
-use SNicholson\IPFO\WIPO\DataMappers\WIPODataMapper;
-use SNicholson\IPFO\EPO\EPODataMapper;
-use SNicholson\IPFO\USPTO\USPTODataMapper;
+use SNicholson\IPFO\Searches\WIPO\DataMappers\WIPODataMapper;
+use SNicholson\IPFO\Searches\EPO\EPODataMapper;
+use SNicholson\IPFO\Searches\USPTO\USPTODataMapper;
 use SNicholson\IPFO\DataMappers\USPTOTrademarkDataMapper;
 
 class DataMapperContainer

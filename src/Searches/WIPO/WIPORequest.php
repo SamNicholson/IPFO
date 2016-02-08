@@ -1,6 +1,6 @@
 <?php
 
-namespace SNicholson\IPFO\WIPO;
+namespace SNicholson\IPFO\Searches\WIPO;
 
 use SNicholson\IPFO\Abstracts\Request;
 use SNicholson\IPFO\Exceptions\DataMappingException;

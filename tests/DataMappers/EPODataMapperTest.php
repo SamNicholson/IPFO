@@ -1,6 +1,6 @@
 <?php
 
-use SNicholson\IPFO\EPO\EPODataMapper;
+use SNicholson\IPFO\Searches\EPO\EPODataMapper;
 use SNicholson\IPFO\IPRight;
 use SNicholson\IPFO\Searches\SearchError;
 use SNicholson\IPFO\ValueObjects\Priority;

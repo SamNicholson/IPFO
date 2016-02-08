@@ -54,7 +54,7 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
 
     private function getPublicationSample()
     {
-        $USPTO = new \SNicholson\IPFO\USPTO\USPTODataMapper();
+        $USPTO = new \SNicholson\IPFO\Searches\USPTO\USPTODataMapper();
         $USPTO->setResponse(file_get_contents(__DIR__ . '/sample/USPTO/publication.sample'));
 
         return $USPTO->getSearchResult();

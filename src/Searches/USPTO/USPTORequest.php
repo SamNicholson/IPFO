@@ -1,6 +1,6 @@
 <?php
 
-namespace SNicholson\IPFO\USPTO;
+namespace SNicholson\IPFO\Searches\USPTO;
 
 use GuzzleHttp;
 use SNicholson\IPFO\Abstracts\Request;
@@ -104,7 +104,7 @@ class USPTORequest extends Request
     {
         switch ($numberType) {
             case 'publication':
-                return $this->baseURI . 'netacgi/nph-Parser?patentnumber=' . $number . '';
+                return $this->baseURI . 'netacgi/nph-ParserLocator?patentnumber=' . $number . '';
                 break;
         }
         return false;

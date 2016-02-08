@@ -73,7 +73,9 @@ class ResultTest extends PHPUnit_Framework_TestCase
                     'address'  => null,
                     'postCode' => null,
                     'country'  => null
-                ]
+                ],
+                'nationality' => '',
+                'domicile' =>''
             ]
         ];
 
@@ -90,7 +92,9 @@ class ResultTest extends PHPUnit_Framework_TestCase
                     'address'  => null,
                     'postCode' => null,
                     'country'  => null
-                ]
+                ],
+                'nationality' => '',
+                'domicile' =>''
             ],
             [
                 'name'      => 'HOLMBERG, REBECCA, C',
@@ -103,7 +107,9 @@ class ResultTest extends PHPUnit_Framework_TestCase
                     'address'  => null,
                     'postCode' => null,
                     'country'  => null
-                ]
+                ],
+                'nationality' => '',
+                'domicile' =>''
             ],
             [
                 'name'      => 'MILLER, ANDREW, P',
@@ -116,7 +122,9 @@ class ResultTest extends PHPUnit_Framework_TestCase
                     'address'  => null,
                     'postCode' => null,
                     'country'  => null
-                ]
+                ],
+                'nationality' => '',
+                'domicile' =>''
             ],
             [
                 'name'      => 'PROVINS, JARROD',
@@ -129,7 +137,9 @@ class ResultTest extends PHPUnit_Framework_TestCase
                     'address'  => null,
                     'postCode' => null,
                     'country'  => null
-                ]
+                ],
+                'nationality' => '',
+                'domicile' =>''
             ],
             [
                 'name'      => 'ROTH, RICHARD',
@@ -142,7 +152,9 @@ class ResultTest extends PHPUnit_Framework_TestCase
                     'address'  => null,
                     'postCode' => null,
                     'country'  => null
-                ]
+                ],
+                'nationality' => '',
+                'domicile' =>''
             ],
             [
                 'name'      => 'MANDELL, JEFFREY',
@@ -155,7 +167,9 @@ class ResultTest extends PHPUnit_Framework_TestCase
                     'address'  => null,
                     'postCode' => null,
                     'country'  => null
-                ]
+                ],
+                'nationality' => '',
+                'domicile' =>''
             ],
         ];
 

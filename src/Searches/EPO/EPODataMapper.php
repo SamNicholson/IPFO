@@ -1,6 +1,6 @@
 <?php
 
-namespace SNicholson\IPFO\EPO;
+namespace SNicholson\IPFO\Searches\EPO;
 
 use SNicholson\IPFO\Exceptions\DataMappingException;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;

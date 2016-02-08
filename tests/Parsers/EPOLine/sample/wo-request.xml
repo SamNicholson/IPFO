@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE request  SYSTEM "request-v1-8.dtd" >
+<?software_name PCT Online Filing?>
+<?software_version Version 3.5.000.244e MT/FOP 20141031/0.20.5.20?>
+<?stylesheet_version Version 2.18?>
+<?fop_version Version 0.20.5.20?>
+<?fop_fontconf common.xml?>
+<?text_in_drawing no?>
+<request lang="fr" dtd-version="1.8" produced-by="applicant" status="new" ro="EP">
+    <file-reference-id>T0004 - WO</file-reference-id>
+    <request-petition>Le soussigné requiert que la présente demande internationale soit traitée conformément au Traité de coopération en matière de brevets</request-petition>
+    <invention-title lang="fr">Appareil pour la fabrication de cigarettes</invention-title>
+    <parties>
+        <applicants>
+            <applicant sequence="1" app-type="applicant" designation="all">
+                <addressbook lang="fr">
+                    <name name-type="legal">Atelier Neycken sprl</name>
+                    <registered-number>BE 0 444 269 995</registered-number>
+                    <address>
+                        <address-1>Sur le Tombeux 30</address-1>
+                        <city>Andrimont</city>
+                        <postcode>4821</postcode>
+                        <country>BE</country>
+                    </address>
+                </addressbook>
+                <nationality>
+                    <country>BE</country>
+                </nationality>
+                <residence>
+                    <country>BE</country>
+                </residence>
+            </applicant>
+        </applicants>
+        <inventors>
+            <inventor sequence="1" designation="all">
+                <addressbook lang="fr">
+                    <last-name>Neycken</last-name>
+                    <first-name>Alain</first-name>
+                    <address>
+                        <address-1>Atelier Neycken</address-1>
+                        <street>Sur le Tombeux 30</street>
+                        <city>Andrimont</city>
+                        <postcode>4821</postcode>
+                        <country>BE</country>
+                    </address>
+                </addressbook>
+            </inventor>
+        </inventors>
+        <agents>
+            <agent sequence="1" rep-type="agent">
+                <addressbook lang="fr">
+                    <last-name>Pecher</last-name>
+                    <first-name>Nicolas</first-name>
+                    <registered-number>000142360</registered-number>
+                    <address>
+                        <address-1>Pecher Patents sprl</address-1>
+                        <street>50 rue des trois burettes</street>
+                        <city>Mont Saint Guibert</city>
+                        <postcode>1435</postcode>
+                        <country>BE</country>
+                    </address>
+                    <phone>+32 477 526 893</phone>
+                    <email email-purpose="informal">nicolas.pecher123@gmail.com</email>
+                </addressbook>
+            </agent>
+            <agent sequence="2" rep-type="agent">
+                <addressbook lang="fr">
+                    <last-name>CONNOR</last-name>
+                    <first-name>Marco</first-name>
+                    <address>
+                        <address-1>Tarameera sprl</address-1>
+                        <street>Rue Marie Gevers 4</street>
+                        <city>Louvain-la-Neuve</city>
+                        <postcode>1348</postcode>
+                        <country>BE</country>
+                    </address>
+                    <phone>+32 494 05 19 66</phone>
+                    <email email-purpose="informal">mconnor0506@yahoo.fr</email>
+                </addressbook>
+            </agent>
+        </agents>
+    </parties>
+    <designation-of-states>
+        <designation-pct/>
+    </designation-of-states>
+    <priority-claims>
+        <priority-claim sequence="1" kind="national">
+            <country>BE</country>
+            <doc-number>BE2014/0647</doc-number>
+            <date>20140828</date>
+            <priority-doc-requested/>
+        </priority-claim>
+        <incorporation-by-reference/>
+    </priority-claims>
+    <search-authority>
+        <isa>
+            <country>EP</country>
+        </isa>
+        <earlier-search-request>
+            <document-id>
+                <country>BE</country>
+                <doc-number>BE2014/0647</doc-number>
+                <date>20140828</date>
+            </document-id>
+            <substantially-equivalent/>
+            <earlier-search-documents results-of-earlier-search="yes" earlier-application="yes" translation-of-earlier-application="no" translation-of-results-of-earlier-search="no" documents-cited-in-earlier-search-results="yes" available-at-isa="yes" request-ro-to-transmit-to-isa="no"/>
+        </earlier-search-request>
+    </search-authority>
+    <check-list>
+        <cl-request page-count="4"/>
+        <cl-description page-count="13"/>
+        <cl-claims page-count="3"/>
+        <cl-abstract page-count="1"/>
+        <cl-drawings page-count="4"/>
+        <cl-fee-calculation/>
+    </check-list>
+    <figure-to-publish>
+        <fig-number></fig-number>
+    </figure-to-publish>
+    <language-of-filing>fr</language-of-filing>
+    <signatories>
+        <signatory>
+            <name name-type="natural">Pecher,  Nicolas</name>
+            <electronic-signature date="20150827" place-signed="Subject:  Nicolas Pecher 44631; Issuer: European Patent Office, European Patent Office CA G2">
+                <enhanced-signature>
+                    <pkcs7/>
+                </enhanced-signature>
+            </electronic-signature>
+            <signatory-capacity>(Mandataire)| Nicolas Pecher 44631</signatory-capacity>
+        </signatory>
+    </signatories>
+</request>

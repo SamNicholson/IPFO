@@ -1,6 +1,6 @@
 <?php
 
-namespace SNicholson\IPFO\USPTO;
+namespace SNicholson\IPFO\Searches\USPTO;
 
 use DateTime;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;

@@ -2,10 +2,10 @@
 
 namespace SNicholson\IPFO\Containers;
 
-use SNicholson\IPFO\EPO\EPORequest;
-use SNicholson\IPFO\USPTO\USPTORequest;
+use SNicholson\IPFO\Searches\EPO\EPORequest;
+use SNicholson\IPFO\Searches\USPTO\USPTORequest;
 use SNicholson\IPFO\Requests\USPTOTrademarkRequest;
-use SNicholson\IPFO\WIPO\WIPORequest;
+use SNicholson\IPFO\Searches\WIPO\WIPORequest;
 
 class RequestsContainer
 {

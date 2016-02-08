@@ -30,6 +30,8 @@ class AgentTest extends PHPUnit_Framework_TestCase
                     'postCode' => '',
                     'country'  => ''
                 ],
+                'nationality' => '',
+                'domicile'    => ''
             ],
             $agent->toArray()
         );

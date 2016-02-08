@@ -12,6 +12,13 @@ abstract class PartyMember implements PartyMemberInterface
     protected $fax;
     /** @var PartyMemberAddress */
     protected $address;
+    protected $nationality;
+    protected $domicile;
+
+    public function __construct()
+    {
+        $this->address = new PartyMemberAddress();
+    }
 
     /**
      * @return mixed
@@ -96,7 +103,7 @@ abstract class PartyMember implements PartyMemberInterface
     /**
      * @return PartyMemberAddress
      */
-    public function getAddress()
+    public function &getAddress()
     {
         if (is_null($this->address)) {
             $this->address = new PartyMemberAddress();
@@ -115,13 +122,15 @@ abstract class PartyMember implements PartyMemberInterface
     public function toArray()
     {
         return [
-            'name'      => $this->getName(),
-            'sequence'  => $this->getSequence(),
-            'reference' => $this->getReference(),
-            'email'     => $this->getEmail(),
-            'phone'     => $this->getPhone(),
-            'fax'       => $this->getFax(),
-            'address'   => $this->getAddress()->toArray(),
+            'name'        => $this->getName(),
+            'sequence'    => $this->getSequence(),
+            'reference'   => $this->getReference(),
+            'email'       => $this->getEmail(),
+            'phone'       => $this->getPhone(),
+            'fax'         => $this->getFax(),
+            'address'     => $this->getAddress()->toArray(),
+            'nationality' => $this->getNationality(),
+            'domicile'    => $this->getDomicile()
         ];
     }
 
@@ -133,5 +142,37 @@ abstract class PartyMember implements PartyMemberInterface
     public function getSequence()
     {
         return $this->sequence;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNationality()
+    {
+        return $this->nationality;
+    }
+
+    /**
+     * @param mixed $nationality
+     */
+    public function setNationality($nationality)
+    {
+        $this->nationality = $nationality;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDomicile()
+    {
+        return $this->domicile;
+    }
+
+    /**
+     * @param mixed $domicile
+     */
+    public function setDomicile($domicile)
+    {
+        $this->domicile = $domicile;
     }
 }

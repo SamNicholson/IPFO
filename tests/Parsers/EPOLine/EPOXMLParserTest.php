@@ -8,6 +8,7 @@ use SNicholson\IPFO\Parties\Inventor;
 use SNicholson\IPFO\Parties\Party;
 use SNicholson\IPFO\Parties\PartyMemberAddress;
 use SNicholson\IPFO\ValueObjects\Priority;
+use SNicholson\IPFO\ValueObjects\SearchType;
 
 class EPOXMLParserTest extends PHPUnit_Framework_TestCase
 {
@@ -18,6 +19,7 @@ class EPOXMLParserTest extends PHPUnit_Framework_TestCase
         $IPRight = new \SNicholson\IPFO\IPRight();
         $IPRight->setFrenchTitle('Méthode et dispositif de mesure de la direction de sources RF');
         $IPRight->setLanguageOfFiling('FR');
+        $IPRight->setSource(SearchType::EPO());
 
         $applicants = new Party();
         $applicant = new Applicant();
@@ -64,6 +66,7 @@ class EPOXMLParserTest extends PHPUnit_Framework_TestCase
         $IPRight = new \SNicholson\IPFO\IPRight();
         $IPRight->setEnglishTitle('High current cyclotron');
         $IPRight->setLanguageOfFiling('GB');
+        $IPRight->setSource(SearchType::EPO());
 
         $applicants = new Party();
         $applicant = new Applicant();
@@ -139,6 +142,7 @@ class EPOXMLParserTest extends PHPUnit_Framework_TestCase
         $IPRight = new \SNicholson\IPFO\IPRight();
         $IPRight->setFrenchTitle('Appareil pour la fabrication de cigarettes');
         $IPRight->setLanguageOfFiling('FR');
+        $IPRight->setSource(SearchType::EPO());
 
         $applicants = new Party();
         $applicant = new Applicant();

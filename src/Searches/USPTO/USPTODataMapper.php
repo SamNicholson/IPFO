@@ -5,12 +5,12 @@ namespace SNicholson\IPFO\Searches\USPTO;
 use DateTime;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
-use SNicholson\IPFO\IPRight;
-use SNicholson\IPFO\IPRightInterface;
-use SNicholson\IPFO\Parties\Applicant;
-use SNicholson\IPFO\ValueObjects\Citation;
-use SNicholson\IPFO\Parties\Inventor;
-use SNicholson\IPFO\Parties\Party;
+use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRightInterface;
+use WorkAnyWare\IPFO\Parties\Applicant;
+use WorkAnyWare\IPFO\IPRights\Citation;
+use WorkAnyWare\IPFO\Parties\Inventor;
+use WorkAnyWare\IPFO\Parties\Party;
 
 class USPTODataMapper extends DataMapper implements DataMapperInterface
 {

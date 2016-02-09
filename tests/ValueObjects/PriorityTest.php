@@ -2,7 +2,7 @@
 
 namespace src\Tests\ValueObjects;
 
-use SNicholson\IPFO\ValueObjects\Priority;
+use WorkAnyWare\IPFO\IPRights\Priority;
 
 class PriorityTest extends \PHPUnit_Framework_TestCase
 {

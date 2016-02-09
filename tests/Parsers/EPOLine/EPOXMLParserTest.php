@@ -2,13 +2,13 @@
 
 use SNicholson\IPFO\Parsers\Document;
 use SNicholson\IPFO\Parsers\EPOLine\EPOXMLParser;
-use SNicholson\IPFO\Parties\Agent;
-use SNicholson\IPFO\Parties\Applicant;
-use SNicholson\IPFO\Parties\Inventor;
-use SNicholson\IPFO\Parties\Party;
-use SNicholson\IPFO\Parties\PartyMemberAddress;
-use SNicholson\IPFO\ValueObjects\Priority;
-use SNicholson\IPFO\ValueObjects\SearchType;
+use WorkAnyWare\IPFO\Parties\Agent;
+use WorkAnyWare\IPFO\Parties\Applicant;
+use WorkAnyWare\IPFO\Parties\Inventor;
+use WorkAnyWare\IPFO\Parties\Party;
+use WorkAnyWare\IPFO\Parties\PartyMemberAddress;
+use WorkAnyWare\IPFO\IPRights\Priority;
+use WorkAnyWare\IPFO\IPRights\SearchType;
 
 class EPOXMLParserTest extends PHPUnit_Framework_TestCase
 {
@@ -16,7 +16,7 @@ class EPOXMLParserTest extends PHPUnit_Framework_TestCase
     public function testParsingOfBelgiumApplication()
     {
         //Make the Right and set basic information
-        $IPRight = new \SNicholson\IPFO\IPRight();
+        $IPRight = new \WorkAnyWare\IPFO\IPRight();
         $IPRight->setFrenchTitle('Méthode et dispositif de mesure de la direction de sources RF');
         $IPRight->setLanguageOfFiling('FR');
         $IPRight->setSource(SearchType::EPO());
@@ -63,7 +63,7 @@ class EPOXMLParserTest extends PHPUnit_Framework_TestCase
     public function testParsingEPApplication()
     {
         //Make the Right and set basic information
-        $IPRight = new \SNicholson\IPFO\IPRight();
+        $IPRight = new \WorkAnyWare\IPFO\IPRight();
         $IPRight->setEnglishTitle('High current cyclotron');
         $IPRight->setLanguageOfFiling('GB');
         $IPRight->setSource(SearchType::EPO());
@@ -139,7 +139,7 @@ class EPOXMLParserTest extends PHPUnit_Framework_TestCase
     public function testParsingWOApplication()
     {
         //Make the Right and set basic information
-        $IPRight = new \SNicholson\IPFO\IPRight();
+        $IPRight = new \WorkAnyWare\IPFO\IPRight();
         $IPRight->setFrenchTitle('Appareil pour la fabrication de cigarettes');
         $IPRight->setLanguageOfFiling('FR');
         $IPRight->setSource(SearchType::EPO());

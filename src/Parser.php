@@ -5,6 +5,7 @@ namespace SNicholson\IPFO;
 use SNicholson\IPFO\Parsers\Document;
 use SNicholson\IPFO\Parsers\ParserInterface;
 use SNicholson\IPFO\Parsers\XMLParser;
+use WorkAnyWare\IPFO\IPRightInterface;
 
 /**
  * Class Parser

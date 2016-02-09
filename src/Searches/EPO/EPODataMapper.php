@@ -5,14 +5,14 @@ namespace SNicholson\IPFO\Searches\EPO;
 use SNicholson\IPFO\Exceptions\DataMappingException;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
-use SNicholson\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRight;
 use SNicholson\IPFO\Searches\SearchError;
-use SNicholson\IPFO\Parties\Applicant;
-use SNicholson\IPFO\ValueObjects\Citation;
-use SNicholson\IPFO\Parties\Inventor;
-use SNicholson\IPFO\Parties\Party;
-use SNicholson\IPFO\ValueObjects\Priority;
-use SNicholson\IPFO\ValueObjects\SearchSource;
+use WorkAnyWare\IPFO\Parties\Applicant;
+use WorkAnyWare\IPFO\IPRights\Citation;
+use WorkAnyWare\IPFO\Parties\Inventor;
+use WorkAnyWare\IPFO\Parties\Party;
+use WorkAnyWare\IPFO\IPRights\Priority;
+use WorkAnyWare\IPFO\IPRights\SearchSource;
 
 class EPODataMapper extends DataMapper implements DataMapperInterface
 {

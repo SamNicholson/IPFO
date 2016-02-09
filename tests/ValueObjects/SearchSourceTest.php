@@ -2,7 +2,7 @@
 
 namespace tests\ValueObjects;
 
-use SNicholson\IPFO\ValueObjects\SearchSource;
+use WorkAnyWare\IPFO\IPRights\SearchSource;
 
 class SearchSourceTest extends \PHPUnit_Framework_TestCase
 {

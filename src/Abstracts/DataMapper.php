@@ -2,10 +2,10 @@
 
 namespace SNicholson\IPFO\Abstracts;
 
-use SNicholson\IPFO\IPRight;
-use SNicholson\IPFO\IPRightInterface;
+use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRightInterface;
 use SNicholson\IPFO\Searches\SearchError;
-use SNicholson\IPFO\Parties\Party;
+use WorkAnyWare\IPFO\Parties\Party;
 
 /**
  * @property mixed mapped

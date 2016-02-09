@@ -4,8 +4,8 @@ namespace SNicholson\IPFO\Searches;
 
 use SNicholson\IPFO\Containers\RequestsContainer;
 use SNicholson\IPFO\Interfaces\SearchInterface;
-use SNicholson\IPFO\ValueObjects\Number;
-use SNicholson\IPFO\ValueObjects\SearchType;
+use WorkAnyWare\IPFO\IPRights\Number;
+use WorkAnyWare\IPFO\IPRights\SearchType;
 
 class OfficeSearch implements SearchInterface
 {

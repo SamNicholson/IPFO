@@ -2,7 +2,7 @@
 
 namespace src\Tests\ValueObjects;
 
-use SNicholson\IPFO\ValueObjects\Citation;
+use WorkAnyWare\IPFO\IPRights\Citation;
 
 class CitationTest extends \PHPUnit_Framework_TestCase
 {

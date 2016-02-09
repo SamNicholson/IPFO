@@ -5,7 +5,7 @@ namespace SNicholson\IPFO\Abstracts;
 use SNicholson\IPFO\Containers\DataMapperContainer;
 use SNicholson\IPFO\Interfaces\RequestInterface;
 use SNicholson\IPFO\SearchResults;
-use SNicholson\IPFO\ValueObjects\SearchSource;
+use WorkAnyWare\IPFO\IPRights\SearchSource;
 
 abstract class Request implements RequestInterface
 {

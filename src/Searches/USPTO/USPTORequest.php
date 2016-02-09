@@ -7,7 +7,7 @@ use SNicholson\IPFO\Abstracts\Request;
 use SNicholson\IPFO\Exceptions\DataMappingException;
 use SNicholson\IPFO\Exceptions\InvalidAddressException;
 use SNicholson\IPFO\Searches\SearchError;
-use SNicholson\IPFO\ValueObjects\SearchSource;
+use WorkAnyWare\IPFO\IPRights\SearchSource;
 
 class USPTORequest extends Request
 {

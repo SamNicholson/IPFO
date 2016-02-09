@@ -2,6 +2,8 @@
 
 namespace SNicholson\IPFO;
 
+use WorkAnyWare\IPFO\IPRightInterface;
+
 class SearchResults
 {
     /**
@@ -55,6 +57,6 @@ class SearchResults
      */
     public function getResult()
     {
-        return $this->responses[0];
+        return isset($this->responses[0]) ? $this->responses[0] : null;
     }
 }

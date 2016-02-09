@@ -2,7 +2,7 @@
 
 namespace SNicholson\IPFO\Parsers\SmartParsers;
 
-use SNicholson\IPFO\Parties\Inventor;
+use WorkAnyWare\IPFO\Parties\Inventor;
 
 class InventorParser extends PartyMemberParser
 {

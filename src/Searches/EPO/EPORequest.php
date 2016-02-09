@@ -5,7 +5,7 @@ namespace SNicholson\IPFO\Searches\EPO;
 use SNicholson\IPFO\Abstracts\Request;
 use GuzzleHttp;
 use SNicholson\IPFO\Searches\SearchError;
-use SNicholson\IPFO\ValueObjects\SearchSource;
+use WorkAnyWare\IPFO\IPRights\SearchSource;
 
 class EPORequest extends Request
 {

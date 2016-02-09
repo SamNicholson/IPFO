@@ -4,11 +4,11 @@ namespace SNicholson\IPFO\Parsers\SmartParsers;
 
 use SNicholson\IPFO\Helpers\IPFOXML;
 use SNicholson\IPFO\Parsers\RecursiveFieldSearch;
-use SNicholson\IPFO\Parties\Agent;
-use SNicholson\IPFO\Parties\Applicant;
-use SNicholson\IPFO\Parties\Party;
-use SNicholson\IPFO\Parties\PartyMember;
-use SNicholson\IPFO\Parties\PartyMemberInterface;
+use WorkAnyWare\IPFO\Parties\Agent;
+use WorkAnyWare\IPFO\Parties\Applicant;
+use WorkAnyWare\IPFO\Parties\Party;
+use WorkAnyWare\IPFO\Parties\PartyMember;
+use WorkAnyWare\IPFO\Parties\PartyMemberInterface;
 
 abstract class PartyMemberParser
 {

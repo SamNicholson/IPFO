@@ -2,7 +2,7 @@
 
 namespace SNicholson\IPFO\Parsers\SmartParsers;
 
-use SNicholson\IPFO\Parties\Applicant;
+use WorkAnyWare\IPFO\Parties\Applicant;
 
 class ApplicantParser extends PartyMemberParser
 {

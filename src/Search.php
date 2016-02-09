@@ -8,8 +8,8 @@ use SNicholson\IPFO\Searches\OfficeSearch;
 use SNicholson\IPFO\Searches\PatentSearch;
 use SNicholson\IPFO\Searches\TrademarkSearch;
 use SNicholson\IPFO\Interfaces\SearchInterface;
-use SNicholson\IPFO\ValueObjects\SearchType;
-use SNicholson\IPFO\ValueObjects\Number;
+use WorkAnyWare\IPFO\IPRights\SearchType;
+use WorkAnyWare\IPFO\IPRights\Number;
 
 /**
  * Class Search

@@ -2,7 +2,7 @@
 
 namespace SNicholson\IPFO\Parsers\SmartParsers;
 
-use SNicholson\IPFO\Parties\Agent;
+use WorkAnyWare\IPFO\Parties\Agent;
 
 class AgentParser extends PartyMemberParser
 {

@@ -2,10 +2,10 @@
 
 namespace SNicholson\IPFO\Interfaces;
 
-use SNicholson\IPFO\IPRight;
-use SNicholson\IPFO\IPRightInterface;
+use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRightInterface;
 use SNicholson\IPFO\Searches\SearchError;
-use SNicholson\IPFO\ValueObjects\Number;
+use WorkAnyWare\IPFO\IPRights\Number;
 
 interface SearchInterface
 {

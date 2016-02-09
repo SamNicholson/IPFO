@@ -2,10 +2,10 @@
 
 namespace src\Tests;
 
-use SNicholson\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRight;
 use SNicholson\IPFO\Search;
-use SNicholson\IPFO\ValueObjects\SearchType;
-use SNicholson\IPFO\ValueObjects\Number;
+use WorkAnyWare\IPFO\IPRights\SearchType;
+use WorkAnyWare\IPFO\IPRights\Number;
 
 class SearchTest extends \PHPUnit_Framework_TestCase
 {

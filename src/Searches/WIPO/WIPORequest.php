@@ -6,7 +6,7 @@ use SNicholson\IPFO\Abstracts\Request;
 use SNicholson\IPFO\Exceptions\DataMappingException;
 use GuzzleHttp;
 use SNicholson\IPFO\Searches\SearchError;
-use SNicholson\IPFO\ValueObjects\SearchSource;
+use WorkAnyWare\IPFO\IPRights\SearchSource;
 use SoapClient;
 
 class WIPORequest extends Request

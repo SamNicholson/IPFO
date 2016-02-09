@@ -3,8 +3,8 @@
 namespace SNicholson\IPFO\Parsers\EPOLine;
 
 use SNicholson\IPFO\Helpers\IPFOXML;
-use SNicholson\IPFO\IPRight;
-use SNicholson\IPFO\IPRightInterface;
+use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRightInterface;
 use SNicholson\IPFO\Parsers\Document;
 use SNicholson\IPFO\Parsers\ParserInterface;
 use SNicholson\IPFO\Parsers\SmartParsers\AgentParser;
@@ -13,7 +13,7 @@ use SNicholson\IPFO\Parsers\SmartParsers\InventorParser;
 use SNicholson\IPFO\Parsers\SmartParsers\PrioritiesParser;
 use SNicholson\IPFO\Parsers\SmartParsers\TitleParser;
 use SNicholson\IPFO\Search;
-use SNicholson\IPFO\ValueObjects\SearchType;
+use WorkAnyWare\IPFO\IPRights\SearchType;
 
 class EPOXMLParser implements ParserInterface
 {

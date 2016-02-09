@@ -2,8 +2,8 @@
 
 namespace SNicholson\IPFO\Parsers;
 
-use SNicholson\IPFO\IPRight;
-use SNicholson\IPFO\IPRightInterface;
+use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRightInterface;
 
 interface ParserInterface
 {

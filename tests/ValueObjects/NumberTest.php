@@ -2,7 +2,7 @@
 
 namespace tests\ValueObjects;
 
-use SNicholson\IPFO\ValueObjects\Number;
+use WorkAnyWare\IPFO\IPRights\Number;
 
 class NumberTest extends \PHPUnit_Framework_TestCase
 {

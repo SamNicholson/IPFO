@@ -4,10 +4,10 @@ namespace SNicholson\IPFO\Parsers\SmartParsers;
 
 use SNicholson\IPFO\Helpers\DateParser;
 use SNicholson\IPFO\Helpers\IPFOXML;
-use SNicholson\IPFO\IPRight;
-use SNicholson\IPFO\IPRightInterface;
+use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRightInterface;
 use SNicholson\IPFO\Parsers\RecursiveFieldSearch;
-use SNicholson\IPFO\ValueObjects\Priority;
+use WorkAnyWare\IPFO\IPRights\Priority;
 
 class PrioritiesParser
 {

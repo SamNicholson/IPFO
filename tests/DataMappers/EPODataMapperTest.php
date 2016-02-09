@@ -1,10 +1,10 @@
 <?php
 
 use SNicholson\IPFO\Searches\EPO\EPODataMapper;
-use SNicholson\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRight;
 use SNicholson\IPFO\Searches\SearchError;
-use SNicholson\IPFO\ValueObjects\Priority;
-use SNicholson\IPFO\ValueObjects\SearchSource;
+use WorkAnyWare\IPFO\IPRights\Priority;
+use WorkAnyWare\IPFO\IPRights\SearchSource;
 
 class EPODataMapperTest extends PHPUnit_Framework_TestCase
 {
@@ -142,36 +142,36 @@ class EPODataMapperTest extends PHPUnit_Framework_TestCase
         $expectedResult->setPriorities($firstPriority, $secondPriority);
 
         //Applicants
-        $applicantParty = new \SNicholson\IPFO\Parties\Party();
-        $applicant1 = new \SNicholson\IPFO\Parties\Applicant();
+        $applicantParty = new \WorkAnyWare\IPFO\Parties\Party();
+        $applicant1 = new \WorkAnyWare\IPFO\Parties\Applicant();
         $applicant1->setName('IONIAN TECHNOLOGIES, INC');
         $applicant1->setSequence('1');
         $applicantParty->addMember($applicant1);
         $expectedResult->setApplicants($applicantParty);
 
         //Inventors
-        $inventorParty = new \SNicholson\IPFO\Parties\Party();
-        $inventor1 = new \SNicholson\IPFO\Parties\Inventor();
+        $inventorParty = new \WorkAnyWare\IPFO\Parties\Party();
+        $inventor1 = new \WorkAnyWare\IPFO\Parties\Inventor();
         $inventor1->setName('MAPLES, BRIAN, K,');
         $inventor1->setSequence('1');
         $inventorParty->addMember($inventor1);
-        $inventor2 = new \SNicholson\IPFO\Parties\Inventor();
+        $inventor2 = new \WorkAnyWare\IPFO\Parties\Inventor();
         $inventor2->setName('HOLMBERG, REBECCA, C,');
         $inventor2->setSequence('2');
         $inventorParty->addMember($inventor2);
-        $inventor3 = new \SNicholson\IPFO\Parties\Inventor();
+        $inventor3 = new \WorkAnyWare\IPFO\Parties\Inventor();
         $inventor3->setName('MILLER, ANDREW, P,');
         $inventor3->setSequence('3');
         $inventorParty->addMember($inventor3);
-        $inventor4 = new \SNicholson\IPFO\Parties\Inventor();
+        $inventor4 = new \WorkAnyWare\IPFO\Parties\Inventor();
         $inventor4->setName('PROVINS, JARROD,');
         $inventor4->setSequence('4');
         $inventorParty->addMember($inventor4);
-        $inventor5 = new \SNicholson\IPFO\Parties\Inventor();
+        $inventor5 = new \WorkAnyWare\IPFO\Parties\Inventor();
         $inventor5->setName('ROTH, RICHARD,');
         $inventor5->setSequence('5');
         $inventorParty->addMember($inventor5);
-        $inventor6 = new \SNicholson\IPFO\Parties\Inventor();
+        $inventor6 = new \WorkAnyWare\IPFO\Parties\Inventor();
         $inventor6->setName('MANDELL, JEFFREY');
         $inventor6->setSequence('6');
         $inventorParty->addMember($inventor6);

@@ -4,7 +4,7 @@ namespace SNicholson\IPFO\Searches;
 
 use SNicholson\IPFO\Abstracts\Search;
 use SNicholson\IPFO\Interfaces\SearchInterface;
-use SNicholson\IPFO\ValueObjects\Number;
+use WorkAnyWare\IPFO\IPRights\Number;
 
 class TrademarkSearch extends Search implements SearchInterface
 {

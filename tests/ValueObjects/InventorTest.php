@@ -2,7 +2,7 @@
 
 namespace src\Tests\ValueObjects;
 
-use SNicholson\IPFO\Parties\Inventor;
+use WorkAnyWare\IPFO\Parties\Inventor;
 
 class InventorTest extends \PHPUnit_Framework_TestCase
 {

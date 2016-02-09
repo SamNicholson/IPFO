@@ -2,7 +2,7 @@
 
 namespace src\Tests\ValueObjects;
 
-use SNicholson\IPFO\ValueObjects\SearchType;
+use WorkAnyWare\IPFO\IPRights\SearchType;
 
 class IPTypeTest extends \PHPUnit_Framework_TestCase
 {

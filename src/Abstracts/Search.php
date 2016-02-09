@@ -4,10 +4,10 @@ namespace SNicholson\IPFO\Abstracts;
 
 use SNicholson\IPFO\Containers\RequestsContainer;
 use SNicholson\IPFO\Interfaces\SearchInterface;
-use SNicholson\IPFO\IPRight;
-use SNicholson\IPFO\IPRightInterface;
-use SNicholson\IPFO\ValueObjects\Number;
-use SNicholson\IPFO\ValueObjects\SearchSource;
+use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRightInterface;
+use WorkAnyWare\IPFO\IPRights\Number;
+use WorkAnyWare\IPFO\IPRights\SearchSource;
 
 abstract class Search implements SearchInterface
 {

@@ -6,12 +6,12 @@ use DateTime;
 use SNicholson\IPFO\Exceptions\DataMappingException;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
-use SNicholson\IPFO\IPRight;
-use SNicholson\IPFO\IPRightInterface;
-use SNicholson\IPFO\Parties\Applicant;
-use SNicholson\IPFO\Parties\Inventor;
-use SNicholson\IPFO\Parties\Party;
-use SNicholson\IPFO\ValueObjects\Priority;
+use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPRightInterface;
+use WorkAnyWare\IPFO\Parties\Applicant;
+use WorkAnyWare\IPFO\Parties\Inventor;
+use WorkAnyWare\IPFO\Parties\Party;
+use WorkAnyWare\IPFO\IPRights\Priority;
 
 class WIPODataMapper extends DataMapper implements DataMapperInterface
 {

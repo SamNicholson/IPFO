@@ -26,6 +26,11 @@ class RightType
         return new RightType(RightType::PATENT);
     }
 
+    public static function fromString($rightType)
+    {
+        return new RightType($rightType);
+    }
+
     private function __construct($type)
     {
         $this->type = $type;

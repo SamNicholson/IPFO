@@ -22,6 +22,11 @@ class SearchSource
         return new SearchSource('WIPO');
     }
 
+    public static function fromString($source)
+    {
+        return new SearchSource($source);
+    }
+
     private function __construct($source)
     {
         $this->source = $source;

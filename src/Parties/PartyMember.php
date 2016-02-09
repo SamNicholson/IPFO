@@ -4,16 +4,16 @@ namespace SNicholson\IPFO\Parties;
 
 abstract class PartyMember implements PartyMemberInterface
 {
-    protected $sequence;
-    protected $name;
-    protected $reference;
-    protected $email;
-    protected $phone;
-    protected $fax;
+    protected $sequence = '';
+    protected $name = '';
+    protected $reference = '';
+    protected $email = '';
+    protected $phone = '';
+    protected $fax = '';
     /** @var PartyMemberAddress */
     protected $address;
-    protected $nationality;
-    protected $domicile;
+    protected $nationality = '';
+    protected $domicile = '';
 
     public function __construct()
     {

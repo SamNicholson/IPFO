@@ -1,0 +1,1441 @@
+<?xml version="1.0" encoding="UTF-8"?><wo-international-application-status>
+    <wo-bibliographic-data produced-by="IB" dtd-version="0.2" lang="EN" date-produced="20160209">
+        <publication-reference>
+            <document-id lang="EN">
+                <country>WO</country>
+                <doc-number>2013/159921</doc-number>
+                <kind>A1</kind>
+                <date>20131031</date>
+            </document-id>
+        </publication-reference>
+        <wo-publication-info>
+            <wo-correction>
+                <document-id>
+                    <country>WO</country>
+                    <doc-number>2013159921</doc-number>
+                    <date>20131227</date>
+                </document-id>
+                <type-of-correction>2</type-of-correction>
+                <wo-repub-code>R3</wo-repub-code>
+                <wo-pubnum>52/2013</wo-pubnum>
+            </wo-correction>
+            <isr-status isr-status="new">
+                <received-at-ib>
+                    <date>20131014</date>
+                </received-at-ib>
+            </isr-status>
+            <pct-pub-info>
+                <wo-published-text>
+                    <wo-text-letter-code>x</wo-text-letter-code>
+                </wo-published-text>
+            </pct-pub-info>
+            <wo-pubnum>44/2013</wo-pubnum>
+        </wo-publication-info>
+        <application-reference appl-type="PCT">
+            <document-id lang="EN">
+                <country>EP</country>
+                <doc-number>PCT/EP2013/001229</doc-number>
+                <date>20130424</date>
+            </document-id>
+        </application-reference>
+        <wo-application-info>
+            <date-of-earliest-priority>
+                <date>20120426</date>
+            </date-of-earliest-priority>
+            <received-at-ib>
+                <date>20130624</date>
+            </received-at-ib>
+        </wo-application-info>
+        <file-reference-id>810835</file-reference-id>
+        <invention-title lang="EN">PILOT TRANSMISSION POWER ADJUSTMENT IN A MULTI-FLOW NETWORK</invention-title>
+        <invention-title lang="FR">AJUSTEMENT DE LA PUISSANCE D'ÉMISSION DE SIGNAL PILOTE DANS UN RÉSEAU À FLUX MULTIPLES</invention-title>
+        <parties>
+            <applicants>
+                <applicant designation="all" app-type="applicant" sequence="1">
+                    <addressbook lang="EN">
+                        <name name-type="legal">ALCATEL LUCENT</name>
+                        <address>
+                            <address-1>148/152, route de la Reine
+                                F-92100 Boulogne-Billancourt</address-1>
+                            <country>FR</country>
+                        </address>
+                    </addressbook>
+                    <nationality>
+                        <country>FR</country>
+                    </nationality>
+                    <residence>
+                        <country>FR</country>
+                    </residence>
+                </applicant>
+            </applicants>
+            <inventors>
+                <inventor designation="all" sequence="1">
+                    <addressbook lang="EN">
+                        <name name-type="natural">WONG, Shin Horng</name>
+                        <address>
+                            <address-1>Alcatel-Lucent Telecom Ltd.
+                                The Quadrant, Stonehill Green
+                                Westlea, Swindon, SN5 7DJ
+                                Wiltshire</address-1>
+                            <country>GB</country>
+                        </address>
+                    </addressbook>
+                </inventor>
+                <inventor designation="all" sequence="2">
+                    <addressbook lang="EN">
+                        <name name-type="natural">PUDDLE, Nicola</name>
+                        <address>
+                            <address-1>Alcatel-Lucent Telecom Ltd.
+                                The Quadrant, Stonehill Green
+                                Westlea, Swindon, SN5 7DJ
+                                Wiltshire</address-1>
+                            <country>GB</country>
+                        </address>
+                    </addressbook>
+                </inventor>
+                <inventor designation="all" sequence="3">
+                    <addressbook lang="EN">
+                        <name name-type="natural">BREND, Graham R.</name>
+                        <address>
+                            <address-1>Alcatel-Lucent Telecom Ltd.
+                                The Quadrant, Stonehill Green
+                                Westlea, Swindon, SN5 7DJ
+                                Wiltshire</address-1>
+                            <country>GB</country>
+                        </address>
+                    </addressbook>
+                </inventor>
+            </inventors>
+            <agents>
+                <agent rep-type="agent" sequence="1">
+                    <addressbook lang="EN">
+                        <name name-type="legal">SARUP, David, Alexander</name>
+                        <address>
+                            <address-1>Alcatel Lucent Telecom Ltd
+                                Intellectual Property Business Group
+                                Christchurch Way
+                                Greenwich London SE10 0AG</address-1>
+                            <country>GB</country>
+                        </address>
+                    </addressbook>
+                </agent>
+            </agents>
+        </parties>
+        <designation-of-states>
+            <designation-pct>
+                <regional>
+                    <region>
+                        <country>EP</country>
+                    </region>
+                    <country>AL</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>AT</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>BE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>BG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>CH</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>CY</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>CZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>DE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>DK</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>EE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>ES</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>FI</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>FR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GB</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>HR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>HU</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>IE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>IS</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>IT</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LT</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LU</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LV</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MC</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MK</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MT</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>NL</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>NO</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>PL</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>PT</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>RO</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>RS</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SI</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SK</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>TR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                </regional>
+                <regional>
+                    <region>
+                        <country>OA</country>
+                    </region>
+                    <country>BF</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>BJ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>CF</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>CG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>CI</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>CM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GN</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GQ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GW</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>ML</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>NE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SN</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>TD</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>TG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                </regional>
+                <regional>
+                    <region>
+                        <country>AP</country>
+                    </region>
+                    <country>BW</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GH</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>KE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LS</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MW</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>NA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>RW</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SD</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SL</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>TZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>UG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>ZM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>ZW</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                </regional>
+                <regional>
+                    <region>
+                        <country>EA</country>
+                    </region>
+                    <country>AM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>AZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>BY</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>KG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>KZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>RU</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>TJ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>TM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                </regional>
+                <national>
+                    <country>AE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>AG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>AL</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>AM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>AO</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>AT</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>AU</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>AZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>BA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>CP</kind-of-protection>
+                    </protection-request>
+                    <country>BB</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>BG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>BH</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>BN</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>BR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>BW</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UMC</kind-of-protection>
+                    </protection-request>
+                    <country>BY</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>BZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>CA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>CH</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>CL</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>CN</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>CO</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>CR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>CU</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>IC</kind-of-protection>
+                    </protection-request>
+                    <country>CZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>DE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>DK</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>DM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>DO</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>DZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>EC</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>EE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>EG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>ES</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>FI</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>GB</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GD</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>GH</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UC</kind-of-protection>
+                    </protection-request>
+                    <country>GM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>GT</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>HN</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>HR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>CP</kind-of-protection>
+                    </protection-request>
+                    <country>HU</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>ID</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>IL</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>IN</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>IS</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>JP</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>KE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>KG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>KM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>KN</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>KP</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>IC</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>KR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>KZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>IP</kind-of-protection>
+                    </protection-request>
+                    <country>LA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LC</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LK</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LS</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>LT</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LU</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>LY</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MD</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>STP</kind-of-protection>
+                    </protection-request>
+                    <country>ME</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MK</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MN</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MW</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>MX</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>MY</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UI</kind-of-protection>
+                    </protection-request>
+                    <country>MZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>NA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>NG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>NI</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>NO</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>NZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>OM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>PA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>PE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>PG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>PH</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>PL</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>PT</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>QA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>RO</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>RS</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PP</kind-of-protection>
+                    </protection-request>
+                    <country>RU</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>RW</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>SC</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SD</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SE</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SK</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>SL</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>SM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>ST</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>SV</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>SY</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>TH</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PP</kind-of-protection>
+                    </protection-request>
+                    <country>TJ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>TM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PR</kind-of-protection>
+                    </protection-request>
+                    <country>TN</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>TR</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>TT</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UC</kind-of-protection>
+                    </protection-request>
+                    <country>TZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>UA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>UG</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UC</kind-of-protection>
+                    </protection-request>
+                    <country>US</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>UZ</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UM</kind-of-protection>
+                    </protection-request>
+                    <country>VC</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>UC</kind-of-protection>
+                    </protection-request>
+                    <country>VN</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PUS</kind-of-protection>
+                    </protection-request>
+                    <country>ZA</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>ZM</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                    <country>ZW</country>
+                    <protection-request subset="yes">
+                        <kind-of-protection>PAT</kind-of-protection>
+                    </protection-request>
+                </national>
+            </designation-pct>
+        </designation-of-states>
+        <wo-priority-info>
+            <priority-claim kind="regional" sequence="1">
+                <country>EP</country>
+                <doc-number>12360031.4</doc-number>
+                <date>20120426</date>
+            </priority-claim>
+            <priority-claim-ib-info>
+                <received-at-ib>
+                    <date>20140423</date>
+                </received-at-ib>
+                <pct-rule17-1 compliance="no"/>
+            </priority-claim-ib-info>
+        </wo-priority-info>
+        <search-authority>
+            <isa>
+                <country>EP</country>
+            </isa>
+        </search-authority>
+        <classifications-ipcr>
+            <classification-ipcr sequence="1">
+                <ipc-version-indicator>
+                    <date>20090101</date>
+                </ipc-version-indicator>
+                <classification-level>A</classification-level>
+                <section>H</section>
+                <class>04</class>
+                <subclass>W</subclass>
+                <main-group>52</main-group>
+                <subgroup>32</subgroup>
+                <symbol-position>F</symbol-position>
+                <classification-value>I</classification-value>
+                <generating-office>
+                    <country>EP</country>
+                </generating-office>
+                <classification-status>B</classification-status>
+                <classification-data-source>H</classification-data-source>
+            </classification-ipcr>
+            <classification-ipcr sequence="2">
+                <ipc-version-indicator>
+                    <date>20090101</date>
+                </ipc-version-indicator>
+                <classification-level>A</classification-level>
+                <section>H</section>
+                <class>04</class>
+                <subclass>W</subclass>
+                <main-group>52</main-group>
+                <subgroup>34</subgroup>
+                <symbol-position>L</symbol-position>
+                <classification-value>I</classification-value>
+                <generating-office>
+                    <country>EP</country>
+                </generating-office>
+                <classification-status>B</classification-status>
+                <classification-data-source>H</classification-data-source>
+            </classification-ipcr>
+            <classification-ipcr sequence="3">
+                <ipc-version-indicator>
+                    <date>20090101</date>
+                </ipc-version-indicator>
+                <classification-level>A</classification-level>
+                <section>H</section>
+                <class>04</class>
+                <subclass>W</subclass>
+                <main-group>52</main-group>
+                <subgroup>40</subgroup>
+                <symbol-position>L</symbol-position>
+                <classification-value>I</classification-value>
+                <generating-office>
+                    <country>EP</country>
+                </generating-office>
+                <classification-status>B</classification-status>
+                <classification-data-source>H</classification-data-source>
+            </classification-ipcr>
+            <classification-ipcr sequence="4">
+                <ipc-version-indicator>
+                    <date>20090101</date>
+                </ipc-version-indicator>
+                <classification-level>A</classification-level>
+                <section>H</section>
+                <class>04</class>
+                <subclass>W</subclass>
+                <main-group>52</main-group>
+                <subgroup>28</subgroup>
+                <symbol-position>L</symbol-position>
+                <classification-value>I</classification-value>
+                <generating-office>
+                    <country>EP</country>
+                </generating-office>
+                <classification-status>B</classification-status>
+                <classification-data-source>H</classification-data-source>
+            </classification-ipcr>
+            <classification-ipcr sequence="5">
+                <ipc-version-indicator>
+                    <date>20090101</date>
+                </ipc-version-indicator>
+                <classification-level>A</classification-level>
+                <section>H</section>
+                <class>04</class>
+                <subclass>W</subclass>
+                <main-group>16</main-group>
+                <subgroup>08</subgroup>
+                <symbol-position>L</symbol-position>
+                <classification-value>I</classification-value>
+                <generating-office>
+                    <country>EP</country>
+                </generating-office>
+                <classification-status>B</classification-status>
+                <classification-data-source>H</classification-data-source>
+            </classification-ipcr>
+            <classification-ipcr sequence="6">
+                <ipc-version-indicator>
+                    <date>20090101</date>
+                </ipc-version-indicator>
+                <classification-level>A</classification-level>
+                <section>H</section>
+                <class>04</class>
+                <subclass>W</subclass>
+                <main-group>52</main-group>
+                <subgroup>14</subgroup>
+                <symbol-position>L</symbol-position>
+                <classification-value>N</classification-value>
+                <generating-office>
+                    <country>EP</country>
+                </generating-office>
+                <classification-status>B</classification-status>
+                <classification-data-source>H</classification-data-source>
+            </classification-ipcr>
+            <classification-ipcr sequence="7">
+                <ipc-version-indicator>
+                    <date>20090101</date>
+                </ipc-version-indicator>
+                <classification-level>A</classification-level>
+                <section>H</section>
+                <class>04</class>
+                <subclass>W</subclass>
+                <main-group>52</main-group>
+                <subgroup>22</subgroup>
+                <symbol-position>L</symbol-position>
+                <classification-value>N</classification-value>
+                <generating-office>
+                    <country>EP</country>
+                </generating-office>
+                <classification-status>B</classification-status>
+                <classification-data-source>H</classification-data-source>
+            </classification-ipcr>
+            <classification-ipcr sequence="8">
+                <ipc-version-indicator>
+                    <date>20090101</date>
+                </ipc-version-indicator>
+                <classification-level>A</classification-level>
+                <section>H</section>
+                <class>04</class>
+                <subclass>W</subclass>
+                <main-group>52</main-group>
+                <subgroup>36</subgroup>
+                <symbol-position>L</symbol-position>
+                <classification-value>N</classification-value>
+                <generating-office>
+                    <country>EP</country>
+                </generating-office>
+                <classification-status>B</classification-status>
+                <classification-data-source>H</classification-data-source>
+            </classification-ipcr>
+            <classification-ipcr sequence="9">
+                <ipc-version-indicator>
+                    <date>20090101</date>
+                </ipc-version-indicator>
+                <classification-level>A</classification-level>
+                <section>H</section>
+                <class>04</class>
+                <subclass>W</subclass>
+                <main-group>52</main-group>
+                <subgroup>24</subgroup>
+                <symbol-position>L</symbol-position>
+                <classification-value>N</classification-value>
+                <generating-office>
+                    <country>EP</country>
+                </generating-office>
+                <classification-status>B</classification-status>
+                <classification-data-source>H</classification-data-source>
+            </classification-ipcr>
+        </classifications-ipcr>
+    </wo-bibliographic-data>
+    <abstract lang="EN">
+        <p num="0000">A method of adapting pilot signal transmission power of a base station operable to provide radio coverage in a multi-flow wireless communications network, a computer program product and base station operable to perform that method. The method comprises: monitoring a base station loading parameter; assessing whether the loading parameter has passed a threshold value; and, if so, adapting the pilot signal transmission power of the base station to adjust a region of multi-flow capable radio coverage overlap between the area of radio coverage provided by the base station and a set of adjacent base stations. Aspects recognise that multi-flow networks can operate more efficiently to alleviate cell overload if a region of coverage overlap between adjacent base stations is increased, thereby allowing two or more base stations to serve user equipment simultaneously in a given geographical area.</p>
+    </abstract>
+    <abstract lang="FR">
+        <p num="0000">L'invention concerne, d'une part un procédé de réglage de la puissance d'émission du signal pilote d'une station de base assurant une couverture hertzienne dans un réseau de radiocommunications à flux multiples, et d'autre part un progiciel et une station de base convenant à la mise en œuvre du procédé. Le procédé consiste d'abord à surveiller un paramètre de charge de la station de base. Le procédé consiste ensuite à vérifier si le paramètre de charge a dépassé une valeur de seuil. Si c'est le cas, le procédé consiste alors à adapter la puissance d'émission du signal pilote de façon à ajuster, entre la zone de couverture hertzienne desservie par la station de base et un ensemble de stations de base adjacentes, le chevauchement des couvertures hertziennes admettant les flux multiples. Par certains aspects, l'invention prend en compte le fait que des réseaux à flux multiples peuvent aider plus efficacement à soulager des cellules dès lors qu'on accroît les chevauchements de zones de couverture entre stations de base adjacentes, ce qui permet à au moins deux stations de base de desservir simultanément un équipement d'utilisateur dans une zone géographique donnée.</p>
+    </abstract>
+    <as-at-date>
+        <date>20140704</date>
+    </as-at-date>
+    <wo-processing-information date-produced="20160209" produced-by="IB">
+        <wo-priority-date-information valid="Y"/>
+        <wo-international-search-process-information>
+            <wo-isa-search-report-information isr-established="Y">
+                <date-of-mailing>
+                    <date>20131016</date>
+                </date-of-mailing>
+                <received-at-ib>
+                    <date>20131014</date>
+                </received-at-ib>
+            </wo-isa-search-report-information>
+        </wo-international-search-process-information>
+    </wo-processing-information>
+</wo-international-application-status>

@@ -1,10 +1,10 @@
 {
-
     "name" : "snicholson/ipfo",
     "description" : "A library to talk to the intellectual property official offices",
     "autoload": {
         "psr-4": {
-            "SNicholson\\IPFO\\" : "src/"
+            "SNicholson\\IPFO\\" : "src/",
+            "WorkAnyWare\\IPFO\\" : "../ipfo-php/src/"
         }
     },
     "config": {

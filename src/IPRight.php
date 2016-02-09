@@ -437,7 +437,7 @@ class IPRight implements IPRightInterface
             'inventors'        => $this->getInventors(true),
             'citations'        => $this->getCitations(true),
             'languageOfFiling' => $this->getLanguageOfFiling(),
-            'agent'            => $this->getAgents(true)
+            'agents'           => $this->getAgents(true)
         ];
     }
 

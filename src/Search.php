@@ -4,6 +4,7 @@ namespace SNicholson\IPFO;
 
 use InvalidArgumentException;
 use SNicholson\IPFO\Containers\RequestsContainer;
+use SNicholson\IPFO\Helpers\RightNumber;
 use SNicholson\IPFO\Searches\OfficeSearch;
 use SNicholson\IPFO\Searches\PatentSearch;
 use SNicholson\IPFO\Searches\TrademarkSearch;
@@ -79,7 +80,7 @@ class Search
      */
     public function byApplicationNumber($number)
     {
-        $this->number = Number::application($number);
+        $this->number = RightNumber::application($number);
         return $this;
     }
 
@@ -90,7 +91,7 @@ class Search
      */
     public function byPublicationNumber($number)
     {
-        $this->number = Number::publication($number);
+        $this->number = RightNumber::publication($number);
         return $this;
     }
 

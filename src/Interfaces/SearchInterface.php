@@ -2,10 +2,9 @@
 
 namespace SNicholson\IPFO\Interfaces;
 
-use WorkAnyWare\IPFO\IPRight;
+use SNicholson\IPFO\Helpers\RightNumber;
 use WorkAnyWare\IPFO\IPRightInterface;
 use SNicholson\IPFO\Searches\SearchError;
-use WorkAnyWare\IPFO\IPRights\Number;
 
 interface SearchInterface
 {
@@ -19,9 +18,9 @@ interface SearchInterface
     /**
      * Returns the results of a number search via this search interface
      *
-     * @param Number $number
+     * @param RightNumber $number
      *
      * @return false|IPRightInterface
      */
-    public function numberSearch(Number $number);
+    public function numberSearch(RightNumber $number);
 }

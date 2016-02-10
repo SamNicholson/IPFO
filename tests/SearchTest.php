@@ -2,6 +2,7 @@
 
 namespace src\Tests;
 
+use SNicholson\IPFO\Helpers\RightNumber;
 use WorkAnyWare\IPFO\IPRight;
 use SNicholson\IPFO\Search;
 use WorkAnyWare\IPFO\IPRights\SearchType;
@@ -29,7 +30,7 @@ class SearchTest extends \PHPUnit_Framework_TestCase
     {
         $search = Search::tradeMark()->byApplicationNumber('EP12345');
         $this->assertEquals(SearchType::tradeMark(), $search->getIPType());
-        $this->assertEquals(Number::application('EP12345'), $search->getNumber());
+        $this->assertEquals(RightNumber::application('EP12345'), $search->getNumber());
     }
 
     /**
@@ -39,7 +40,7 @@ class SearchTest extends \PHPUnit_Framework_TestCase
     {
         $search = Search::patent()->byApplicationNumber('EP12345');
         $this->assertEquals(SearchType::patent(), $search->getIPType());
-        $this->assertEquals(Number::application('EP12345'), $search->getNumber());
+        $this->assertEquals(RightNumber::application('EP12345'), $search->getNumber());
     }
 
     /**
@@ -49,7 +50,7 @@ class SearchTest extends \PHPUnit_Framework_TestCase
     {
         $search = Search::tradeMark()->byPublicationNumber('EP12345');
         $this->assertEquals(SearchType::tradeMark(), $search->getIPType());
-        $this->assertEquals(Number::publication('EP12345'), $search->getNumber());
+        $this->assertEquals(RightNumber::publication('EP12345'), $search->getNumber());
     }
 
     /**
@@ -59,7 +60,7 @@ class SearchTest extends \PHPUnit_Framework_TestCase
     {
         $search = Search::patent()->byPublicationNumber('EP12345');
         $this->assertEquals(SearchType::patent(), $search->getIPType());
-        $this->assertEquals(Number::publication('EP12345'), $search->getNumber());
+        $this->assertEquals(RightNumber::publication('EP12345'), $search->getNumber());
     }
 
     /**

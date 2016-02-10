@@ -3,6 +3,7 @@
 namespace SNicholson\IPFO\Searches;
 
 use SNicholson\IPFO\Containers\RequestsContainer;
+use SNicholson\IPFO\Helpers\RightNumber;
 use SNicholson\IPFO\Interfaces\SearchInterface;
 use WorkAnyWare\IPFO\IPRights\Number;
 use WorkAnyWare\IPFO\IPRights\SearchType;
@@ -34,7 +35,7 @@ class OfficeSearch implements SearchInterface
         return $this->error;
     }
 
-    public function numberSearch(Number $number)
+    public function numberSearch(RightNumber $number)
     {
         //Set up some variables
         $this->requestNumber     = $number->getNumberString();

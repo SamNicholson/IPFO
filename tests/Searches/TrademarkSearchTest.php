@@ -28,7 +28,7 @@ class TrademarkSearchTest extends PHPUnit_Framework_TestCase
      */
     public function testUSPTOTradeMarkSearch()
     {
-        $number = \WorkAnyWare\IPFO\IPRights\Number::application('US12345');
+        $number = \SNicholson\IPFO\Helpers\RightNumber::application('US12345');
         $this->requestsContainerMock->expects($this->once())->method('newUSPTOTrademarkRequest')
             ->willReturn($this->requestMock);
         $this->requestMock->expects($this->once())->method('simpleNumberSearch')->with($number)->willReturn(true);
@@ -40,7 +40,7 @@ class TrademarkSearchTest extends PHPUnit_Framework_TestCase
      */
     public function testFailedNumberSearchWillTriggerFailureAndError()
     {
-        $number = \WorkAnyWare\IPFO\IPRights\Number::application('WO12345');
+        $number = \SNicholson\IPFO\Helpers\RightNumber::application('WO12345');
         $tradeMarkSearch = $this->getTradeMarkSearch();
         $this->requestsContainerMock->expects($this->once())->method('newUSPTOTrademarkRequest')->willReturn($this->requestMock);
         $this->requestMock->expects($this->once())->method('simpleNumberSearch')->with($number)->willReturn(false);

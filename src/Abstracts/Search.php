@@ -3,10 +3,9 @@
 namespace SNicholson\IPFO\Abstracts;
 
 use SNicholson\IPFO\Containers\RequestsContainer;
+use SNicholson\IPFO\Helpers\RightNumber;
 use SNicholson\IPFO\Interfaces\SearchInterface;
-use WorkAnyWare\IPFO\IPRight;
 use WorkAnyWare\IPFO\IPRightInterface;
-use WorkAnyWare\IPFO\IPRights\Number;
 use WorkAnyWare\IPFO\IPRights\SearchSource;
 
 abstract class Search implements SearchInterface
@@ -35,11 +34,11 @@ abstract class Search implements SearchInterface
     }
 
     /**
-     * @param Number $number
+     * @param RightNumber $number
      *
      * @return bool|IPRightInterface
      */
-    public function numberSearch(Number $number)
+    public function numberSearch(RightNumber $number)
     {
         //Set up some variables
         $this->requestNumber     = $number->getNumberString();

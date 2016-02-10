@@ -28,7 +28,7 @@ class PatentSearchTest extends PHPUnit_Framework_TestCase
      */
     public function testEPRequestFired()
     {
-        $number = \WorkAnyWare\IPFO\IPRights\Number::application('EP12345');
+        $number = \SNicholson\IPFO\Helpers\RightNumber::application('EP12345');
         $this->requestsContainerMock->expects($this->once())->method('newEPORequest')->willReturn($this->requestMock);
         $this->requestMock->expects($this->once())->method('simpleNumberSearch')->with($number)->willReturn(true);
         $this->assertTrue($this->getPatentSearch()->numberSearch($number));
@@ -39,7 +39,7 @@ class PatentSearchTest extends PHPUnit_Framework_TestCase
      */
     public function testUSPTORequestFired()
     {
-        $number = \WorkAnyWare\IPFO\IPRights\Number::application('US12345');
+        $number = \SNicholson\IPFO\Helpers\RightNumber::application('US12345');
         $this->requestsContainerMock->expects($this->once())->method('newUSPTORequest')->willReturn($this->requestMock);
         $this->requestMock->expects($this->once())->method('simpleNumberSearch')->with($number)->willReturn(true);
         $this->assertTrue($this->getPatentSearch()->numberSearch($number));
@@ -50,7 +50,7 @@ class PatentSearchTest extends PHPUnit_Framework_TestCase
      */
     public function testWIPORequestFired()
     {
-        $number = \WorkAnyWare\IPFO\IPRights\Number::application('WO12345');
+        $number = \SNicholson\IPFO\Helpers\RightNumber::application('WO12345');
         $this->requestsContainerMock->expects($this->once())->method('newWIPORequest')->willReturn($this->requestMock);
         $this->requestMock->expects($this->once())->method('simpleNumberSearch')->with($number)->willReturn(true);
         $this->assertTrue($this->getPatentSearch()->numberSearch($number));
@@ -61,7 +61,7 @@ class PatentSearchTest extends PHPUnit_Framework_TestCase
      */
     public function testFailedNumberSearchWillTriggerFailureAndError()
     {
-        $number = \WorkAnyWare\IPFO\IPRights\Number::application('WO12345');
+        $number = \SNicholson\IPFO\Helpers\RightNumber::application('WO12345');
         $patentSearch = $this->getPatentSearch();
         $this->requestsContainerMock->expects($this->once())->method('newWIPORequest')->willReturn($this->requestMock);
         $this->requestMock->expects($this->once())->method('simpleNumberSearch')->with($number)->willReturn(false);

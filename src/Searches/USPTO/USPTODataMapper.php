@@ -5,7 +5,7 @@ namespace SNicholson\IPFO\Searches\USPTO;
 use DateTime;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
-use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPF;
 use WorkAnyWare\IPFO\IPRightInterface;
 use WorkAnyWare\IPFO\Parties\Applicant;
 use WorkAnyWare\IPFO\IPRights\Citation;
@@ -17,7 +17,7 @@ class USPTODataMapper extends DataMapper implements DataMapperInterface
 
     public function mapData()
     {
-        $result = new IPRight();
+        $result = new IPF();
         $this->getGrant($result);
         $this->getApplication($result);
         $this->getParties($result);

@@ -6,7 +6,7 @@ use DateTime;
 use SNicholson\IPFO\Exceptions\DataMappingException;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
-use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPF;
 use WorkAnyWare\IPFO\IPRightInterface;
 use WorkAnyWare\IPFO\Parties\Applicant;
 use WorkAnyWare\IPFO\Parties\Inventor;
@@ -18,7 +18,7 @@ class WIPODataMapper extends DataMapper implements DataMapperInterface
 
     public function mapData()
     {
-        $result = new IPRight();
+        $result = new IPF();
         $this->getPublication($result);
         $this->getApplication($result);
         $this->getParties($result);

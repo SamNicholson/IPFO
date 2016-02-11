@@ -3,7 +3,7 @@
 namespace SNicholson\IPFO\Parsers\EPOLine;
 
 use SNicholson\IPFO\Helpers\IPFOXML;
-use WorkAnyWare\IPFO\IPRight;
+use WorkAnyWare\IPFO\IPF;
 use WorkAnyWare\IPFO\IPRightInterface;
 use SNicholson\IPFO\Parsers\Document;
 use SNicholson\IPFO\Parsers\ParserInterface;
@@ -37,7 +37,7 @@ class EPOXMLParser implements ParserInterface
      */
     public function getIPRight()
     {
-        $IPRight = new IPRight();
+        $IPRight = new IPF();
         $IPRight->setSource(SearchType::EPO());
         $IPRight->setApplicants(ApplicantParser::parse($this->XML));
         $IPRight->setInventors(InventorParser::parse($this->XML));

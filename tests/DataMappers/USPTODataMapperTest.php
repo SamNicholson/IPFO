@@ -1,6 +1,6 @@
 <?php
 
-use WorkAnyWare\IPFO\IPF;
+use WorkAnyWare\IPFO\IPRight;
 use WorkAnyWare\IPFO\IPRightInterface;
 use WorkAnyWare\IPFO\IPRights\Citation;
 
@@ -63,7 +63,7 @@ class USPTODataMapperTest extends PHPUnit_Framework_TestCase
 
     private function getExpectedPublication()
     {
-        $result = new IPF();
+        $result = new IPRight();
         //Application
         $result->setApplicationDate('2003-09-02');
         $result->setApplicationNumber('10/653,633');

@@ -16,7 +16,7 @@ class EPOXMLParserTest extends PHPUnit_Framework_TestCase
     public function testParsingOfBelgiumApplication()
     {
         //Make the Right and set basic information
-        $IPRight = new \WorkAnyWare\IPFO\IPF();
+        $IPRight = new \WorkAnyWare\IPFO\IPRight();
         $IPRight->setFrenchTitle('Méthode et dispositif de mesure de la direction de sources RF');
         $IPRight->setLanguageOfFiling('FR');
         $IPRight->setSource(SearchType::EPO());
@@ -63,7 +63,7 @@ class EPOXMLParserTest extends PHPUnit_Framework_TestCase
     public function testParsingEPApplication()
     {
         //Make the Right and set basic information
-        $IPRight = new \WorkAnyWare\IPFO\IPF();
+        $IPRight = new \WorkAnyWare\IPFO\IPRight();
         $IPRight->setEnglishTitle('High current cyclotron');
         $IPRight->setLanguageOfFiling('GB');
         $IPRight->setSource(SearchType::EPO());
@@ -139,7 +139,7 @@ class EPOXMLParserTest extends PHPUnit_Framework_TestCase
     public function testParsingWOApplication()
     {
         //Make the Right and set basic information
-        $IPRight = new \WorkAnyWare\IPFO\IPF();
+        $IPRight = new \WorkAnyWare\IPFO\IPRight();
         $IPRight->setFrenchTitle('Appareil pour la fabrication de cigarettes');
         $IPRight->setLanguageOfFiling('FR');
         $IPRight->setSource(SearchType::EPO());

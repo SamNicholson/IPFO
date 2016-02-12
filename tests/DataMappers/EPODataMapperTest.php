@@ -1,7 +1,7 @@
 <?php
 
 use SNicholson\IPFO\Searches\EPO\EPODataMapper;
-use WorkAnyWare\IPFO\IPF;
+use WorkAnyWare\IPFO\IPRight;
 use SNicholson\IPFO\Searches\SearchError;
 use WorkAnyWare\IPFO\IPRights\Priority;
 use WorkAnyWare\IPFO\IPRights\SearchSource;
@@ -91,7 +91,7 @@ class EPODataMapperTest extends PHPUnit_Framework_TestCase
     public function testSinglePriorityIsParsedCorrectly()
     {
         $actualResult = $this->getSinglePriorityExample();
-        $expectedResult = new IPF();
+        $expectedResult = new IPRight();
         $priority = Priority::fromNumber('EP20030075514');
         $priority->setDate('2003-02-21');
         $expectedResult->addPriority($priority);
@@ -109,7 +109,7 @@ class EPODataMapperTest extends PHPUnit_Framework_TestCase
     private function getExpectedPublicationResult()
     {
         //Setup the expected publication result
-        $expectedResult = new IPF();
+        $expectedResult = new IPRight();
         $expectedResult->setSource(SearchSource::EPO());
 
         //titles

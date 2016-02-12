@@ -5,7 +5,7 @@ namespace SNicholson\IPFO\Searches\EPO;
 use SNicholson\IPFO\Exceptions\DataMappingException;
 use SNicholson\IPFO\Interfaces\DataMapperInterface;
 use SNicholson\IPFO\Abstracts\DataMapper;
-use WorkAnyWare\IPFO\IPF;
+use WorkAnyWare\IPFO\IPRight;
 use SNicholson\IPFO\Searches\SearchError;
 use WorkAnyWare\IPFO\Parties\Applicant;
 use WorkAnyWare\IPFO\IPRights\Citation;
@@ -71,7 +71,7 @@ class EPODataMapper extends DataMapper implements DataMapperInterface
             }
         }
 
-        $result = new IPF();
+        $result = new IPRight();
         $result->setSource(SearchSource::EPO());
 
         //Iterate through each of the documented results from the EPO

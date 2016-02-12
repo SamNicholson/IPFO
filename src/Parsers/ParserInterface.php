@@ -2,7 +2,7 @@
 
 namespace SNicholson\IPFO\Parsers;
 
-use WorkAnyWare\IPFO\IPF;
+use WorkAnyWare\IPFO\IPRight;
 use WorkAnyWare\IPFO\IPRightInterface;
 
 interface ParserInterface

@@ -4,7 +4,7 @@ namespace SNicholson\IPFO\Parsers\SmartParsers;
 
 use SNicholson\IPFO\Helpers\DateParser;
 use SNicholson\IPFO\Helpers\IPFOXML;
-use WorkAnyWare\IPFO\IPF;
+use WorkAnyWare\IPFO\IPRight;
 use WorkAnyWare\IPFO\IPRightInterface;
 use SNicholson\IPFO\Parsers\RecursiveFieldSearch;
 use WorkAnyWare\IPFO\IPRights\Priority;

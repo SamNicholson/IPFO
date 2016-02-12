@@ -14,7 +14,7 @@ use WorkAnyWare\IPFO\IPRightInterface;
 class Parser
 {
     /**
-     * Parses a given document into an IPF Object
+     * Parses a given document into an IPRight Object
      *
      * @param $document
      *

@@ -2,7 +2,7 @@
 
 namespace SNicholson\IPFO\Abstracts;
 
-use WorkAnyWare\IPFO\IPF;
+use WorkAnyWare\IPFO\IPRight;
 use WorkAnyWare\IPFO\IPRightInterface;
 use SNicholson\IPFO\Searches\SearchError;
 use WorkAnyWare\IPFO\Parties\Party;

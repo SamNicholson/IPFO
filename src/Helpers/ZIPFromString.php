@@ -33,7 +33,7 @@ class ZIPFromString
             for ($i = 0; $i < $this->zip->numFiles; $i++) {
                 $fp = $this->zip->getStream($this->zip->getNameIndex($i));
                 if (!$fp) {
-                    throw new FileHandleException('Failed to open contents of USPTO ZIP File');
+                    throw new FileHandleException('Failed to open contents of USPTO ZIP Document');
                 }
                 $this->contents[$this->zip->getNameIndex($i)] = '';
                 while (!feof($fp)) {
